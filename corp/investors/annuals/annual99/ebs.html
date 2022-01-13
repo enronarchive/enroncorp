@@ -1,0 +1,424 @@
+<html>
+<title>Enron Annual Report 1999 - Enron Broadband Services</title>
+<head>
+ <script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+
+
+
+// -->
+
+</script>
+
+	</head>
+
+	<style type="text/css">
+	<!--
+		body {font-family: verdana,geneva,helvetica,arial}
+		td {font-family: verdana,geneva,helvetica,arial}
+	-->
+	</style>
+
+	<body bgcolor="#ffffff">
+
+		<!-- top navigation -->
+		<table border="0" cellspacing="0" cellpadding="0" width="580">
+			<tr valign="top">
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',0,70,20,1)">Why?</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-600,70,20,1)">Strategy</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1200,70,20,1)">The Dream<br>Team</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1800,70,20,1)">EIN</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-2400,70,20,1)">Physical<br>Networks</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3000,70,20,1)">Strategic<br>Partners</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3600,70,20,1)">ePowered<br>Applications</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4200,70,20,1)">Bandwidth Trading and<br>Content Services</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4800,70,20,1)">Result</a></td>
+			</tr>
+			<tr>
+				<td colspan="8">
+					<img src="/src/img/ui/pixel_trans.gif" width="1" height="8"><br>
+					<img src="/src/ebs.gif" width="382" height="20">
+				</td>
+				<td valign="bottom">
+					<a href="javascript:window.close()"><img src="/src/close_orange.gif" width="35" height="16" border="1"></a>
+				</td>
+		</table>
+
+		<!-- timeline -->
+		<div id="timeline" style="position: absolute; left:0; top:70; width:5400; height:380; margin:0">
+			<table width="5400" height="380" border="0" cellpadding="0" cellspacing="0">
+				<tr><td colspan="9" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td></tr>
+
+<!-- this row contains the strategies, results, and images -->
+				<tr width="600" valign="top">
+					<td rowspan="7" width="600" bgcolor="#ff9900">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="280" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="230" align="right">
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/next_blue.gif" width="27" height="16" border="0" align="right"></a>
+						<p><font color="#0033cc" size="+1"><i>
+						ENRON BROADBAND SERVICES</i></font></p>
+						<p><font size="+3" color="#ffffff">
+						The Internet is too slow and unreliable to support high-bandwidth content and the
+						rich media needs of eCommerce.</font></p>
+						<p>
+						<font size="+1" color="#0033cc">ENRON ASKS</font>
+						<font size="+2" color="#0033cc"><b>WHY?</b></font>
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',0,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#0033cc">
+						<b>STRATEGY:</b> Enron assembles a fiber optic network to deliver high-quality 
+						rich media content to end-users. It connects the network to the public Internet 
+						via the Enron Intelligent Network and develops the Broadband Operating System 
+						to control the network's physical and software elements. Enron sees that 
+						bandwidth capacity can be traded as a commodity and conducts the first 
+						bandwidth trade in 1999.
+						</font></p>
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/dreamteam.gif" width="160" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="50" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/epowerlogo.gif" width="280" height="85" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="30" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/fiber.gif" width="226" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/logos.gif" width="150" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="50" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/ebsmonitor.jpg" width="200" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="40" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4800,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/ebstraders.gif" width="200" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="40" height="1">
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#ff6600">
+						<b>RESULT:</b> The Enron Intelligent Network allows content and Internet providers 
+						to transport rich media and streaming video right to the desktop with no delay or 
+						quality reductions. Bandwidth trading permits customers to buy bandwidth capacity 
+						as needed and avoid the cost of full-time, underused capacity. Enron is accepted as 
+						an Internet innovator and strikes an alliance with Sun Microsystems to advance 
+						Enron's Broadband Operating System as the industry standard protocol.
+						</font><p>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the colored block headings -->
+				<tr width="600" valign="top">
+					<td bgcolor="#0033cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>THE DREAM TEAM</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff9900">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>ENRON INTELLIGENT NETWORK (EIN)</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#000000">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>PHYSICAL NETWORKS</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff6600">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>STRATEGIC PARTNERS</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#3366ff">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>ePOWERED APPLICATIONS</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#009900">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>BANDWIDTH TRADING AND CONTENT SERVICES</b></font>
+						</nobr>
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the description blocks -->
+				<tr valign="top">
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="160" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						In late 1998, Enron forms Enron Broadband Services to develop a fiber optic 
+						business. Joe Hirko, former Portland General Electric CFO, and Ken Rice, former 
+						chairman of Enron North America, are called in to capture every possible 
+						opportunity in the high-bandwidth market. They attract the industry's leading 
+						technological minds to assemble a high-bandwidth network of superior hardware, 
+						intelligent software and innovative products and applications. They draw on 
+						talent throughout Enron to explore all possible bandwidth business opportunities.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron acquires Modulus, the creator of InterAgent software, which adds 
+						embedded ePowered<sup>TM</sup> intelligence to the network. The EIN's unique hardware 
+						architecture works off a chain of servers and distributed servers to avoid the 
+						delay of sending data through multiple routers. The EIN can be accessed on 
+						demand and users pay according to use, negating the need for their own 
+						investment in high-bandwidth connectivity.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron augments its initial 1,700 miles of fiber optic cable by building, swapping
+						and leasing additional capacity in the U.S. By early 2000, Enron has access to
+						14,300 route miles. To upload and download content from the Internet, the company
+						establishes points of presence, pooling points and data centers in 30
+						strategic markets. Leasing fiber keeps capital investment to a minimum.
+						At the same time, the unit benefits from strong sales of dark fiber and
+						data transmission.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Best-in-breed technology is obtained through strategic partnerships with the 
+						industry's leaders: Cisco Systems&reg; routers, Sun&reg; Microsystems servers and 
+						Ciena&reg; dense wave division multiplexors--equipment that is unsurpassed in 
+						moving data and content. As partners, these Internet luminaries give Enron 
+						instant credibility with customers and assist in forming new relationships.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						The EIN moves data up to 50 times faster than current Internet speed and reduces 
+						average data latency from approximately 29 seconds to 3 seconds. Media streams on 
+						the EIN like nowhere else, and Enron capitalizes on the EIN's speed and 
+						responsiveness to launch unique and lucrative ePowered applications, including:
+						<ul>
+							<li>ePowered Media Cast<sup>TM</sup> delivers broadcast-quality video to the desktop. 
+								That allows the Country Music Association to simulcast additional video 
+								from its annual Country Music Awards broadcast using ePowered Media Cast.</li>
+							<li>ePowered Media Transport speeds video content wherever it needs to go, 
+								bypassing satellite and land-based networks.</li>
+						</ul>
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Veteran Enron North America market-maker Tom Gros recognizes that bandwidth 
+						capacity should be bought and sold via standardized contracts, similar to 
+						the way natural gas and electricity are marketed. He brings in Jean Mrha 
+						and other experienced Enron traders and in December 1999 initiates the 
+						first-ever forward trade of bandwidth between New York and Los Angeles. 
+						By serving as a market intermediary, Enron reduces the cost and increases 
+						the flexibility of purchasing bandwidth capacity and helps bandwidth producers 
+						and consumers manage price and supply risks. David Cox sells services directly 
+						to content providers, such as entertainment and media companies.
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+	</body>
+</html>
+
+

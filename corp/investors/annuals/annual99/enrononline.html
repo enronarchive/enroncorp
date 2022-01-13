@@ -1,0 +1,440 @@
+<html>
+<title>Enron Annual Report 1999 - EnronOnLine</title>
+<head>
+ <script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+
+
+
+// -->
+
+</script>
+
+	</head>
+
+	<style type="text/css">
+	<!--
+		body {font-family: verdana,geneva,helvetica,arial}
+		td {font-family: verdana,geneva,helvetica,arial}
+	-->
+	</style>
+
+	<body bgcolor="#ffffff">
+
+		<!-- top navigation -->
+		<table border="0" cellspacing="0" cellpadding="0" width="580">
+			<tr valign="top">
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',0,70,20,1)">Why?</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-600,70,20,1)">Strategy</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1200,70,20,1)">Project<br>Head</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1800,70,20,1)">Global Trading<br>Operation</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-2400,70,20,1)">EnronOnline<br>Operations</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3000,70,20,1)">RAC</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3600,70,20,1)">Information<br>Technology</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4200,70,20,1)">Legal and<br>Tax</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4800,70,20,1)">Result</a></td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<img src="/src/img/ui/pixel_trans.gif" width="1" height="8"><br>
+					<img src="/src/enrononline.gif" width="158" height="20">
+				</td>
+				<td></td><td></td><td></td><td valign="bottom">
+					<a href="javascript:window.close()"><img src="/src/close_orange.gif" width="35" height="16" border="1"></a>
+				</td>
+		</table>
+
+		<!-- timeline -->
+		<div id="timeline" style="position: absolute; left:0; top:70; width:5400; height:380; margin:0">
+			<table width="5400" height="380" border="0" cellpadding="0" cellspacing="0">
+				<tr><td colspan="9" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td></tr>
+
+<!-- this row contains the strategies, results, and images -->
+				<tr width="600" valign="top">
+					<td rowspan="7" width="600" bgcolor="#ff6600">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="280" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="230" align="right">
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/next_blue.gif" width="27" height="16" border="0" align="right"></a>
+						<p><font color="#0033cc" size="+1"><i>
+						EnronOnline</i></font></p>
+						<p><font size="+3" color="#ffffff">
+						No one trades energy over the Internet.</font></p>
+						<p>
+						<font size="+1" color="#0033cc">ENRON ASKS</font>
+						<font size="+2" color="#0033cc"><b>WHY?</b></font>
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',0,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#0033cc">
+						<b>STRATEGY:</b> eCommerce over the Internet is the new standard for business-to-business 
+						transactions; Enron creates EnronOnline, the first global transaction system to bring 
+						worldwide energy markets into the Internet age. Customers have complete 24-hour-a-day 
+						computer access to Enron's prices in all Enron global wholesale markets. They can 
+						execute transactions with Enron instantly with a click of their mouse. To establish 
+						first-mover advantage, Enron's traders set an aggressive timetable--just seven 
+						months--to launch EnronOnline. A global team of more than 350 traders, technology 
+						experts, lawyers and other Enron experts is assembled to design a secure, legally sound 
+						and easy-to-use service.
+						</font></p>
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/louisekitchen.gif" width="94" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="100" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/eoltrader.jpg" width="167" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="80" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/globe2.gif" width="105" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="100" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/eolchart.gif" width="149" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="80" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/philippebibi.gif" width="149" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="90" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4800,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/eolmonitor.jpg" width="125" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="100" height="1">
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#ff6600">
+						<b>RESULT:</b> EnronOnline debuts on November 29, 1999, completing transactions 
+						with a notional value of  more than $9 billion during its first two-and-a-half 
+						months. All of the hundreds of wholesale products that Enron currently offers, 
+						ranging from Canadian natural gas and German power to weather derivatives and 
+						pulp and paper, can be transacted through EnronOnline. Customers navigate across 
+						the web site to manage their energy portfolios free of charge. Already, Enron 
+						envisions EnronOnline as a portal with much more potential. As Enron enters new 
+						markets with additional products, the scalability of EnronOnline will allow new 
+						customers to "click and transact" almost anything Enron can offer.
+						</font><p>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the colored block headings -->
+				<tr width="600" valign="top">
+					<td bgcolor="#3366cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>PROJECT LEAD</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#006600">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>GLOBAL TRADING OPERATION</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ffcc00">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>EnronOnline OPERATIONS</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#339933">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>CREDIT/FOREIGN EXCHANGE/RISK ASSESSMENT AND CONTROL (RAC)</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff6600">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>INFORMATION TECHNOLOGY (IT)</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#0033cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>LEGAL AND TAX</b></font>
+						</nobr>
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the description blocks -->
+				<tr valign="top">
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="160" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						In late April 1999 Enron's head traders sense the time is right to advance to 
+						the next level of wholesale energy transactions. Louise Kitchen, then head of 
+						European Gas Trading, takes up the challenge to execute the launch of a global 
+						Internet-based commodity transaction system. Louise draws on Enron's global 
+						network of intellectual capital to mobilize a team. Its goal is to break down 
+						geographical boundaries and connect Enron's worldwide trading capability and 
+						customer base via the Internet, while ensuring compliance with international 
+						regulatory and cultural restrictions. For the next seven months Louise's core 
+						team drives the development, design and implementation of a web site that 
+						simplifies and expedites transactions with Enron.</font>
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Without Enron's strong presence and volume in international commodity markets, 
+						it would not have the liquidity to make markets in hundreds of products, or 
+						the experience and pricing knowledge to operate throughout the world. Each 
+						trading group helps design the suite of systems that maintains prices on the 
+						web site, while individual traders specify special product requirements. 
+						EnronOnline becomes a system for traders designed by traders. Training on 
+						EnronOnline begins in August 1999, with traders participating in global 
+						simulations to ensure a flawless launch. The first transaction is completed 
+						at 9:52 a.m. on November 29 by the traders on the U.S. Natural Gas Central Desk.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						To ensure a first-class customer experience, a dedicated operations team is 
+						created from Enron's broad business support network. EnronOnline Operations 
+						is a global group with expertise in marketing, contract management, customer 
+						data processing and more. The immense volume of data--from the 120 different 
+						contracts to the changing of customer addresses--is maintained on a continual 
+						basis. Providing premier service to internal and external customers is the 
+						driving force behind this group, which offers 24-hour HelpDesk support in 
+						more than 140 languages to assist in the registration and transaction processes.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Online transactions happen so fast and volumes can be so great that credit 
+						decisions are required on a continual basis. Therefore, automated credit and 
+						risk assessment control functions are built into the EnronOnline system. 
+						Each customer transacting on EnronOnline requires a continuously updated 
+						customer profile with credit and term limits for every product type. All 
+						transactions are automatically and instantly screened for credit approval 
+						before acceptance. Because this is a global system, Enron's Foreign Exchange 
+						Desk quotes currency rates that are then incorporated into the commodity 
+						pricing on a real-time basis to ensure that prices reflect the underlying 
+						exchange rates. Any completed currency-related transactions flow 
+						automatically into the foreign exchange systems.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron, recognized as an innovative user of technology by Information Week and 
+						a leading player in the New Economy by Wired magazine, faces an unusual 
+						challenge with EnronOnline: it must ensure that prices posted by traders are 
+						up-to-the-minute and transactions can occur securely across the Internet. 
+						Chief Technology Officer Philippe Bibi mobilizes his global team, led by Jay 
+						Webb. It is no small feat to provide a continual stream of price updates for 
+						hundreds of products, each requiring individual design and support. IT not 
+						only ensures the smooth integration of EnronOnline into the existing IT 
+						network infrastructure but also seamlessly connects it to the back office 
+						systems for contract settlement, risk management and commodity scheduling. 
+						Finally, IT manages the web site day to day as markets open and close across 
+						the globe.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						What turns a mouse click into a legally binding contract? Enron's legal team works 
+						with the project leaders to create a framework for online transactions that meets 
+						global requirements. Legal teams in each country engineer specialized electronic 
+						commodity trading agreements that can be accepted by the customer online. The team 
+						must deal with hundreds of legal issues and regulatory standards for each country. 
+						The tax group ensures that EnronOnline accommodates the statues of all international 
+						as well as domestic jurisdictions, and both teams monitor ever-changing regulations 
+						for eCommerce.
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+	</body>
+</html>

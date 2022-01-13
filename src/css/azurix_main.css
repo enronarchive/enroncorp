@@ -1,0 +1,38 @@
+body { font-family: Helvetica, Arial; font-size: 10pt; color: #000000; }
+p { font-family: Helvetica, Arial; font-size: 10pt; color: #000000;}
+a.subMenuText { font-family: Monaco, Helvetica, Arial; font-size: 8pt; color: #FFFFFF; text-decoration: none;}
+li { font-family: Helvetica, Arial; font-size: 10pt; color: #000000;}
+footerText { font-family: Helvetica, Arial; font-size: 9pt; color: #000000;}
+h1 { font-family: Helvetica, Arial; font-size: 12pt; color: #000000; font-weight: bold;}
+p.head1 { font-family: Helvetica, Arial; font-size: 10pt; color: #000000; font-weight: bold;}
+p.head2 { font-family: Helvetica, Arial; font-size: 12pt; color: #000000; font-weight: bold;}
+h5 { font-family: Helvetica, Arial; font-size: 10pt; color: #000000; ; font-weight: normal;}
+p.red { font-family: Helvetica, Arial; font-size: 12pt; color: #000000; font-weight: bold;}
+a:link { color:#000099}
+a:visited { color:#0066CC}
+a:hover { color:#FF0000}
+p.tickerText {  font-family: Helvetica, Arial; font-size: 10pt; color: #FFFFFF;  }
+font.tickerText {  font-family: Helvetica, Arial; font-size: 10pt; color: #FFFFFF;  }
+a.tickerLink {  font-family: Helvetica, Arial; font-size: 10pt; color: #00CCFF;  }
+
+/*
+     FILE ARCHIVED ON 04:29:54 Aug 17, 2000 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 21:05:45 Apr 15, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 62.402 (3)
+  esindex: 0.009
+  captures_list: 572.678
+  CDXLines.iter: 9.963 (3)
+  PetaboxLoader3.datanode: 70.315 (4)
+  exclusion.robots: 0.188
+  exclusion.robots.policy: 0.164
+  RedisCDXSource: 497.237
+  PetaboxLoader3.resolve: 99.427
+  load_resource: 151.138
+*/

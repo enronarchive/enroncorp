@@ -1,0 +1,178 @@
+<html>
+<head>
+    
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+p {  font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 12px}
+.small {  font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 10px}
+input {font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 12px}
+select {font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 12px}
+a {font-family: Tahoma, Arial, Helvetica, sans-serif;color:blue;}
+a:visited {font-family: Tahoma, Arial, Helvetica, sans-serif;color:blue;}
+.dotitle { font-family: Tahoma, Arial, Helvetica, sans-serif; color:#FF6600; font-size: 15px; font-weight:bold;}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!--<div id="SiLayer" style="position:absolute; left:420px; top:85px; width:155px; height:89px; z-index:6"><img src="../images/si.gif" width="312" height="243"></div>-->
+<div id="Layer1" style="position:absolute; left:375px; top:130px; width:183; height:278; z-index:1; visibility: visible"> 
+<table width="183" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3"><img src="/src/img/direct/es/question_top.gif" width="183" height="67"></td>
+</tr>
+<tr>
+<td colspan="3"><img src="/src/img/direct/es/question_handshake.jpg" width="183" height="181"></td>
+</tr>
+<tr>
+<!--    <td><img src="../images/question_si.gif" width="28" height="30" border="0"></td>	<td><img src="../images/question_no.gif" width="31" height="30" border="0"></td>    <td><img src="../images/question_no_estoy.gif" width="124" height="30" border="0"></td>-->
+<td><a href="main.asp#" onclick="MM_openBrWindow('/project/not/index.html','popup','width=302,height=233')"><img src="/src/img/direct/es/question_si.gif" width="28" height="30" border="0"></a></td>
+<td><a href="main.asp#" onclick="MM_openBrWindow('/project/not/index.html','popup','width=302,height=233')"><img src="/src/img/direct/es/question_no.gif" width="31" height="30" border="0"></a></td>
+<td><a href="main.asp#" onclick="MM_openBrWindow('/project/not/index.html','popup','width=302,height=233')"><img src="/src/img/direct/es/question_no_estoy.gif" width="124" height="30" border="0"></a></td>
+</tr>
+</table>
+</div>
+<a name="top"></a>
+<table width="365" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="10">&nbsp;</td>
+<td width="355"><p class="dotitle">Su Oferta</p>
+<p>Por favor rellene el siguiente cuestionario y nosotros le 
+proporcionaremos una oferta.</p>
+<form name="frmData" id="frmData" method="GET" action="main.html">
+<table width="350" cellpadding="5" cellspacing="0" border="0">
+<tr> 
+<td height="40" width="142" align="right"><p>¿Es usted un cliente cualificado?</p></td>
+<td width="198"><select name="eligible" class>
+<option value="si" selected>Si</option>
+<option value="no">No</option>
+<option value="noestoy">No estoy seguro</option>
+</select></td>
+</tr>
+<tr>
+<td colspan="2" class="small"><i>Clientes cualificados son los que consumen 1 millón kWh<br>
+o más por año o están conectados a una línea eléctrica<br>de 1kV o más</i></td>
+</tr>
+<tr>
+<td align="right"><p>Su Compañía:</p></td>
+<td><input type="text" name="compania" size="17" maxlength="150"></td>
+</tr>
+<tr>
+<td align="right"><p>Nombre de Contacto:</p></td>
+<td><input type="text" name="nombre_de_contacto" size="17" maxlength="50"></td>
+</tr>
+<tr>
+<td align="right"><p>Cargo:</p></td>
+<td><input type="text" name="cargo" size="17" maxlength="100"></td>
+</tr>
+<tr>
+<td align="right"><p>Tipo de Actividad:</p></td>
+<td><select name="actividad">
+<option value="Comercio">Comercio</option>
+<option value="Explotacion agricola">Explotaci&oacute;n agr&iacute;cola </option>
+<option value="Fabrica">F&aacute;brica</option>
+<option value="Hospital">Hospital</option>
+<option value="Hotel">Hotel</option>
+<option value="Institucion Educativa">Instituci&oacute;n Educativa</option>
+<option value="Oficina">Oficina</option>
+<option value="Otros">Otros</option>
+</select></td>
+</tr>
+<tr>
+<td align="right"><p>Número de puntos de consumo:</p></td>
+<td><input type="text" name="puntos_de_consumo" size="17" maxlength="50"></td>
+</tr>
+<tr>
+<td valign="top" align="right"><p><img src="/src/img/direct/es/tran.gif" width="1" height="15">Potencia Necesaria:</p></td>
+<td><input type="text" name="potencia_necesaria" size="17" maxlength="50"><div class="small"><i>en kW</i></div></td>
+</tr>
+<tr>
+<td align="right"><p>¿Cuánta electricidad consume como media por mes?</p></td>
+<td><input type="text" name="consumo" size="17" maxlength="50"><div class="small"><i>en kWh</i></div></td>
+</tr>
+<tr>
+<td align="right"><p>¿Cuál es el importe medio de su factura mensual de electricidad en pta antes de I.V.A?</p></td>
+<td><input type="text" name="factura_mensual" size="17" maxlength="100"></td>
+</tr>
+<tr>
+<td align="right"><p>¿A qu&eacute; tipo de Tarifa est&aacute; abonado?</p></td>
+<td><select name="tarifa">
+<option value="1.1">1.1</option>
+<option value="2.1">2.1</option>
+<option value="3.1">3.1</option>
+<option value="R.1">R.1</option>
+<option value="Otros">Otros</option>
+<option value="Mercado Libre">Mercado Libre</option>
+<option value="Desconocido">Desconocido</option>
+</select></td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td colspan="2"><p><b>Informaci&oacute;n de Contacto</b></p></td>
+</tr>
+<tr>
+<td align="right"><p>Calle:</p></td>
+<td><input type="text" name="calle" size="17" maxlength="150"></td>
+</tr>
+<tr>
+<td align="right"><p>Municipio:</p></td>
+<td><input type="text" name="muninipio" size="17" maxlength="150"></td>
+</tr>
+<tr>
+<td align="right"><p>Provincia:</p></td>
+<td><input type="text" name="provincia" size="17" maxlength="150"></td>
+</tr>
+<tr>
+<td align="right"><p>Código Postal:</p></td>
+<td><input type="text" name="codigo_postal" size="17" maxlength="150"></td>
+</tr>
+<tr>
+<td align="right"><p>Teléfono:</p></td>
+<td><input type="text" name="telefono" size="17" maxlength="50"></td>
+</tr>
+<tr>
+<td align="right"><p>Fax:</p></td>
+<td><input type="text" name="fax" size="17" maxlength="50"></td>
+</tr>
+<tr> 
+<td align="right"><p>E-mail:</p></td>
+<td><input type="text" name="e-mail" size="17" maxlength="100"></td>
+</tr>
+<tr>
+<td colspan="2"><p>¿Preguntas?<br>Comentarios:</p></td>
+</tr>
+<tr>
+<td colspan="2"><textarea name="commentarios" rows="5" cols="30"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" name="Submit" value="Enviar"></td>
+</tr>
+</table>
+</form></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><font face="Tahoma, Arial, Helvetica, sans-serif" size="1">Al completar y enviar esta solicitud se entenderá
+que está conforme con la <a href="/direct/es/privacidad.html">Aviso Legal y Política de Privacidad</a> de Enron Directo</font></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td align="right"><a href="#top"><img src="/src/img/direct/es/arrow_up.gif" width="26" height="27" border="0"></a></td>
+</tr>
+</table>
+</body>
+</html>

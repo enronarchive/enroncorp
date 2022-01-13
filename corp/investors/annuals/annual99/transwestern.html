@@ -1,0 +1,396 @@
+<html>
+<title>Enron Annual Report 1999 - Transwestern Pipeline</title>
+	<head>
+ <script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+
+
+
+// -->
+
+</script>
+
+	</head>
+
+	<style type="text/css">
+	<!--
+		body {font-family: verdana,geneva,helvetica,arial}
+		td {font-family: verdana,geneva,helvetica,arial}
+	-->
+	</style>
+
+	<body bgcolor="#ffffff">
+
+		<!-- top navigation -->
+		<table border="0" cellspacing="0" cellpadding="0" width="580">
+			<tr valign="top">
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',0,70,20,1)">Why?</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-600,70,20,1)">Strategy</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1200,70,20,1)">Gas Flows<br>Task Force</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1800,70,20,1)">Optimization<br>Team</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-2400,70,20,1)">Compression<br>Services</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3000,70,20,1)">EE&CC;</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3600,70,20,1)">Regulatory<br>Affairs</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4200,70,20,1)">Commercial<br>Group</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4800,70,20,1)">Result</a></td>
+			</tr>
+			<tr>
+				<td colspan="7">
+					<img src="/src/img/ui/pixel_trans.gif" width="1" height="8"><br>
+					<img src="/src/gallup.gif" width="363" height="20">
+				</td>
+				<td></td><td></td><td></td><td valign="bottom">
+					<a href="javascript:window.close()"><img src="/src/close_orange.gif" width="35" height="16" border="1"></a>
+				</td>
+		</table>
+
+		<!-- timeline -->
+		<div id="timeline" style="position: absolute; left:0; top:70; width:5400; height:380; margin:0">
+			<table width="5400" height="380" border="0" cellpadding="0" cellspacing="0">
+				<tr><td colspan="9" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td></tr>
+
+<!-- this row contains the strategies, results, and images -->
+				<tr width="600" valign="top">
+					<td rowspan="7" width="600" bgcolor="#0033cc">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="280" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="230" align="right">
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/next_orange.gif" width="27" height="16" border="0" align="right"></a>
+						<p><font color="#ff9900" size="+1"><i>
+						TRANSWESTERN PIPELINE</i></font></p>
+						<p><font size="+3" color="#ffffff">
+						Traditional gas transportation offers little flexibility to customers.</font></p>
+						<p>
+						<font size="+1" color="#ff9900">ENRON ASKS</font>
+						<font size="+2" color="#ff9900"><b>WHY?</b></font>
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="280" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="280" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',0,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#0033cc">
+						<b>STRATEGY:</b> Transwestern uses its expertise and Enron's to fast-track capacity 
+						expansion to California, where natural gas demand is growing rapidly. In response to 
+						customers' reluctance to subscribe to the new capacity under old scenarios, 
+						Transwestern Pipeline develops innovative, flexible products for the natural gas 
+						transportation market.
+						</font></p>
+					</td>
+
+					<td width="600" height="155" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/california.gif" width="200" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/oteam.gif" width="186" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/compressor.gif" width="266" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="5" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/eeccguys.jpg" width="332" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/capitol.gif" width="217" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="50" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4800,70,20,1)"><img src="/src/next_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/commercialgroup.jpg" width="155" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="1">
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="230" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="230" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/previous_orange.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#ff6600">
+						<b>RESULT:</b> Transwestern increases pipeline capacity to the California border
+						without laying new pipe--avoiding delay, expense and right-of-way negotiations.
+						Capacity will increase 15 percent beginning second quarter 2000, just months
+						after the plan is approved by federal regulators.
+					</td>
+
+				</tr>
+
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the colored block headings -->
+				<tr width="600" valign="top">
+					<td bgcolor="#00cc00">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>TRANSWESTERN GAS FLOWS TASK FORCE</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#000000">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>TRANSWESTERN OPTIMIZATION TEAM</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff9900">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>ENRON COMPRESSION SERVICES</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#0033cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>ENRON ENGINEERING &amp; CONSTRUCTION COMPANY</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#6699cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>TRANSWESTERN GOVERNMENT/REGULATORY AFFAIRS</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#cc0000">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>TRANSWESTERN COMMERCIAL GROUP</b></font>
+						</nobr>
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the description blocks -->
+				<tr valign="top">
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="200" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Through its forecast of overall demand and supply of gas production in the U.S. and Canada, the task force anticipates that California gas demand will increase by 3.2 percent annually, mostly due to electric power generation. Customers want to ship low-cost gas from the San Juan basin in New Mexico to the California border. They sign commitments to use the proposed increase in Transwestern's capacity because of Transwestern's ability to offer innovative deal structures and its bi-directional flexibility to serve both California and Texas intrastate markets.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Created to increase pipeline capacity through incremental improvements, the Optimization Team searches for ways to flow more gas without laying new pipe. To increase capacity 15 percent, Ben Asante, Ron Matthews, Terry Galassini and Dave Foti conceive an innovative two-step approach. First, the team will site a new $12 million compressor at Gallup, New Mexico, to increase pressure at the San Juan junction to 950 psig. Second, it advocates the use of two coolers, at La Plata and the Blanco Hub, to reduce the gas temperature, allowing more gas to be compressed through the pipe.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron provides compression services at several pipeline sites throughout
+						North America. Enron will provide 10,000 shaft horsepower to run the Gallup
+						compressor. By providing the service at a lower cost than Transwestern could
+						otherwise obtain, Enron helps lower the cost of the Gallup expansion.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron Engineering &amp; Construction Company (EE&CC;) is the traditional provider
+						of construction services to Transwestern. EE&CC;'s familiarity with the
+						project and Transwestern's system allows it to set an ambitious schedule
+						of completing construction in just four months. When completed, the Gallup
+						expansion will add 50 MMcf/d from the San Juan basin. Overall, Transwestern's
+						capacity to the California border is anticipated to increase by 140 MMcf/d.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Transwestern files its expansion proposal with the Federal Energy Regulatory
+						Commission (FERC) in May 1999. FERC approves the proposal in January 2000.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Transwestern creates customized products to meet the specific needs of
+						its customers. They can purchase capacity at set prices or index the
+						price of transportation to basin spreads. For the first time, customers
+						can use a variety of Transwestern services to mitigate price risk.
+						<img src="/src/img/ui/pixel_trans.gif" width="575" height="1">
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,52 @@
+/* Netscape for Windows styles */
+
+<style type: "text/css">
+
+body { background-color: #ffffff }
+
+div {}
+
+/* NAVBAR STYLES */
+.navpos { position: absolute; left: 5px; top: 90px; width: 95 } 
+.navitems { font-size: 8pt; font-family: arial, helvetica, geneva;
+	margin-bottom: 10px; padding-left: 8px; text-indent: -5px } 
+.navlink { color: #000000 }
+
+/* TOPBAR STYLES */
+.topbarpos { position: absolute; left: 0; top: 0 }
+.enronpos { position: absolute; left: 8px; top: 42px }
+.crumb { position: absolute; left: 130px; top: 20px; width: 500 px }
+.logo { position: absolute; top: 10px; left: 600px } 
+.topbartext { font: bold 14.5pt arial, helvetica, geneva, san-serif;
+	color: #ffffff;  
+	position: absolute; left: 130px; top: 46px; width: 500 px }
+
+/* TOPLINKS STYLES */
+.toplinkspos { position: absolute; left: 127px; top: 70px }
+.toplinkstext { font-size: 8pt; font-family: arial, helvetica, geneva }
+
+/* TEXT STYLES */
+.body {	position: absolute; top: 110px; left: 130px; width: 490 px }
+.captionfont { font: 10pt arial, helvetica, geneva, san-serif; font-style: italic; color: #0066cc }
+
+
+/* FOOTER STYLES */
+.footerpos { position: relative; top: 5 px }
+.foottext { font-size: 8pt; font-family: arial, helvetica, geneva; color: #000000 }
+
+.blue { color: #0066cc }
+
+/* STOCK PRICES STYLES */
+.stocktitle { font: bold 14pt arial, helvetica, geneva, san-serif; color: #ffffff }
+.stockdelay { font: 9pt; color: #ffffff }
+.stocktitlerow { font: bold 10pt arial, helvetica, geneva, san-serif; color: #0066cc }
+
+
+/*
+     FILE ARCHIVED ON 11:00:19 Feb 04, 2002 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:22:55 Feb 22, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/

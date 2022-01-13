@@ -1,0 +1,62 @@
+<html>
+<head>
+
+	<title>FGT Current Tariff Search: Search Query </title> 
+	<meta name="DESCRIPTION" content="Sample query form for Microsoft Index Server">
+	<meta name="AUTHOR" content="Index Server Team">
+	<meta name="KEYWORDS" content="query, content, hit">
+	<meta name="SUBJECT" content="search form">
+</head>
+
+<body bgcolor="#ffffff" link="#cc0000" vlink="#006699">
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr valign="top"><td><!-- top bar --><!--
+	<img src="./images/spacerw.gif" height="5"><br>
+	<img src="./images/ettopbr2.gif" WIDTH="588" HEIGHT="58"><br>
+	<img src="./images/spacerw.gif" height="40"><br>
+-->
+<br><br><!-- title -->
+	<img src="/src/img/ui/spacerw.gif" width="27"> 
+	<img height="35" src="/src/img/ets/fgt/etbtasearch.gif" width="450"> <!-- indent 27 pixels throughout document -->
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tr><td><img src="/src/img/ui/spacerw.gif" width="27"></td><td width="450"><br><!-- <img src="images/magnifier.jpg" WIDTH="50" HEIGHT="39"> -->
+			<font face="arial" size="-1">To search, choose a category, then enter words and phrases, separated by commas (e.g., search, jet engines, basketball).<br>
+			<hr width="100%" align="center" size="3"><br><!-- ********* Query Input Form ********* -->
+			
+			<h4>Tariff Search</h4><br>
+
+	<form method="GET" action="/project/not/index.html">
+		<b><font size="-1" face="arial,geneva,helvetica">
+		Search
+		</font></b><!-- define the dropdown menu to filter the query to certain hosts -->
+		<select name="trfsect">
+			<option selected value="FGT0TRF*"> Current Tariff 			
+			<option value="FGT0TRF0SCHD"> Rate Schedules
+			<option value="FGT0TRF0GTC"> General Terms and Conditions
+			<option value="FGT0TRF0FSA"> Form of Service 
+              Agreement</option>    
+		</select>
+		<br>
+
+		<input name="UserRestriction" size="45" maxlength="100">		 
+		<input type="hidden" name="CiScope" value="/infopostings/fgt/tariff/current/">	
+		<input type="hidden" name="CiMaxRecordsPerPage" value="10">
+		<input type="hidden" name="TemplateName" value="queryfgt">
+		<input type="hidden" name="HTMLQueryForm" value="/tariff/search/queryfgt.htm">
+		<input type="hidden" name="CiSort" value="rank[d]">
+		<input type="hidden" name="VPATH" value="/infopostings/fgt/tariff/current/">
+		
+		<input type="submit" value="Submit"><br>
+	</form>
+
+			<a href="tipshelp.html"><font face="arial" size="-1">Tips for searching</font></a><font face="arial" size="-1"><br><br><br></font></font> 
+		
+	</td>
+	</tr>
+	</table> 
+</td>
+</tr>
+</table> 
+</body>
+</html>

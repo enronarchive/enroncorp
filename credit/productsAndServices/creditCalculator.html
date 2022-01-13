@@ -1,0 +1,207 @@
+<html>
+<head>
+
+
+<style type="text/css">
+<!-- Menu CSS attributes -->
+table.menu {width: 118px; background-color: #FFFFFF; }
+td.menuParent {background-color: #99CCFF;}
+td.menuPanel {background-color: #99CCFF;}
+td.menuParentSelected {background-color: #006699; }
+div.menuParent {padding: 2px;}
+div.menuChild {width: 116px; padding: 2px; border: 1px solid #006699; margin : 1px 1x 1px 1px;}
+div.menuPanel {width: 118px; border: solid #FFFFFF; border-width: 0px 1px 1px 1px; }
+a.menuLink {font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #006699; text-decoration: none;}
+a:hover.menuLink {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+a.menuLinkSelected {font: 12px Arial, Tahoma, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none;}
+a.menuChildLinkSelected {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+td.pagefooter {BACKGROUND-COLOR: #009966; COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; TEXT-ALIGN: right;}
+a.pagefooter {COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; font-weight: bold;}
+
+
+<!-- Default CSS attributes -->
+BODY {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TD {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TH {FONT-SIZE: 12px; font-weight: bold; text-align: left; FONT-FAMILY: Arial, Verdana, helvetica}
+SELECT {FONT-SIZE: 12px;}
+P {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+select.Search {width: 150px; font-size: 12px;}
+input.Search {width: 150px; font-size: 12px;}
+input.receivable {width: 150px; font-size: 12px; text-align: right;}
+H5 {FONT-SIZE: 8pt;FONT-FAMILY: Verdana, Arial, helvetica;FONT-WEIGHT=bold;}
+TD.PartnerHeading {color: #428db5; FONT-FAMILY: Arial, Verdana, helvetica; font-size: 17px; FONT-WEIGHT: bold;}
+b.blueH	{FONT-SIZE: 12pt; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.blue	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica;}
+.bluebold	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.darkblue {background-color: #006699; color: #FFFFFF; font-weight: bold;}
+.lightblue {background-color: #C1E9E9;}
+.darkgray {background-color: #999999;  color: #FFFFFF;}
+.middlegray {background-color: #CCCCCC;}
+.lightgray {background-color: #E3E5E5;}
+.darkgrey {background-color: #999999;  color: #FFFFFF;}
+.middlegrey {background-color: #CCCCCC;}
+.lightgrey {background-color: #E3E5E5;}
+.white {background-color: #FFFFFF;}
+a.homepage:hover	{color:#cc3300;text-decoration:none;}
+a.homepage			{color:#006699;text-decoration:none;}
+a.nohover {color:#006699;text-decoration:underline;}
+a.nohover:hover {color:#006699;text-decoration:underline;}
+a {color:#006699;}
+a.portfolioCommand {color:#006699; font-weight: bold;}
+a.portfolioTab {color:#636163; font-weight: bold; text-decoration:none;}
+a.clsToolTip {color: #000000; font-weight: bold; text-decoration: none;}
+tr.portfolioHeading {FONT-SIZE: 12px; font-weight: bold; text-align: left; color:#006699; background-color: #CCCCCC;}
+tr.indicesHeading {FONT-SIZE: 8pt; font-weight: bold; text-align: left; color:#006699;}
+span.blueHeading {color: #006699; font-weight: bold;}
+span.pageHeading {color: #006699; font-weight: bold; font-size: 14pt;}
+</style>
+
+</head>
+<body leftmargin="2" topmargin="2" marginwidth="2" marginheight="2">
+
+<map name="m_banner">
+<area shape="rect" coords="518,111,628,127" href="/credit/rfi/requestforinfo.html" alt="request for info" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="524,73,624,94" alt="Help" href="/credit/sitehelp/" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="641,74,739,92" href="/credit/siteMap/" alt="Site map" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="652,109,722,127" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="123,123,465,160" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="12,60,111,150" href="/corp/" alt="Enron.com" target="_blank">
+</map>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr class="banner">	
+	<td colspan="3"><img name="banner" src="/src/img/credit/banner.gif" width="760" border="0" usemap="#m_banner"></td>
+</tr>
+<tr>
+	<td width="118" valign="top" align="center" class="menuPanel">
+		
+
+<script language="javascript">
+function MenuSelect(intTopMenu, intSecMenu) {
+	var strCookie;
+	strCookie = "ECMenu=TopMenu=" + intTopMenu + "&SecMenu=" + intSecMenu + ";path=/;";
+	document.cookie = strCookie;	
+}</script>
+
+<table class="menu" border="0" cellspacing="0" cellpadding="0">
+
+	<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParentSelected"><div class="menuParent"><a href="/credit/portfolio/" class="menuLinkSelected" onclick="MenuSelect(0, -1)">Portfolios &amp; Credit Information</a></div></td></tr>
+		
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,0)">Portfolio</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,1)">Indices</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,2)">Graphs</a></div></td></tr>
+		
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(1, -1)">Company Search</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/aboutUs/" class="menuLink" onclick="MenuSelect(2, -1)">About Us</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/tmspartners/" class="menuLink" onclick="MenuSelect(3, -1)">Partners</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/productsAndServices/" class="menuLink" onclick="MenuSelect(4, -1)">Products and Services</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/learnMore/" class="menuLink" onclick="MenuSelect(5, -1)">Learn More...</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+
+</table>
+		<!--<table border='0' cellspacing='0' cellpadding='0'>
+			<tr><td align="center" valign="bottom">
+				<img src="/Menu/Images/shim.gif" width="50" height="100" border="0"><BR>				
+			</td></tr>			
+		</table>-->
+	</td>
+	<td width="24" rowspan="2"><img name="space_shim" src="/src/img/credit/shim.gif" width="24" height="10" border="0"></td>
+	<td width="618" rowspan="2" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="618">
+  <tr>
+<!-- Shim row, height 1. -->
+   <td><img src="/src/img/credit/shim.gif" width="106" height="1" border="0"></td>
+   <td><img src="/src/img/credit/shim.gif" width="489" height="1" border="0"></td>
+   <td><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td>
+  </tr>
+
+  <tr valign="top"><!-- row 1 -->
+   <td colspan="2"><img name="calculator_main_blank" src="/src/img/credit/shim.gif" width="595" height="13" border="0"></td>
+   <td rowspan="5"><img name="calculator_main_blank2" src="/src/img/credit/shim.gif" width="1" height="322" border="0"></td>
+  </tr>
+  <tr valign="top"><!-- row 2 -->
+   <td><!--<img src="/web/20010331175427im_/http://www.enroncredit.com/productsAndServices/images/logo_calculator.gif" alt="Analytical Services" width="87" height="80" border="0">--></td>
+   <td width="489" height="85"><img src="/src/img/credit/shim.gif" width="1" height="10" border="0">&nbsp;<br>Perform real-time, quantitative credit analysis based on <a href="/credit/productsAndServices/CreditEcc.html">Enron Cost of Credit</a> (ECC) information using our Analytical Services. <p>In the <a href="/credit/portfolio/cdtMain.html">Portfolios &amp; Credit Information</a> section of this website, you will find the Expected Loss Calculator.  This calculator will allow you to input your credit exposure and determine your Expected Loss based on ECC data, the Expected Loss shows how much a particular credit exposure is costing your business. You can assess the Expected Loss associated with one company or across an entire <a href="/credit/productsAndServices/InformerPortfolio.html">portfolio</a>.<p>&nbsp;</td>
+  </tr>
+  <tr valign="top"><!-- row 3 -->
+   <td><img name="calculator_main_blank1" src="/src/img/credit/shim.gif" width="106" height="144" border="0"></td>
+   <td width="489" height="144"><table width="500" border="0" cellpadding="0" cellspacing="0">
+		<tr><td width="500" class="darkblue"><img src="/src/img/credit/shim.gif" width="1" height="5" border="0"></td></tr>
+		<tr><td width="500" class="white"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td></tr>
+		<tr><td class="darkgrey" width="446" height="20"><img src="/src/img/credit/shim.gif" width="5" height="1" border="0">&nbsp; With our Analytical Services, you can :</td></tr>		
+		<tr><td width="500" class="white"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td></tr>
+	</table><table width="500" border="0" cellpadding="3" cellspacing="0">
+		<tr><td class="lightblue">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td class="lightblue" width="10" height="15"><img src="/web/20010331175427im_/http://www.enroncredit.com/productsAndServices/images/blue_bullet.gif" width="7" height="7" alt="" border="0"></td>
+			<td class="lightblue" width="484">Quantify credit risk, rather than rely on subjective, qualitative information</td>
+		</tr>
+		<tr><td class="lightblue">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td class="lightblue" width="10" height="15"><img src="/web/20010331175427im_/http://www.enroncredit.com/productsAndServices/images/blue_bullet.gif" width="7" height="7" alt="" border="0"></td>
+			<td class="lightblue" width="484">Assess the credit risk of a specific company or analyze your entire portfolio</td>
+		</tr>
+		<tr><td class="lightblue">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td class="lightblue" width="10" height="15"><img src="/web/20010331175427im_/http://www.enroncredit.com/productsAndServices/images/blue_bullet.gif" width="7" height="7" alt="" border="0"></td>
+			<td class="lightblue" width="484">Make faster decisions about specific transactions </td>
+		</tr>
+		<tr><td class="lightblue">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td class="lightblue" width="10" height="15" valign="top"><img src="/src/img/credit/shim.gif" width="1" height="5" border="0"><br><img src="/web/20010331175427im_/http://www.enroncredit.com/productsAndServices/images/blue_bullet.gif" width="7" height="7" alt="" border="0"></td>
+			<td class="lightblue" width="484">Perform "what if" scenarios to see how making specific changes to your portfolio affects your overall credit risk</td>
+		</tr>
+	</table></td>
+  </tr>
+  <tr valign="top"><!-- row 4 -->
+   <td colspan="2" width="595" height="62"><img src="/src/img/credit/shim.gif" width="1" height="12" border="0"><br>Other analytical tools are in the final stages of development and will be released in the third quarter of 2001. These easy-to-use, interactive tools will allow you to analyze credit information, such as the Value at Risk (VaR), on a specific company or across your entire portfolio. In addition, you will be able to perform a variety of other calculations so you can make faster, better credit decisions.  If you are interested in learning more about our future analytical tools or the anticipated launch dates, please <a href="/credit/rfi/requestforinfo.html">contact us</a> today.</td>
+  </tr>
+  <tr valign="top"><!-- row 5 -->
+   <td colspan="2"><img name="calculator_main_blank3" src="/src/img/credit/shim.gif" width="595" height="18" border="0"></td>
+  </tr>
+</table>
+	
+</td>
+</tr>
+<tr valign="bottom"><td class="menuPanel"><img src="/src/img/credit/left_wheel.jpg" border="0" width="118" height="184"></td></tr>
+</table><center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr>
+	<td colspan="3" class="white" width="760"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr>
+	<td class="pageFooter" valign="bottom" align="left" width="9"><img src="/src/img/credit/left.gif"></td>
+	<td width="742" class="pageFooter">
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+		<td class="pageFooter">You are not currently logged in. <a class="pageFooter" href="http://web.archive.org/web/20010331175427/https://www.enroncredit.com/membership/deeplogin.html">Click here to Log in or Register</a></td>
+	</tr></td></table>
+	</td>
+	<td class="pageFooter" valign="bottom" align="right" width="9"><img src="/src/img/credit/right.gif"></td>
+</tr>
+</table>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 17:54:27 Mar 31, 2001 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:05:46 Sep 18, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  RedisCDXSource: 379.591
+  exclusion.robots.policy: 0.404
+  PetaboxLoader3.resolve: 248.011
+  CDXLines.iter: 20.099 (3)
+  exclusion.robots: 0.424
+  PetaboxLoader3.datanode: 324.845 (4)
+  esindex: 0.078
+  LoadShardBlock: 135.052 (3)
+  captures_list: 540.929
+  load_resource: 485.165
+-->

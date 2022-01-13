@@ -1,0 +1,297 @@
+<html>
+<head>
+ <meta name="ETS" content="NNG Forms">
+<title>External Hot Tap Access</title>
+</head>
+<body bgcolor="white"><!--This is the External Hot Tap Access Form--><!--for FGT, NNG, and TW -->
+
+<center>
+<font size="2" face="Arial"><b>
+       External HotTap®<font face="Symbol"></font>
+Access</b>
+</font><br><br>
+</center><!--The form will posted to the Action="/cgi-bin..." HotTap Helpdesk@     -->
+<center>
+<form method="GET" onsubmit="return VerifyRequiredFields()" action="/project/not/index.html" name="HotTapAccess">
+<input type="hidden" name="Host" value="mailman.enron.com">
+<script language="javascript">
+  	document.writeln("<input type='hidden' name='To' value='HotTap Helpdesk@" + ServerDomain + ".com'>");</script>
+<input type="hidden" name="Subject" value="External HotTap Access Form">
+<input type="hidden" name="From" value="External HotTap Access Form">
+</center><!--This form is filled with several embedded tables   --><!--the table structure may be unneccessary but required--><!--do to portability between four different browser types--><!--********************************--><!--Table two/ all Embedded Tables--><!--********************************-->
+
+
+<center>
+<table border="0" cellpadding="1" cellspacing="0" width="70%"><tr><td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="Arial" color="#ffffff" size="-1"><b>Action Requested</b>
+       </font></td></tr>
+</table>
+      <center></center><!--**********************************--><!--Table one with one embedded table--><!--**********************************-->
+
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td><center>
+<input type="radio" checked name="Action_Requested" value="New"><font face="arial" size="1"> <strong>New</strong>
+<input type="radio" name="Action_Requested" value="Change"> <strong>Change*</strong>
+<input type="radio" name="Action_Requested" value="Delete"> <strong>Delete*</strong></font></center>
+</td></tr>
+<tr><td><center><font face="arial" size="1">&nbsp;&nbsp;&nbsp;*If requesting change or delete, please supply your Hottap User ID</font></center></td><td><input name="HotTap_ID"></td></tr>
+</table>
+</td></tr>
+</table>
+</center><!--********************************--><!--Table two/ all Embedded Tables--><!--********************************-->
+
+
+<center><!--<table border=0 cellpadding="1" cellspacing="0" width="100%"><tr><td> -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="Arial" color="#ffffff" size="-1"><b>User Information</b>
+       </font></td></tr>
+</table>
+</center><!--*********************************--><!--Table Three with one embedded table--><!--*********************************-->
+
+
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+      	  <td align="left" width="190"><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Name:</font> </td><td><input name="User_Name"></td>
+		  <td align="left" width="190"><font face="arial" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tax ID #:</font> </td><td><input name="Tax_ID"></td>
+      </tr>
+	  <tr>
+	  	  <td align="left" width="190"><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Company Name:</font> </td><td><input name="Company_Name"></td>
+	      <td align="left" width="190"><font face="arial" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>DUNS's #:</font> </td><td><input name="DUNS_Num"></td>
+	  </tr>
+
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Address:</font></td><td><input name="Address"></td></tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>City:</font></td><td><input name="City"></td> </tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>State:</font></td><td><input name="State"></td></tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>ZipCode:</font></td><td><input name="ZipCode"></td></tr>
+	  <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Country:</font></td><td><input name="Country"></td></tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Phone:</font> </td><td><input name="Phone"></td></tr>
+	  <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Ext:</font> </td><td><input name="Ext"></td></tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>Fax:</font> </td><td><input name="Fax"></td></tr>
+      <tr><td><font face="arial" size="1">&nbsp;&nbsp;&nbsp;<font size="2" color="red">*</font>E-mail:</font> </td><td><input name="Email"></td>
+      	  <td align="left" width="190"><font face="arial" size="2" color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Denotes 
+                  required 
+      fields.</font>  </td>
+      </tr>
+
+</table>
+</td></tr>
+</table>
+</center><!--**********--><!--Table four--><!--**********-->
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" colspan="4" align="middle"><font face="arial" color="#ffffff" size="-1"><b>Security Word</b>
+       </font></td></tr>
+</table>
+</center><!--**********************************--><!--Table five with one embedded table--><!--**********************************-->
+
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td><input type="radio" checked name="Security_Choice" value="Mother's maiden name"><font face="arial" size="1"> <strong>Mother's maiden
+      name </strong>
+<input type="radio" name="Security_Choice" value="Pet's name"> <strong>Pet's Name </strong>
+<input type="radio" name="Security_Choice" value="City of birth">
+      <strong>City of birth</strong></font> </td>
+
+       <td align="middle"><font face="arial" size="1">Security Word</font></td><td><input name="Security_Word"></td>
+                <p></p></tr>
+
+</table>
+</td></tr>
+</table>
+</center><!--*********************************--><!--          Table six              --><!--*********************************-->
+
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle" colspan="3"><font face="arial" color="#ffffff" size="-1"><b>Business Role</b>
+       </font></td></tr>
+</table>
+</center><!--*********************************--><!--           Table seven with embedded table          --><!--*********************************-->
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr><td>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tr><td align="left" height="30" width="100%"><input type="checkbox" name="Shipper_Role" value="Yes">
+   <b><font face="Arial" size="1">Shipper</b></font>
+<input type="checkbox" name="Operator_Role" value="Yes">
+   <b><font face="Arial" size="1">Operator</b></font>
+<input type="checkbox" name="Agents_Designees_Role" value="Yes"><b>
+   <font face="Arial" size="1">Agents/Designees </b></font>
+   <font face="Arial" size="1">(specify for whom)</font>
+<input name="Agents_Designees_For" size="30"> </td>
+<tr><td><b><font face="Arial" size="1"><p>Access is requested for the following </b></font>
+   <font face="Arial" size="1">(list subsidiaries/affiliates)</font> </p>
+   <tr><td><center><textarea cols="73" name="Access_For" rows="4"></textarea></center></td>
+   </tr>
+</table></td></td></tr></table>
+</center><!--*********************************--><!--           Table eight           --><!--*********************************-->
+
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="arial" color="#ffffff" size="-1"><b>Shipper/Operator Information</b>
+       </font>
+       </td></tr>
+</table>
+</center><!--*************************************--><!--Table nine with embedded table--><!--*************************************-->
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="arial" color="#ffffff" size="-1"><b>FGT</b>
+       </font>
+       </td></tr>
+</table>
+</center>
+
+
+<center>
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="1" cellpadding="0" cellspacing="0" width="100%"><!--
+  <tr><td nowrap height="20"><font face="arial" size="1"><INPUT TYPE="checkbox" NAME="FGT_Contracts_Update"   >
+      <B><FONT FACE="Arial" SIZE=1>FGT Contracts Application - UPDATE</B></FONT></td></tr>
+-->
+  <tr><td align="left" height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Contracts_Update">
+      <b><font face="Arial" size="1">FGT Contracts Application - UPDATE</b></font>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <font face="arial" size="1"><input type="checkbox" name="FGT_Electronic_Execution_Update">
+      <b><font face="Arial" size="1">FGT Contracts Electronic Signature - Update</b></font></font></font></td></tr>      
+  <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Contracts_Inquiry">
+      <b><font face="Arial" size="1">FGT Contracts Application - INQUIRY</b></font></font></td></tr>
+  <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Flowing_Gas">
+      <b><font face="Arial" size="1">FGT Flowing Gas and Invoicing documents</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_TMS_Update">
+      <b><font face="Arial" size="1">FGT Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - UPDATE ACCESS</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_TMS_Inquiry">
+      <b><font face="Arial" size="1">FGT Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - INQUIRY ACCESS ONLY</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Capacity_Release_Update">
+      <b><font face="Arial" size="1">FGT Capacity Release - UPDATE</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Capacity_Release_Inquiry">
+      <b><font face="Arial" size="1">FGT Capacity Release - INQUIRY</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="FGT_Operational_Flow_Volumes">
+      <b><font face="Arial" size="1">FGT Operational Data (Operational Data form is required)&nbsp;&nbsp;&nbsp;</b></font>
+      <a href="/project/not/index.html" target="_blank"><font face="arial" size="1">Open 
+                  FGT Operational Data Form</a></font></font></td>
+</tr>
+</table>
+            <center></center>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="arial" color="#ffffff" size="-1"><b>NNG</b>
+       </font>
+       </td></tr>
+</table>
+</center>
+
+
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="NNG_Flowing_Gas">
+      <b><font face="Arial" size="1">NNG Flowing Gas and Invoicing documents</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="NNG_TMS_Update">
+      <b><font face="Arial" size="1">NNG Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - UPDATE ACCESS</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="NNG_TMS_Inquiry">
+      <b><font face="Arial" size="1">NNG Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - INQUIRY ACCESS ONLY</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="NNG_CMS">
+      <b><font face="Arial" size="1">NNG CMS as a releasing and/or acquiring shipper and request for throughput service</b></font></font></td></tr>
+</table>
+</center>
+
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="arial" color="#ffffff" size="-1"><b>TW</b>
+       </font>
+       </td></tr>
+</table>
+</center>
+
+<center>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="TW_Flowing_Gas">
+      <b><font face="Arial" size="1">TW Flowing Gas and Invoicing documents</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="TW_TMS_Update">
+      <b><font face="Arial" size="1">TW Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - UPDATE ACCESS</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="TW_TMS_Inquiry">
+      <b><font face="Arial" size="1">TW Nomination and Confirmation systems (TMS) as a nominating shipper and/or operator of a point - INQUIRY ACCESS ONLY</b></font></font></td></tr>
+   <tr><td nowrap height="20"><font face="arial" size="1"><input type="checkbox" name="TW_Capacity_Release">
+      <b><font face="Arial" size="1">TW Capacity Release Program as a releasing and/or acquiring shipper</b></font></font></td></tr>
+</table>
+</center>
+
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr><td bgcolor="#333333" align="middle"><font face="arial" color="#ffffff" size="-1"><b>Subscriber Agreement</b>
+       </font>
+       </td></tr>
+</table>
+</center>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td>
+  <tr><td nowrap height="20"><font face="arial" size="1">Subscriber agreement on file (if no, Subscriber agreement form is required - Fax to 713 646-8260)<input type="radio" checked name="Subscriber_Agreement_On_File" value="Yes">yes<input type="radio" name="Subscriber_Agreement_On_File" value="No">no
+      </font></td></tr>
+
+</table>
+</center>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+          <td>
+
+       <tr><td><a href="/project/not/index.html" target="_blank"><font face="arial" size="1">Open FGT Subscriber Form</a></font></td>
+       <td><a href="/project/not/index.html" target="_blank"><font face="arial" size="1">Open NNG Subscriber Form</a></font></td>
+       <td><a href="/project/not/index.html" target="_blank"><font face="arial" size="1">Open TW Subscriber Form</a></font></td></tr>
+
+
+</td>
+       </tr>
+
+</table>
+</center></tr></table>
+
+</center></td></tr></tbody></table></td></tr></table></td></tr></table></center><!--*********************************--><!--      End of table structure     --><!--*********************************--><!--	alert("in it");   -->
+
+<center>
+<br><br>
+        <input type="submit" value="Submit" id="submit1" name="submit1">
+        <input type="reset" value="Reset" id="reset1" name="reset1">
+</center></form>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 03:32:22 Feb 17, 2002 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:39:34 Oct 19, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 69.773 (3)
+  esindex: 0.007
+  captures_list: 87.445
+  CDXLines.iter: 13.085 (3)
+  PetaboxLoader3.datanode: 75.693 (4)
+  exclusion.robots: 0.353
+  exclusion.robots.policy: 0.339
+  RedisCDXSource: 1.602
+  PetaboxLoader3.resolve: 31.309
+  load_resource: 80.733
+-->

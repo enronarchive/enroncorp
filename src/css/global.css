@@ -1,0 +1,43 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 23:34:15 oct 21, 2001 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:25:47 mar 2, 2017.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+A
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: purple;
+    FONT-WEIGHT: normal
+}
+A:active
+{
+    COLOR: blue
+}
+A:hover
+{
+    COLOR: red;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+BODY
+{
+    COLOR: black;
+    FONT-FAMILY: sans-serif;
+    FONT-SIZE: medium;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}

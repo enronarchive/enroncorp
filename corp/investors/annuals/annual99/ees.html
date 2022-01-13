@@ -1,0 +1,383 @@
+<html>
+<title>Enron Annual Report 1999 - Enron Energy Services</title>
+<head>
+ <script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+
+
+
+// -->
+
+</script>
+
+	</head>
+
+	<style type="text/css">
+	<!--
+		body {font-family: verdana,geneva,helvetica,arial}
+		td {font-family: verdana,geneva,helvetica,arial}
+	-->
+	</style>
+
+	<body bgcolor="#ffffff">
+
+		<!-- top navigation -->
+		<table border="0" cellspacing="0" cellpadding="0" width="580">
+			<tr valign="top">
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',0,70,20,1)">Why?</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-600,70,20,1)">Strategy</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1200,70,20,1)">Customer</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-1800,70,20,1)">Lead Team</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-2400,70,20,1)">Financing</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3000,70,20,1)">Risk<br>Management</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-3600,70,20,1)">Deal<br>Structuring</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4200,70,20,1)">Engineering</a></td>
+				<td><font size="-2"><a href="javascript:WM_moveTo('timeline',-4800,70,20,1)">Result</a></td>
+			</tr>
+			<tr>
+				<td colspan="8">
+					<img src="/src/img/ui/pixel_trans.gif" width="1" height="8"><br>
+					<img src="/src/ees.gif" width="471" height="20">
+				</td>
+				<td valign="bottom">
+					<a href="javascript:window.close()"><img src="/src/close_orange.gif" width="35" height="16" border="1"></a>
+				</td>
+		</table>
+
+		<!-- timeline -->
+		<div id="timeline" style="position: absolute; left:0; top:70; width:5400; height:380; margin:0">
+			<table width="5400" height="380" border="0" cellpadding="0" cellspacing="0">
+				<tr><td colspan="9" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td></tr>
+
+<!-- this row contains the strategies, results, and images -->
+				<tr width="600" valign="top">
+					<td rowspan="7" width="600" bgcolor="#009900">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="280" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="230" align="right">
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/next_blue.gif" width="27" height="16" border="0" align="right"></a>
+						<p><font color="#330066" size="+1"><i>
+						ENRON ENERGY SERVICES</i></font></p>
+						<p><font size="+3" color="#ffffff">
+						Most companies operate undercapitalized and inefficient energy infrastructure
+						and bear unnecessary cost and waste.</font></p>
+						<p>
+						<font size="+1" color="#330066">ENRON ASKS</font>
+						<font size="+2" color="#330066"><b>WHY?</b></font>
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',0,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#0033cc">
+						<b>STRATEGY:</b> Energy is a large expense at Owens Corning, one of the world's 
+						largest melters of glass to make fibers for insulating and reinforcement products. 
+						Owens Corning already was capitalizing on various energy management programs, 
+						including interruptible power, but was looking to further reduce its energy expenses 
+						while decreasing or eliminating the risk of losing power during peak usage.
+						</font></p>
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-600,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/magnify.gif" width="135" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="50" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1200,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/leadteam.gif" width="136" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="60" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-1800,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/financing.jpg" width="187" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="40" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-2400,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/megawattchart.gif" width="313" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3000,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/dealers.gif" width="150" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="50" height="1">
+					</td>
+
+					<td width="600" bgcolor="#ffffff" align="right">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="15" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4800,70,20,1)"><img src="/src/next_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<a href="javascript:WM_moveTo('timeline',-3600,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<img src="/src/engineers.jpg" width="241" height="150" border="0">
+						<img src="/src/img/ui/pixel_trans.gif" width="40" height="1">
+					</td>
+
+					<td rowspan="7" width="600" bgcolor="#ffffff">
+						<img src="/src/img/ui/pixel_trans.gif" width="600" height="5"><br>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="300" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="25" height="300" align="right">
+						<a href="javascript:WM_moveTo('timeline',-4200,70,20,1)"><img src="/src/previous_blue.gif" width="27" height="15" border="0" align="right"></a>
+						<p><font size="+1" color="#ff6600">
+						<b>RESULT:</b> With dozens of Enron experts tackling the problem, Owens Corning can 
+						expect meaningful energy savings as well as improved efficiency and better power 
+						quality. Through a 10-year partnership valued at $1.3 billion, covering 22 U.S. Owens 
+						Corning facilities, Enron will finance and refurbish specific energy infrastructure 
+						projects and allow Owens Corning to buy energy at advantageous rates.
+						</font><p>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the colored block headings -->
+				<tr width="600" valign="top">
+					<td bgcolor="#0033cc">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>CUSTOMER</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff9900">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>LEAD TEAM</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#000000">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>FINANCING</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#ff6600">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>COMMODITY PRICE RISK MANAGEMENT</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#3366ff">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>DEAL STRUCTURING &amp; ACCOUNT MANAGEMENT</b></font>
+						</nobr>
+					</td>
+
+					<td bgcolor="#009900">
+						<nobr>
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="1">
+						<font size="-2" color="#ffffff"><b>ENGINEERING</b></font>
+						</nobr>
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="6" bgcolor="#000000"><img src="/src/img/ui/pixel_trans.gif" width="1" height="1"></td>
+				</tr>
+
+<!-- this row contains the description blocks -->
+				<tr valign="top">
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="160" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Owens Corning seeks an energy partner that can reliably serve the company on a national and international basis. Enron is the only company with worldwide reach and the ability to provide a packaged solution that includes commodity purchasing and energy equipment financing, as 
+well as engineering and risk management. As talks progress, Owens Corning is impressed by Enron's ability to quickly present and execute new energy solutions. Enron's focus 
+on environmentally beneficial energy solutions also is important to ecology-minded Owens Corning.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Harold Buchanan, managing director, and Michael Mann, vice president, lead a team of experts during the analysis, structuring and negotiations to find out all they can about Owens Corning's operations and needs. Extensive discussion and examination of data are necessary to design the best customized solution.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Financial engineering specialists Larry Derrett, vice president, and Clint Freeland, director, create and discard dozens of financial structures until they hit upon the right one: the formation of a jointly owned limited liability company (LLC) empowered to execute the agreement. The LLC serves as a platform for joint decision-making, shared savings and energy equipment leasing. Energy savings will offset the customer's leasing costs. Enron arranged the financing for the transaction.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron will use its experience as the world's largest marketer of electricity to effectively predict the market cost of electricity using its retail electricity indexes published in Megawatt Daily. The risk management team designs a unique structure based on the indexes to protect Owens Corning from substantial price spikes that historically occur. Owens Corning is immune to day-to-day electricity price fluctuations. Enron manages the risk systematically through its large portfolio of commodity contracts.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="160" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						Enron assigns point persons to oversee deal development and account management. Michael Moore, vice president of deal structuring, creates the scope, transaction components and pricing solutions covering every aspect of the deal--commodity transactions, construction management, project management, legal, tax, regulatory, accounting and more. By looking at the total picture rather than each individual piece, Owens Corning and Enron significantly increase the potential savings. After the LLC is formed, Barbara Kortes is named global account manager to provide continuing service and coordinate Enron resources for the account. She looks out for the customer's interests and works with Owens Corning to expand the relationship to overseas facilities. Already, Enron has engineered a backup generation system for a plant in Brazil.
+					</td>
+
+					<td bgcolor="#ffffff"><font size="-1">
+						<img src="/src/img/ui/pixel_trans.gif" width="10" height="150" align="left">
+						<img src="/src/img/ui/pixel_trans.gif" width="15" height="150" align="right">
+						A team of electrical and mechanical engineers led by Cynthia Wishert evaluates Owens Corning's energy infrastructure and proposes updating air-compression systems and steam boilers. Owens Corning is not driven to refurbish equipment because the investment does not meet its internal rate of return criteria. However, Enron's buying power and ability to squeeze efficiencies throughout the energy supply chain enables Enron to install state-of-the-art assets and recover their cost.
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+	</body>
+</html>

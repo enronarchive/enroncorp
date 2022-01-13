@@ -1,0 +1,112 @@
+.mainText  {
+	font-size : 12px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	line-height: 14px;
+}
+
+.navText  {
+	font-size : 9px;
+	color : #FFFFFF;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+.navItem  {
+	font-size : 11px;
+	color : #FFFFFF;
+	font-family : Arial, Helvetica, Geneva, sans-serif;
+}
+
+.navLink  {
+	font-size : 11px;
+	color : #FFFFFF;
+	font-family : Arial, Helvetica, Geneva, sans-serif;
+}
+
+.titleText  {
+	font-size : 16px;
+	color: #0066CC;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+}
+
+.smTitleText  {
+	font-size : 12px;
+	color : #0066CC;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+}
+
+.bodyText  {
+	font-size : 12px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+}
+
+A.more:link, A.more:visited {
+	font-size : 12px;
+	color : #0066CC;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+}
+
+.smBodyText  {
+	font-size : 10px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+.blackText  {
+	font-size : 11px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+.orangeText  {
+	font-size : 11px;
+	color : #FF8040;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+.smTextBold  {
+	font-size : 11px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.lgTextBold  {
+	font-size : 18px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+}
+
+.title  {
+	font-size : 24px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+}
+.super  {
+	font-size : 9px;
+	color : #000000;
+	font-family : Verdana, Arial, Helvetica, Geneva, sans-serif;
+	vertical-align: super;
+	text-decoration: none;	
+}
+
+
+/*
+     FILE ARCHIVED ON 11:35:32 Oct 30, 2001 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 00:28:32 Feb 22, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/

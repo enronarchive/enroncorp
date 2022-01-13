@@ -1,0 +1,357 @@
+<html>
+<head>
+ <meta name="GENERATOR" content="Microsoft Developer Studio">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Customer Activities - notice contacts</title>
+</head>
+<body bgcolor="white">
+<link rel="stylesheet" href="/src/css/winie.css" type="text/css">
+
+<script language="JavaScript">
+function ConditionalSubmit()
+  {
+  var nm_email_1;
+  var nm_first_1;
+  var nm_last_1;
+  var nm_contact_cmpy_1;
+  var nb_phone_1;
+  var nb_lgen;
+  var nb_operation = "";
+
+  for (i = 0 ; i < document.forms[0].elements.length ; i++)
+  {
+	if (document.forms[0].elements[i].name == "nb_operation")
+		if (document.forms[0].elements[i].checked)
+			nb_operation = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nb_lgen")
+		nb_lgen = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nm_email_1")
+		nm_email_1 = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nm_first_1")
+		nm_first_1 = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nm_last_1")
+		nm_last_1 = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nm_contact_cmpy_1")
+		nm_contact_cmpy_1 = document.forms[0].elements[i].value;
+
+	if (document.forms[0].elements[i].name == "nb_phone_1")
+		nb_phone_1 = document.forms[0].elements[i].value;
+  }
+
+  // Insure that an operation was entered
+  if(nb_operation == "")
+    {
+    alert("Please select a purpose.");
+    return false;
+    }
+
+  // Insure that the legal entity number was entered
+  if(nb_lgen == "")
+    {
+    alert("Please enter a legal entity number.");
+    return false;
+    }
+
+  // Insure that the e-mail address if filled in.
+  if(nm_email_1 == "")
+    {
+    alert("At least one e-mail address must be specified.");
+    return false;
+    }
+
+  // Insure that the first name is filled in.
+  if(nm_first_1 == "")
+    {
+    alert("A first name must be specified.");
+    return false;
+    }
+
+  // Insure that the last name is filled in.
+  if(nm_last_1 == "")
+    {
+    alert("A last name must be specified.");
+    return false;
+    }
+
+  // Insure that the company line is filled in.
+  if(nm_contact_cmpy_1 == "")
+    {
+    alert("A company name must be specified.");
+    return false;
+    }
+
+  // Insure that the phone number is filled in.
+  if(nb_phone_1 == "")
+    {
+    alert("A phone number must be specified.");
+    return false;
+    }
+
+  document.forms[0].submit();
+  return true;
+  }
+</script>
+
+<br>
+<table width="600" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="fixFont" width="25">&nbsp;
+
+<form action="../../../fgt/ip/savecontacts.asp" method="GET">
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="fixFont" valign="top">
+
+  <table border="0">
+    <tr><td class="fixFont" valign="top" colspan="5">
+      Fill in the contact information using the form below. Field names in<br>
+      bold are required. Please note that this is an E-Mail address form and<br>
+	  <b>not</b> a change of address form. See the <a href="#notice">notice</a>
+	  at the bottom of this page.
+    </td></tr>
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="10"></td></tr>
+
+    <!-- Begin Purpose -->
+    <tr>
+		<td class="fixFont" valign="top" width="10%" nowrap><b>Purpose</b></td>
+		<td class="fixFont" valign="top">
+			<input type="radio" name="nb_operation" value="1">Add<img src="/src/img/ui/spacer.gif" width="5">
+			<input type="radio" name="nb_operation" value="2">Delete<img src="/src/img/ui/spacer.gif" width="5">
+			<input type="radio" name="nb_operation" value="3">Replace
+		</td>
+	</tr>
+    <!-- End Purpose -->
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="5"></td></tr>
+
+    <tr><td class="fixFont" valign="top" colspan="5">
+	<font color="red">If you select "Delete" or "Replace", please indicate the old name and E-mail<br>
+	address in the comments section below.</font>
+    </td></tr>
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="5"></td></tr>
+
+    <!-- Begin Legal Entity -->
+    <tr>
+		<td class="fixFont" valign="top" width="10%" nowrap><b>Legal Entity #</b></td>
+		<td class="fixFont" valign="top">
+			<input type="text" name="nb_lgen" value"">
+		</td>
+	</tr>
+    <!-- End Purpose -->
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="5"></td></tr>
+
+    <tr><td class="fixFont" valign="top" colspan="5">
+    Please indicate the type of notices you would prefer to receive for each<br>
+	Transportation Service Provider.  To specify contract or POI #'s, please<br>
+	enter them in the Comments section below.
+    </td></tr>
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="5"></td></tr>
+
+	<tr><td class="fixFont" colspan="5">
+
+		<table border="1">
+		<tr>
+			<td class="fixFont" bgcolor="#CCCCCC">&nbsp;</th>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>Critical Notices</b></th>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>Bump Notices</b></th>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>Shipper Sched<br>Qty Cut Notices</b></th>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>Operator Sched<br>Qty Cut Notices</b></th>
+		</tr>
+		<tr>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>FGT</b></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="fgt_CRIT"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="fgt_BUMP"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="fgt_CUTSH"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="fgt_CUTOP"></td>
+		</tr>
+		<!--		
+		<TR>
+			<td class=fixFont bgcolor=#CCCCCC><B>NBPL</B></TD>
+			<td class=fixFont align=center valign=middle><input type=checkbox value="ALL" name="nbp_CRIT"></TD>
+			<td class=fixFont align=center valign=middle><input type=checkbox value="ALL" name="nbp_BUMP"></TD>
+			<td class=fixFont align=center valign=middle><input type=hidden value="" name="nbp_CUTSH">&nbsp</TD>
+			<td class=fixFont align=center valign=middle><input type=hidden value="" name="nbp_CUTOP">&nbsp</TD>
+		</TR>
+		-->
+		<tr>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>NNG</b></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="nng_CRIT"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="nng_BUMP"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="nng_CUTSH"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="nng_CUTOP"></td>
+		</tr>
+		<tr>
+			<td class="fixFont" bgcolor="#CCCCCC"><b>TW</b></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="twp_CRIT"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="twp_BUMP"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="twp_CUTSH"></td>
+			<td class="fixFont" align="center" valign="middle"><input type="checkbox" value="ALL" name="twp_CUTOP"></td>
+		</tr>
+		</table>
+
+
+	</td>
+	</tr>
+
+	<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="10"></td></tr>
+
+	</table>
+
+	<table>
+    <!-- Begin Contact Information -->
+    <tr><td class="fixFont" valign="top">
+      <hr><b>Contact Information</b><hr>
+      <table border="0" cellpadding="0" cellspacing="5">
+		<tr><td class="fixFont" valign="top"><img src="/src/img/ui/spacer.gif" height="10"></td></tr>
+        <tr>
+          <td class="fixFont" valign="top"><b>E-Mail 1</b></td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="80" value="" name="nm_email_1"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top"><b>First</b></td>
+          <td class="fixFont" valign="top"><table border="0" cellpadding="0" cellspacing="0"><tr>
+          <td class="fixFont" valign="top"><input type="TEXT" size="15" maxlength="15" value="" name="nm_first_1"></td>
+          <td class="fixFont" valign="top">MI</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="1" maxlength="1" value="" name="nm_middle_1"></td>
+          </tr></table></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top"><b>Last</b></td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="40" value="" name="nm_last_1"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top"><b>Company</b></td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="40" value="" name="nm_contact_cmpy_1"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top"><b>Phone</b></td>
+          <td class="fixFont" valign="top"><table border="0" cellpadding="0" cellspacing="0"><tr>
+          <td class="fixFont" valign="top"><input type="TEXT" size="15" maxlength="15" value="" name="nb_phone_1"></td>
+          <td class="fixFont" valign="top">Extension</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="10" maxlength="10" value="" name="nb_extension_1"></td>
+          </tr></table></td>
+		</tr>
+		<tr><td class="fixFont" colspan="2"><hr></td></tr>
+        <tr>
+          <td class="fixFont" valign="top">E-Mail 2</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="80" value="" name="nm_email_2"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top">First</td>
+          <td class="fixFont" valign="top"><table border="0" cellpadding="0" cellspacing="0"><tr>
+          <td class="fixFont" valign="top"><input type="TEXT" size="15" maxlength="15" value="" name="nm_first_2"></td>
+          <td class="fixFont" valign="top">MI</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="1" maxlength="1" value="" name="nm_middle_2"></td>
+          </tr></table></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top">Last</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="40" value="" name="nm_last_2"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top">Company</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="40" maxlength="40" value="" name="nm_contact_cmpy_2"></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="top">Phone</td>
+          <td class="fixFont" valign="top"><table border="0" cellpadding="0" cellspacing="0"><tr>
+          <td class="fixFont" valign="top"><input type="TEXT" size="15" maxlength="15" value="" name="nb_phone_2"></td>
+          <td class="fixFont" valign="top">Extension</td>
+          <td class="fixFont" valign="top"><input type="TEXT" size="10" maxlength="10" value="" name="nb_extension_2"></td>
+          </tr></table></td>
+		</tr>
+		<tr><td class="fixFont" colspan="2"><hr></td></tr>
+        <tr><td class="fixFont" valign="top"></td><td class="fixFont" valign="top">
+	      
+            If there is any other information you wish to include such as,<br>
+            contract numbers, POI numbers or special instructions, please<br>
+			include it in the comments section below.
+          </font></td>
+        </tr>
+        <tr>
+          <td class="fixFont" valign="TOP">Comments</td>
+          <td class="fixFont" valign="top"><textarea rows="5" cols="51" name="nm_comments" wrap="VIRTUAL"></textarea></td>
+        </tr>
+      </table>
+    </td></tr>
+    <!-- End Contact Information -->
+
+    <!-- Begin Submit/Reset Buttons -->
+    <tr><td class="fixFont" valign="top"><hr>
+      <input type="button" value="Submit" onclick="ConditionalSubmit()">
+      <input type="RESET" value="Reset">
+	  <hr>
+    </td></tr>
+    <!-- End Submit/Reset Buttons -->
+
+    <!-- Begin Legal Disclaimer -->
+    <tr><td class="fixFont" valign="top">
+      <a name="notice">
+	  <p>In addition to notification through the informational postings, Enron operated <br>
+	  interstate pipelines will provide critical, bump, shipper, and/or operator scheduled <br>
+	  quantity cut notices using Internet E-mail address pursuant to Federal Energy <br>
+	  Regulatory Commission (FERC) Order No. 587-G.</p>
+
+	  <p>If you are a current shipper or a service requester with a transportation contract <br>
+	  that will be subject to receiving notices and you have a functional E-mail address, <br>
+	  we ask that you complete and submit the above Enron Interstate Pipelines E-mail <br>
+	  notice form.  When the electronic form is received, an Enron representative will <br>
+	  contact you to confirm the information you provided is correct.</p>
+
+	  <p>The electronic notice will be brief; it will inform you that a critical, bump, <br>
+	  shipper, and/or operator scheduled quantity event is taking place and where to find <br>
+	  more information.  This will allow you the option of using a third-party delivery <br>
+	  service (pager, fax, etc.) for immediate notification purposes.</p>
+
+	  <p>The E-mail notices will not replace the informational postings, which will still <br>
+	  remain your primary source of detailed notice information.</p>
+
+      <p>Please keep in mind that you are responsible to see that the E-mail information is <br>
+	  kept current.  Changes to previously supplied information must be made using the <br>
+	  E-mail notice form.  Verification will be made by an Enron representative before an <br>
+	  E-mail address is modified or deleted in the pipeline's data base used to generate <br>
+	  notices.  Please allow up to one business day to verify and update information in our <br>
+	  systems.</p>
+
+      <p>The Enron Interstate Pipelines will not share or sell information provided in this <br>
+	  form to third parties.</p>
+	  </a>
+    </td></tr>
+    <!-- End Legal Disclaimer -->
+  </table>
+</form>
+
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+    <br>
+</td>
+</tr>
+</table>
+</body>
+</html>

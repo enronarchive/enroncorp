@@ -1,0 +1,81 @@
+/* IE for Mac styles */
+
+<style type: "text/css">
+
+body { background-color: #ffffff }
+
+/* NAVBAR STYLES */
+.navitems { font-size: 10px; font-family: verdana, arial, helvetica, geneva;
+	margin-bottom: 10px; padding-left: 4px; text-indent: -5px; 
+	color: #ffffff }
+.navlink { color: #ffffff }
+
+.backtotop { font-size: 9px; font-family: verdana, arial, helvetica, geneva; text-decoration: none }
+
+/* TOPLINKS STYLES */
+.toplinkstext { font-size: 8pt; font-family: verdana, arial, helvetica, geneva }
+
+/* TEXT STYLES */
+.captionfont { font: 10pt verdana, arial, helvetica, geneva, sans-serif; font-style: italic; color: #0066cc }
+.crumblink { font: 10px verdana, arial, helvetica, geneva, sans-serif; color: #ffffff; text-decoration: none }
+.menulink { font: 10px verdana, arial, helvetica, geneva, sans-serif; color: #ffffff }
+td { font: 12px verdana, arial, helvetica, geneva, sans-serif }
+
+
+/* FOOTER STYLES */
+.foottext { font-size: 8pt; font-family: verdana, arial, helvetica, geneva; color: #000000 }
+
+.blue { color: #0066cc }
+
+/* STOCK PRICES STYLES */
+.stocktitle { font: bold 14pt verdana, arial, helvetica, geneva, sans-serif; color: #ffffff }
+.stockdelay { font: 9pt; color: #ffffff }
+.stocktitlerow { font: bold 10pt verdana, arial, helvetica, geneva, sans-serif; color: #0066cc }
+
+/* LEVEL 2 STYLES */
+.l2title { font: bold 12px verdana, arial, helvetica, geneva, sans-serif; 
+			color: #ffffff;
+			margin-top: 3px; margin-bottom: 3px }
+.l2titleyellow { font: bold 12px verdana, arial, helvetica, geneva, sans-serif; 
+			color: #ffff00;
+			margin-top: 3px; margin-bottom: 3px }
+.l2copy { font: 10px verdana, arial, helvetica, geneva, sans-serif; 
+			color: #ffffff }
+.l2linklist { font: 10px verdana, arial, helvetica, geneva, sans-serif; 
+			color: #ffffff; 
+			line-height: 14px }
+.l2linkitem { margin-left: 10px; 
+			text-indent: -12px }
+.workhead {font: 17px verdana, arial, helvetica, geneva, sans-serif; 
+            color: #ff9900; 
+            line-height: 34px; 
+            font-weight: bold }
+
+
+/* LEVEL 3 STYLES */
+h2 { font: 16px verdana, arial, helvetica, geneva, sans-serif;
+            color: #333333;
+            margin-top: 4px; margin-bottom: 17px }
+
+
+/*
+     FILE ARCHIVED ON 01:36:36 Oct 09, 2003 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 19:11:39 Jul 16, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 37.206 (3)
+  esindex: 0.007
+  captures_list: 51.861
+  CDXLines.iter: 10.643 (3)
+  PetaboxLoader3.datanode: 36.773 (4)
+  exclusion.robots: 0.168
+  exclusion.robots.policy: 0.159
+  RedisCDXSource: 0.584
+  PetaboxLoader3.resolve: 1130.829
+  load_resource: 1143.849
+*/

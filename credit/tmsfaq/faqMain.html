@@ -1,0 +1,1119 @@
+<html>
+<head>
+
+
+<style type="text/css">
+<!-- Menu CSS attributes -->
+table.menu {width: 118px; background-color: #FFFFFF; }
+td.menuParent {background-color: #99CCFF;}
+td.menuPanel {background-color: #99CCFF;}
+td.menuParentSelected {background-color: #006699; }
+div.menuParent {padding: 2px;}
+div.menuChild {width: 116px; padding: 2px; border: 1px solid #006699; margin : 1px 1x 1px 1px;}
+div.menuPanel {width: 118px; border: solid #FFFFFF; border-width: 0px 1px 1px 1px; }
+a.menuLink {font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #006699; text-decoration: none;}
+a:hover.menuLink {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+a.menuLinkSelected {font: 12px Arial, Tahoma, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none;}
+a.menuChildLinkSelected {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+td.pagefooter {BACKGROUND-COLOR: #009966; COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; TEXT-ALIGN: right;}
+a.pagefooter {COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; font-weight: bold;}
+
+
+<!-- Default CSS attributes -->
+BODY {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TD {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TH {FONT-SIZE: 12px; font-weight: bold; text-align: left; FONT-FAMILY: Arial, Verdana, helvetica}
+SELECT {FONT-SIZE: 12px;}
+P {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+select.Search {width: 150px; font-size: 12px;}
+input.Search {width: 150px; font-size: 12px;}
+input.receivable {width: 150px; font-size: 12px; text-align: right;}
+H5 {FONT-SIZE: 8pt;FONT-FAMILY: Verdana, Arial, helvetica;FONT-WEIGHT=bold;}
+TD.PartnerHeading {color: #428db5; FONT-FAMILY: Arial, Verdana, helvetica; font-size: 17px; FONT-WEIGHT: bold;}
+b.blueH	{FONT-SIZE: 12pt; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.blue	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica;}
+.bluebold	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.darkblue {background-color: #006699; color: #FFFFFF; font-weight: bold;}
+.lightblue {background-color: #C1E9E9;}
+.darkgray {background-color: #999999;  color: #FFFFFF;}
+.middlegray {background-color: #CCCCCC;}
+.lightgray {background-color: #E3E5E5;}
+.darkgrey {background-color: #999999;  color: #FFFFFF;}
+.middlegrey {background-color: #CCCCCC;}
+.lightgrey {background-color: #E3E5E5;}
+.white {background-color: #FFFFFF;}
+a.homepage:hover	{color:#cc3300;text-decoration:none;}
+a.homepage			{color:#006699;text-decoration:none;}
+a.nohover {color:#006699;text-decoration:underline;}
+a.nohover:hover {color:#006699;text-decoration:underline;}
+a {color:#006699;}
+a.portfolioCommand {color:#006699; font-weight: bold;}
+a.portfolioTab {color:#636163; font-weight: bold; text-decoration:none;}
+a.clsToolTip {color: #000000; font-weight: bold; text-decoration: none;}
+tr.portfolioHeading {FONT-SIZE: 12px; font-weight: bold; text-align: left; color:#006699; background-color: #CCCCCC;}
+tr.indicesHeading {FONT-SIZE: 8pt; font-weight: bold; text-align: left; color:#006699;}
+span.blueHeading {color: #006699; font-weight: bold;}
+span.pageHeading {color: #006699; font-weight: bold; font-size: 14pt;}
+</style>
+
+</head>
+<body leftmargin="2" topmargin="2" marginwidth="2" marginheight="2">
+
+<map name="m_banner">
+<area shape="rect" coords="518,111,628,127" href="/credit/rfi/requestforinfo.html" alt="request for info" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="524,73,624,94" alt="Help" href="/credit/sitehelp/" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="641,74,739,92" href="/credit/siteMap/" alt="Site map" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="652,109,722,127" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="123,123,465,160" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="12,60,111,150" href="/corp/" alt="Enron.com" target="_blank">
+</map>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr class="banner">	
+	<td colspan="3"><img name="banner" src="/src/img/credit/topbar.png" width="760" border="0" usemap="#m_banner"></td>
+</tr>
+<tr>
+	<td width="118" valign="top" align="center" class="menuPanel">
+		
+
+<script language="javascript">
+function MenuSelect(intTopMenu, intSecMenu) {
+	var strCookie;
+	strCookie = "ECMenu=TopMenu=" + intTopMenu + "&SecMenu=" + intSecMenu + ";path=/;";
+	document.cookie = strCookie;	
+}</script>
+
+<table class="menu" border="0" cellspacing="0" cellpadding="0">
+	<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParentSelected"><div class="menuParent"><a href="/credit/portfolio/" class="menuLinkSelected" onclick="MenuSelect(0, -1)">Portfolios &amp; Credit Information</a></div></td></tr>
+		
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,0)">Portfolio</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,1)">Indices</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,2)">Graphs</a></div></td></tr>
+		
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(1, -1)">Company Search</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/aboutUs/" class="menuLink" onclick="MenuSelect(2, -1)">About Us</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/tmspartners/" class="menuLink" onclick="MenuSelect(3, -1)">Partners</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/productsAndServices/" class="menuLink" onclick="MenuSelect(4, -1)">Products and Services</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/learnMore/" class="menuLink" onclick="MenuSelect(5, -1)">Learn More...</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+
+</table>
+		<!--<table border='0' cellspacing='0' cellpadding='0'>
+			<tr><td align="center" valign="bottom">
+				<img src="/Menu/Images/shim.gif" width="50" height="100" border="0"><BR>				
+			</td></tr>			
+		</table>-->
+	</td>
+	<td width="24" rowspan="2"><img name="space_shim" src="/src/img/credit/shim.gif" width="24" height="10" border="0"></td>
+	<td width="618" rowspan="2" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="618">
+  <tr valign="top"><!-- row 1 -->
+   <td colspan="3"><img name="faq_top_blank" src="/src/img/credit/shim.gif" width="618" height="14" border="0">
+ 	</td>
+  </tr>
+  <tr valign="top"><!-- row 2 -->
+   <!-- <td><img src="/src/img/credit/faq_logo.gif" border="0"></td>
+   <td><img src="/src/img/credit/shim.gif" border="0" width="19"></td> -->
+   <td valign="middle"><span class="pageHeading">Frequently Asked Questions</span><p>
+   Legal Note: The FAQ's are not intended to replace the General Terms and Conditions (GTC's), to which reference should be made for precise answers.<a name="#Top"></a></td>
+  </tr>
+  <tr height="19">
+  	<td>&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+
+
+<table width="618" cellspacing="0" border="0" cellpadding="0">
+
+<tr>
+
+<td><a href="#Question0"><p>What is the ECC?</p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question1"><p>How can I use the ECC to estimate how much credit exposure is costing me? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question2"><p>What can I do to reduce my credit exposure? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question3"><p>
+      What is the difference between the ECC and the Digital Bankruptcy Swap 
+      prices on the website?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question4"><p>What is "recovery"? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question5"><p>What is the difference between probability of bankruptcy and default? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question6"><p>Who do I call if I want more information on managing my credit risk exposure? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question7"><p>What is Enron Credit?</p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question8"><p>
+      Why should I consider Enron Credit for managing my credit exposure?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question9"><p>
+      What is a Digital Bankruptcy Swap?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question10"><p>
+      Why would you purchase/sell a Digital Bankruptcy Swap?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question11"><p>How does the Enron Credit Digital Bankruptcy Swap differ from other types of credit protection? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question12"><p>Who are Enron Credit's target customers? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question13"><p>Is Enron Credit quoting ECC for rated companies only? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question14"><p>
+      Would we still get paid if my company was responsible for filing the 
+      bankruptcy petition that triggered the bankruptcy event on a Reference 
+      Entity upon which we had previously purchased credit protection from 
+      Enron Credit?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question15"><p>
+      How do you define &quot;bankruptcy&quot;?
+    </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question16"><p>How will claims be settled? </p></a></td>
+</tr>
+
+<tr>
+
+<td><a href="#Question17"><p>
+      How easy is it to obtain payment from a Digital Bankruptcy Swap?
+    </p></a></td>
+</tr>
+
+</table>
+<p></p>
+
+<table width="618" cellspacing="0" border="0" cellpadding="0">
+
+<tr>
+	<td>
+		<a name="Question0"><p>What is the ECC?</p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      The ECC (Enron Cost of Credit) is a simple numeric measure of the cost 
+      of extending trade credit to a company based on Enron Credit's 
+      proprietary model. It is designed to make it easy to compare such 
+      credit-related cost of doing business with different companies - a 
+      company with an ECC of 5% would be &quot;cheaper&quot; to transact with than one 
+      with an ECC of 5.4%. 
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      In addition to making comparisons simple, the ECC is also meaningful. It 
+      approximates to the estimated risk of the company becoming bankrupt in 
+      the course of a year, multiplied by the amount you might expect to lose 
+      after such bankruptcy. For example, if a company has a 1% chance of 
+      going bankrupt and you expect to lose 60% of your money in the case of 
+      its bankruptcy, the ECC would be 0.6% (or 60 basis points). This company 
+      is more expensive to do business with than a company with a 2% chance of 
+      being declared bankrupt, but from which you would expect to recover 90% 
+      of your money - an ECC of 0.2% (or 20 basis points). 
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question1"><p>How can I use the ECC to estimate how much credit exposure is costing me? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      To evaluate how much credit exposure is costing you in a single 
+      transaction, look at the value of your exposure and how long you will 
+      have this exposure. Look up the ECC on Enron Credit and multiply this by 
+      your exposure to obtain the &quot;cost&quot; of protecting yourself against 
+      bankruptcy of the counterparty. Remember, the ECC gives an annual cost - 
+      so if you have a long-term exposure you will need to multiply this cost 
+      by the number of years you are holding the credit risk.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      By comparing this credit cost of different transactions, you can 
+      identify the most profitable transactions to enter into, taking account 
+      of credit risk. If you have two possible transactions both of which 
+      yield the same profit (before consideration of credit risk), you would 
+      choose to transact with the company with the lower value of ECC as the 
+      profit from this transaction is less risky.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question2"><p>What can I do to reduce my credit exposure? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      The primary tool in the reduction of credit exposure is to purchase some 
+      form of credit protection. It is important that the protection is well 
+      matched to the nature of the exposure - in terms of value, term and 
+      triggering event. For the typical credit risk in commercial contracts 
+      between corporates, the Digital Bankruptcy Swap product offered by Enron 
+      Credit can be a useful tool to reduce credit exposure.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      A second method is to diversify your credit exposure. By selling 
+      protection on companies that are unrelated to your credit portfolio you 
+      can gain a source of income to cover the purchase of protection and 
+      additionally can reduce the overall risk in your portfolio. For more 
+      information on the benefits of diversification, please call us on  0800 
+      085 5386 (Free in UK), +44 (0)20 7783 5151 London or +1 888 337 9876 
+      (Free in US) Houston.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question3"><p>
+      What is the difference between the ECC and the Digital Bankruptcy Swap 
+      prices on the website?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      The ECC is a measure of your credit risk as a percentage - it includes 
+      an assumption on the likely recovery. The price of a Digital Bankruptcy 
+      Swap is determined using the probability of bankruptcy and an 
+      appropriate interest rate - i.e. it does not include any assumption on 
+      recovery.
+    </p>
+    <p>
+      
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question4"><p>What is "recovery"? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      Recovery is the proportion of the debt that you are owed which you are 
+      able to recover following the bankruptcy of the company which owes the 
+      debt. This will depend on the assets of the bankrupt company and where 
+      you are in the chain of creditors - secured lenders will be at the top 
+      and are paid first with unsecured trade creditors at the bottom.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question5"><p>What is the difference between probability of bankruptcy and default? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>Default is normally used to mean the failure to make a payment on a bond or bank loan. When this occurs, it 		can be in the interests of the affected creditor to keep the defaulting company as a going concern - rather than forcing it into bankruptcy.</p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>This means that the probability of bankruptcy is lower than that of default (i.e. bankruptcy is less likely than default).</p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question6"><p>Who do I call if I want more information on managing my credit risk exposure? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      Call Enron Credit for more information on managing your credit risk 
+      exposure, on 0800 085 5386 (Free in UK) +44 (0)20 7783 5151 London or +1 
+      888 337 9876 (Free in US) Houston.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question7"><p>What is Enron Credit?</p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>Enron Credit is the first online provider of credit risk management solutions for business. We aim to provide the tools you need to evaluate the credit quality of your customers in real-time and offer tools to manage your credit risks.</p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      Enron Credit provides live credit prices and the opportunity to create 
+      and manage portfolios. Enron acts as principal on all of its 
+      transactions to facilitate efficient risk transfer. We maintain Digital 
+      Bankruptcy Swap prices on more than 10,000 reference credits. These 
+      prices can be viewed on this website. Also eligible customers are able 
+      to transact in bankruptcy swaps on a number of US and European names via 
+      Enron's global Internet-based transaction system, EnronOnline&#153;.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question8"><p>
+      Why should I consider Enron Credit for managing my credit exposure?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>There are a number of reasons why we think your company should consider Enron as its first choice for managing credit exposures. Credit analysis and pricing are integral parts of Enron's risk management and financing activities. All transactions, whether trading or financing, create credit positions that require a correct valuation and management. Over the past decade, Enron has invested in technology and people to accurately evaluate, price and manage credit. Our capabilities are at the top end of the market, giving us the opportunity to be one of the few entities capable of evaluating both rated and non-rated counterparties. As Enron moves its businesses to the Internet via new E-commerce initiatives, it is essential that we manage our credit portfolio in real time. Enron Credit will now provide other companies with the credit tools that we have developed, to help them better understand and manage their own credit risk. </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question9"><p>
+      What is a Digital Bankruptcy Swap?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      A Digital Bankruptcy Swap is a method for transferring financial risk 
+      incurred due to a counterparty bankruptcy from one company to another. 
+      One company (the &quot;protection seller&quot;) will promise to pay a certain 
+      fixed amount (the &quot;notional&quot;) to another (the &quot;protection buyer&quot;) if a 
+      third company (the &quot;reference credit&quot;) files for bankruptcy. For 
+      offering this protection, the seller will charge a fee - this is usually 
+      specified as a percentage of the notional amount to be paid quarterly. 
+      This is normally defined in basis points, where 100 basis points = 1%.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      For example, Enron Credit may sell you $1 million of protection in the 
+      event that XYZ Corp files for bankruptcy. For this protection, Enron 
+      Credit might charge 2% p.a. of the notional, i.e. $20,000. In return, if 
+      XYZ Corp is declared bankrupt, Enron Credit will pay you $1 million.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      Unlike an insurance contract, payment is made automatically when the 
+      bankruptcy filing has been confirmed - there is no requirement to prove 
+      (or mitigate) any loss.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      They key items to consider when buying a Digital Bankruptcy Swap are:
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+
+		
+
+		
+<ul>
+				
+<li><p>
+      do you incur a loss when a Bankruptcy Event occurs (or is there another 
+      event which would trigger losses)?
+    </p></li>
+				
+<li><p>
+      how much would you lose? This is influenced both by your exposure, and 
+      how much you would expect to recover in the case that your counterparty 
+      became bankrupt.
+    </p></li>
+				
+<li><p>
+      the term for which you require protection.
+    </p></li>
+				
+<li><p>
+      the fee being charged.
+    </p></li>
+				
+</ul>
+			
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question10"><p>
+      Why would you purchase/sell a Digital Bankruptcy Swap?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      You would purchase a Digital Bankruptcy Swap to mitigate the risk that 
+      your customers do not pay on commercial contracts as a result of their 
+      bankruptcy.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      When looking at credit protection on a counterparty, you should assess 
+      your profit at risk under the relevant commercial contract(s) and then 
+      assess the likely recovery you would make if the counterparty failed to 
+      make payment and was declared bankrupt.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      For example, if you have US$10m profit at risk and estimate that you 
+      would recover 50% of this if the counterparty failed, then you have an 
+      estimated credit exposure of US$5m - so you would be looking to buy a 
+      Digital Bankruptcy Swap with a &quot;notional&quot; value of US$5m from Enron 
+      Credit.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      You may also want to use Digital Bankruptcy Swaps to diversify your 
+      credit exposure. Many companies find themselves with their credit risks 
+      concentrated in a few industries or geographic regions - in this 
+      situation, one event can adversely affect many contracts - either 
+      through bankruptcies or an increase in the costs of credit protection. 
+      You can use the portfolios in Enron Credit and the ECC-measure of credit 
+      risk by industry or geography to see how exposed your credit portfolio 
+      is today.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>As well as buying bankruptcy (or other credit ) protection on the relevant companies you could also diversify your credit exposure by selling protection on unrelated companies. In effect, you can "swap" exposure to a sector in which you have excess exposure for one in which you still have head-room in your credit limits.</p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>Selling protection allows you to make more efficient use of your credit limits and provides a source of income to offset the costs of purchasing credit protection. This new income should not be adversely affected by events affecting your existing credit risk portfolio (and vice versa).</p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+<p>
+      If you want any advice on diversifying your credit portfolio, please 
+      contact us on 0800 085 5386 (Free in UK) +44 (0)20 7783 5151 London or 
+      +1 888 337 9876 (Free in US) Houston.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question11"><p>How does the Enron Credit Digital Bankruptcy Swap differ from other types of credit protection? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>The Enron Credit Digital Bankruptcy Swap has a number of clear advantages over other types of credit protection.</p>
+			
+
+		
+
+		
+		<p></p>
+	
+		
+
+		
+
+		
+<ul>
+				
+<li><p>
+      The trigger event of bankruptcy is more closely related to the true 
+      credit risk in many commercial contracts than bond default (bond default 
+      is a common payment trigger under a Credit Default Swap). This means 
+      that Enron Credit offers more competitive pricing.
+    </p></li>
+				
+<li><p>
+      Payout is automatic on bankruptcy being confirmed - there is no need to 
+      prove any loss or to go through a lengthy and costly claims process as 
+      can be required with insurance. You know exactly what you will receive 
+      from the swap in the event of bankruptcy. You will be paid the full 
+      &quot;notional&quot; value of the swap.
+    </p></li>
+				
+<li><p>Enron Credit offers prices and other useful credit risk information on-line.</p></li>
+				
+<li><p>Our Digital Bankruptcy Swap uses standardized documentation - reducing your transaction costs.</p></li>
+				
+<li><p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Enron Credit provides an environment in which you can easily adjust your 
+      level of protection at any time or re-sell any excess protection. 
+    </p></li>
+				
+</ul>
+			
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question12"><p>Who are Enron Credit's target customers? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      Our target customers are medium and large corporations. It is our aim to 
+      provide the information they need to understand their credit exposure 
+      and the products to enable them to manage this exposure. We intend to 
+      expand our horizon across the spectrum of industries to create a global 
+      market for corporations to manage their commercial credit risks. We will 
+      also be providing information to the trusted advisors used by these 
+      corporations.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question13"><p>Is Enron Credit quoting ECC for rated companies only? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      We currently provide ECCs for over 10,000 companies - many of these have 
+      been rated by the rating agencies, but this is not a pre-requisite. If 
+      you are interested in a quote for a particular company, please contact 
+      us on 0800 085 5386 (Free in UK) +44 (0)20 7783 5151 London or +1 888 
+      337 9876 (Free in US) Houston.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question14"><p>
+      Would we still get paid if my company was responsible for filing the 
+      bankruptcy petition that triggered the bankruptcy event on a Reference 
+      Entity upon which we had previously purchased credit protection from 
+      Enron Credit?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      Regardless of who petitions for bankruptcy (you or even the Reference 
+      Entity itself), if the bankruptcy petition is not dismissed, withdrawn 
+      or stayed within 30 days of its presentation (or 60 days in the case of 
+      North American Reference Entities), and if the other conditions for 
+      settlement are satisfied, the protection amount becomes payable to you 
+      by the protection seller &#8211; Enron Credit in this example. Full details 
+      can be found in the Bankruptcy Swap General Terms &amp; Conditions on the 
+      website.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question15"><p>
+      How do you define &quot;bankruptcy&quot;?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>Bankruptcy is defined according to the laws of the home country of the relevant company. </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question16"><p>How will claims be settled? </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      The mechanism for settlement will follow closely the approach set out in 
+      the ISDA '99 Credit Derivatives Definitions: once the Bankruptcy Event 
+      has been objectively verified (i.e. using publicly available 
+      information) and passed the 30 (60) day confirmation period, either the 
+      protection buyer or seller can notify the other party that the 
+      settlement terms have been satisfied. The fixed, pre-agreed payment will 
+      then be made within 5 business days of such notification. The full 
+      legally defined terms can be found in the Digital Bankruptcy Swap 
+      General Terms &amp; Conditions.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+<tr>
+	<td>
+		<a name="Question17"><p>
+      How easy is it to obtain payment from a Digital Bankruptcy Swap?
+    </p></a>
+	</td>
+	<td>
+		<img src="/src/img/credit/shim.gif" width="14" height="1" border="0">
+	</td>
+	<td width="80" valign="top">
+	  <a href="#Top">Back to top</a>
+	</td>
+</tr>
+<tr>
+<td colspan="3">
+
+	
+		
+<p>
+      Very easy. Payment is triggered by the occurrence of a Credit Event, 
+      which is defined in our documents &quot;General Terms and Conditions&quot;, as a 
+      formal event of bankruptcy or other similar proceeding or analogous 
+      event (see our documents for the precise definition for each). These 
+      Bankruptcy Events are as objectively verifiable as possible, making it 
+      easy to claim based on publicly available information.
+    </p>
+			
+
+		
+
+		
+		<p></p>
+	
+</td></tr>
+
+</table>
+
+
+</td>
+</tr>
+<tr valign="bottom"><td class="menuPanel"><img src="/src/img/credit/left_wheel.jpg" border="0" width="118" height="184"></td></tr>
+</table><center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr>
+	<td colspan="3" class="white" width="760"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr>
+	<td class="pageFooter" valign="bottom" align="left" width="9"><img src="/src/img/credit/left.gif"></td>
+	<td width="742" class="pageFooter">
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+		<td class="pageFooter">You are not currently logged in. <a class="pageFooter" href="/project/not/index.html">Click here to Log in or Register</a></td>
+	</tr></td></table>
+	</td>
+	<td class="pageFooter" valign="bottom" align="right" width="9"><img src="/src/img/credit/right.gif"></td>
+</tr>
+</table>
+</body>
+</html>

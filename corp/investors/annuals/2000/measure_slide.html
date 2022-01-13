@@ -1,0 +1,368 @@
+<html>
+<title>Measuring Performance</title>
+	<head>
+ <link rel="stylesheet" href="/src/css/ar2000.css" type="text/css">	
+	
+<script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+// -->
+</script>
+<style type="text/css">
+	<!--
+		body {
+			background-attachment: fixed;
+		}
+
+		td {font-family: verdana,geneva,helvetica,arial}
+		/* External Style Sheet */
+	-->
+	</style>
+</head>
+<body bgcolor="#ffffff">
+
+<div id="frame2" style="LEFT: 30px; MARGIN: 0px; WIDTH: 23px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+<img src="/src/EN01_measuringslide_b_02.gif" width="23" height="260" border="0" alt="">
+</div>
+
+<div id="frame4" style="LEFT: 54px; MARGIN: 0px; WIDTH: 315px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+<img src="/src/EN01_measuringslide_b_04.gif" width="315" height="260" border="0" alt="">
+</div>
+
+<div id="timeline" style="LEFT: 0px; MARGIN: 0px; WIDTH: 2000px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+<table border="0" cellpadding="0" cellspacing="0" width="800">
+
+<tr><!--Page 1-->
+
+<td valign="top" width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr>
+			<td align="left" width="400" height="50" colspan="3"><img height="40" alt="" src="/src/img/ui/clear.gif" width="400" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="60" height="20"><img height="20alt=&quot;&quot;" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="right" width="290" height="20"><img height="1" alt="" src="/src/img/ui/clear.gif" width="268" border="0"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_forward_measuring.gif" border="0"></a></td>
+			<td align="left" width="50" height="20"><img height="20" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+
+		<tr>
+			<td align="left" width="60">&nbsp;</td>
+			<td align="left" width="290" class="smBodyText" valign="top"><img height="26" alt="Measuring Performances" src="/src/headers/EN01_measuringperf_head.gif" width="185"><br>
+Companies can't improve what they can't measure.  
+That's why Enron has developed a state-of-the-art Performance 
+Measurement Center (PMC) that monitors, predicts and changes customer 
+energy consumption. Powered by a flexible Internet-based link that 
+connects customers' building controls to the PMC, and operated by a 
+team of energy management professionals, the PMC is a unique resource, 
+enabling genuinely proactive energy management.</td>
+			<td align="left" width="40">&nbsp;</td>
+	    </tr>
+
+	</table>
+	
+</td><!--PAGE 2-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0" width="400">
+
+		<tr>
+			<td align="left" width="400" colspan="3" height="50"><img alt="" src="/src/img/ui/clear.gif" width="400" height="50" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="60"><img height="20" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><a href="javascript:WM_moveTo('timeline',-00,0,20,1)"><img src="/src/arrow_backward_measuring.gif" border="0"></a><img height="1" alt="" src="/src/img/ui/clear.gif" width="246" border="0"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_forward_measuring.gif" border="0"></a></td>
+			<td align="left" width="50"><img height="20" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+			
+		<tr align="left">
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="30" border="0"></td>
+			<td align="left" width="290" class="smBodyText" valign="top"><img height="26" alt="" src="/src/headers/EN01_purchasing_sens.gif" width="185" border="0" alt="Sensible Investments">
+			<br>PMC data identify opportunities to improve efficiency through
+                equipment upgrades or through
+				changes in processes, without adversely affecting a client’s operations. 
+				The PMC’s sophisticated modeling systems calculate a
+				cost-benefit analysis for every potential investment in energy
+				assets. This analysis includes a real-time correlation with the
+				price of commodities to help companies not only make
+				decisions but also to show them that there are decisions to be made. </td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="5" border="0"></td>
+
+		</tr>
+
+	</table>
+
+</td><!--PAGE 3-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0" width="400">
+
+		<tr>
+			<td align="left" width="400" colspan="3" height="50"><img height="50" alt="" src="/src/img/ui/clear.gif" width="400" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="60"><img height="20" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_backward_measuring.gif" border="0"></a><img height="1" alt="" src="/src/img/ui/clear.gif" width="246" border="0"><a href="javascript:WM_moveTo('timeline',-1200,0,20,1)"><img src="/src/arrow_forward_measuring.gif" border="0"></a></td>
+			<td align="left" width="50"><img height="20" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+			
+		<tr align="left">
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><img height="26" alt="Reducing Peak Demand" src="/src/headers/EN01_measuringperf2.gif" width="185" border="0"></td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+
+		</tr>
+	
+		<tr>
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290" class="smBodyText" valign="top">
+The cost of energy varies widely over the course of the day. The
+PMC uses real-time pricing information, and the stream of data
+coming from the customer site, to automatically and remotely reduce
+customers’ low-priority energy use when the price of energy is 
+highest ensuring that the customer gets maximum benefit for every dollar
+spent on energy.</td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="60"><img height="1" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><img height="1" alt="" src="/src/img/ui/clear.gif" width="290" border="0"></td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+	
+	</table>
+</td><!--PAGE 4-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0" width="400">
+
+		<tr>
+			<td align="left" width="400" colspan="3" height="50"><img height="50" alt="" src="/src/img/ui/clear.gif" width="25" border="0"></td>
+		</tr>
+		<tr align="left">
+			<td align="left" width="60" height="20"><img height="20alt=&quot;&quot;" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_backward_measuring.gif" border="0"></a><img height="1" alt="" src="/src/img/ui/clear.gif" width="246" border="0"><a href="javascript:WM_moveTo('timeline',-1600,0,20,1)"><img src="/src/arrow_forward_measuring.gif" border="0"></a></td>
+			<td align="left" width="50" height="20"><img height="20" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+		<tr align="left">
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290"><img height="26" alt="Diagnostic Measurements" src="/src/headers/EN01_measuringperf3.gif" width="185" border="0"></td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>
+		<tr>
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290" class="smBodyText" valign="top">
+			Most energy users don’t realize something is wrong until the
+energy bill comes, and then it is much too late. But with the Enron PMC,
+real-time monitoring means that unusual changes in energy demand
+are tracked instantaneously, enabling Enron and the customer
+to identify and address problems before energy costs get out of hand.
+			
+		</td>
+			<td align="left" width="50"><img height="1" alt="" src="/src/img/ui/clear.gif" width="50" border="0"></td>
+		</tr>	
+	
+	</table>
+
+				
+</td><!--PAGE 5-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0" width="400">
+
+		<tr>
+			<td align="left" width="400" colspan="3" height="50"><img height="40" alt="" src="/src/img/ui/clear.gif" width="25" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="30"><img height="20" alt="" src="/src/img/ui/clear.gif" width="30" border="0"></td>
+			<td align="left" width="290"><a href="javascript:WM_moveTo('timeline',-1200,0,20,1)"><img src="/src/arrow_backward_measuring.gif" border="0"></a></td>
+			<td align="left" width="30"><img height="20" alt="" src="/src/img/ui/clear.gif" width="25" border="0"></td>
+		</tr>
+			
+		<tr align="left">
+			<td align="left" width="30"><img height="25" alt="" src="/src/img/ui/clear.gif" width="30" border="0"></td>
+			<td align="left" width="290"><img height="26" alt="Minimizing Downtime" src="/src/headers/EN01_measuringperf4.gif" width="185" border="0"></td>
+			<td align="left" width="5"><img height="1" alt="" src="/src/img/ui/clear.gif" width="5" border="0"></td>
+
+		</tr>
+	
+		<tr>
+			<td align="left" width="60"><img height="25" alt="" src="/src/img/ui/clear.gif" width="60" border="0"></td>
+			<td align="left" width="290" class="smBodyText" valign="top">
+When repairs are needed, PMC personnel can help control the costs of 
+vendor calls and on-site repairs through diagnostic data, and 
+through best-practice management of a network of thousands of service providers. 
+We work with service providers to categorize and analyze the actual cost of repairs. 
+With Enron's expertise and scale, we can improve response times, reduce downtime and 
+cut the cost of repairs and maintenance.</td>
+			<td align="left" width="25"><img height="1" alt="" src="/src/img/ui/clear.gif" width="25" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="60"><img height="1" alt="" src="/src/img/ui/clear.gif" width="30" border="0"></td>
+			<td align="left" width="290"><img height="1" alt="" src="/src/img/ui/clear.gif" width="300" border="0"></td>
+			<td align="left" width="30"><img height="1" alt="" src="/src/img/ui/clear.gif" width="25" border="0"></td>
+		</tr>
+	
+	</table>
+			
+	
+</td>
+
+</tr>
+</table>
+		</div>
+		
+		<div id="frame1" style="LEFT: 0px; MARGIN: 0px; WIDTH: 30px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+		<img src="/src/EN01_measuringslide_b_01.gif" width="30" height="260" border="0" alt="">
+		</div>
+
+		<div id="frame3" style="LEFT: 53px; MARGIN: 0px; WIDTH: 1px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+		<img src="/src/EN01_measuringslide_b_03.gif" width="1" height="260" border="0" alt="">
+		</div>
+
+		<div id="frame5" style="LEFT: 369px; MARGIN: 0px; WIDTH: 31px; POSITION: absolute; TOP: 0px; HEIGHT: 260px">
+		<img src="/src/EN01_measuringslide_b_05.gif" width="31" height="260" border="0" alt="">			
+		</div>
+</body>
+</html>

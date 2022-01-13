@@ -1,0 +1,219 @@
+<html>
+<head>
+ <title>HotTap Customer Activities</title>
+</head>
+
+<body bgcolor="white" onload="GetID(document.forms[0]);">
+
+<form action="/project/not/index.html">
+<h2 align="CENTER">HotTap Customer Activities</h2>
+
+<p><b><font face="Arial">User:</font></b> <input type="TEXT" name="userid" size="25"> <br>
+<input type="CHECKBOX" name="changepass" value="@"> <font face="Arial">Change Password During Login</font></p>
+<p><b><font face="Arial">Select an Application:</font></b><font face="Arial"> 
+<select name="applist">
+<option value="NNGTM20" selected>NNG - Throughput Management</option>
+<option value="NNGCAP">NNG - Capacity Release</option>
+<option value="TWTM20">TW - Throughput Management</option>
+<option value="TWCAP">TW - Capacity Release</option>
+<option value="FGTTM20">FGT - Throughput Management</option>
+<option value="FGT32">FGT - Capacity Release</option>
+<option value="NBPL">NBPL - Customer Interface</option>
+</select>
+</font></p>
+<p><b><font size="2" face="Arial">Options</font><font size="2">:</font></b><br>
+<i><font face="Arial">Select either Resolution or Screen Percent</font></i><br>
+<font face="Arial">
+<input type="RADIO" name="resolution" value="1024"> 1024 x 768 
+<input type="RADIO" name="resolution" value="800" selected> 800 x 600 
+<input type="RADIO" name="resolution" value="640"> 640 x 480<br>
+<input type="RADIO" name="resolution" value="100"> 100%
+<input type="RADIO" name="resolution" value="80"> 80%</font></p>
+<p><input type="CHECKBOX" name="encrypt" value="on"><font face="Arial"> Use Encryption<br>
+<input type="CHECKBOX" name="savesettings" value="yes"> Save Settings</font></p>
+<b><center>
+<p font face="Arial"><input type="BUTTON" name="Submit" value="  Go  " onclick="SetID(document.forms[0])">
+</font></b></p></form>
+
+
+<script language="JavaScript">
+
+<!-- HIDE FORM OTHER BROWSERS>
+
+
+
+function GetID (form) {
+
+	var HotCookie = GetCookie("HotTapWEB");
+
+	if (HotCookie == null) {
+
+		form.userid.value = '';
+		form.resolution[1].checked = true;
+	}
+
+	else
+	{
+		form.savesettings.checked = true
+		var colon1 = HotCookie.indexOf(":")		
+		var colon2 = HotCookie.indexOf(":",colon1 + 1)
+		var colon3 = HotCookie.indexOf(":",colon2 + 1)	
+		form.userid.value = HotCookie.substring(0,colon1)
+		if (HotCookie.substring(colon1 + 1,colon2) == "1024")
+			{form.resolution[0].checked = true}
+		if (HotCookie.substring(colon1 + 1,colon2) == "800")
+			{form.resolution[1].checked = true}
+		if (HotCookie.substring(colon1 + 1,colon2) == "640")
+			{form.resolution[2].checked = true}
+		if (HotCookie.substring(colon1 + 1,colon2) == "100")
+			{form.resolution[3].checked = true}
+		if (HotCookie.substring(colon1 + 1,colon2) == "80")
+			{form.resolution[4].checked = true}
+		if (HotCookie.substring(colon2 + 1,colon3) == "Y")
+			{form.encrypt.checked = true}
+		var SaveApp = HotCookie.substring(colon3 + 1,HotCookie.length)
+		if (SaveApp != null)
+			{
+				var i = eval(SaveApp)
+				form.applist[i].selected = true
+			}
+			
+	}
+
+
+}
+
+
+
+function SetID (form) {
+
+	if (form.userid.value == "")
+	{
+		alert("Please enter your HotTap ID")
+	}
+	else
+	{
+		DeleteCookie("HotTapWEB")
+		DeleteCookie("HotTapCAS")
+		DeleteCookie("HotTapSRV")
+
+		if (form.savesettings.checked)
+		{
+		
+			UseID = form.userid.value
+			UseRes = "800"
+			if (form.resolution[0].checked)
+				{UseRes = "1024"}
+			if (form.resolution[1].checked)
+				{UseRes = "800"}
+			if (form.resolution[2].checked)
+				{UseRes = "640"}
+			if (form.resolution[3].checked)
+				{UseRes = "100"}
+			if (form.resolution[4].checked)
+				{UseRes = "80"}	
+			UseEncrypt = "N"
+			if (form.encrypt.checked)
+				{UseEncrypt = "Y"}
+			var i = form.applist.selectedIndex
+			var SaveApp = escape(i)
+			expires = new Date();
+
+			expires.setTime(expires.getTime() + 24 * 60 * 60 * 365 * 1000);
+
+			document.cookie="HotTapWEB=" + UseID + ":" + UseRes + ":" + UseEncrypt + ":" + SaveApp + "; expires=" + expires.toGMTString(); 
+
+			
+		}
+		form.submit()
+	}
+}
+
+
+
+function DeleteCookie (name,path,domain) {
+
+	if (GetCookie(name)) 
+	{
+
+    		document.cookie = name + "=" +
+
+      		((path) ? "; path=" + path : "") +
+
+      		((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+
+	}
+
+}
+
+
+
+function GetCookie (name) {
+
+	var arg = name + "=";
+
+  	var alen = arg.length;
+
+  	var clen = document.cookie.length;
+
+  	var i = 0;
+
+  	while (i < clen) 
+	{
+
+    		var j = i + alen;
+
+    		if (document.cookie.substring(i, j) == arg)
+
+      			return getCookieVal (j);
+
+    		i = document.cookie.indexOf(" ", i) + 1;
+
+    		if (i == 0) break; 
+
+  	}
+
+  	return null;
+
+}
+
+
+
+function getCookieVal (offset) {
+
+	var endstr = document.cookie.indexOf (";", offset);
+
+  	if (endstr == -1)
+
+    		endstr = document.cookie.length;
+
+  		return unescape(document.cookie.substring(offset, endstr));
+
+}
+
+// STOP HIDING SCRIPT -->
+
+</script>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 01:31:09 Mar 02, 2000 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 01:11:29 Oct 15, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 117.397 (3)
+  esindex: 0.006
+  captures_list: 134.283
+  CDXLines.iter: 12.095 (3)
+  PetaboxLoader3.datanode: 286.03 (4)
+  exclusion.robots: 0.231
+  exclusion.robots.policy: 0.221
+  RedisCDXSource: 0.482
+  PetaboxLoader3.resolve: 75.909 (3)
+  load_resource: 264.04
+-->

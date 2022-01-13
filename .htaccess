@@ -1,0 +1,7 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:megaQa
+ErrorDocument 404 /404.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE megaQa:ERRORPAGEID
+

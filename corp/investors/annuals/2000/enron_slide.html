@@ -1,0 +1,461 @@
+<html>
+<title>EnronOnline</title>
+<head>
+ <link rel="stylesheet" href="/src/css/ar2000.css" type="text/css">	
+	
+<script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+// -->
+</script>
+<style type="text/css">
+	<!--
+		body {
+			background-attachment: fixed;
+		}
+
+		td {font-family: verdana,geneva,helvetica,arial}
+		/* External Style Sheet */
+	-->
+	</style>
+</head>
+<body bgcolor="#ffffff">
+
+<div id="frame2" style="position: absolute; left:20; top:0; width:8; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_02.gif" width="8" height="260" border="0" alt="">
+</div>
+
+<div id="frame4" style="position: absolute; left:29; top:0; width:343; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_04.gif" width="343" height="260" border="0" alt="">
+</div>
+
+<div id="frame6" style="position: absolute; left:373; top:0; width:8; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_06.gif" width="8" height="260" border="0" alt="">
+</div>
+
+
+<div id="timeline" style="position: absolute; left:0; top:0; width:1200; height:260; margin:0;">
+<table border="0" cellpadding="0" cellspacing="0" width="2000">
+
+<tr>
+
+<!--Page 1-->
+
+<td width="400">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr>
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="2" width="340"><img src="/src/img/ui/clear.gif" width="282" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_forward.gif" border="0"></a></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr>
+			<td align="left" width="400" colspan="5"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+			
+		<tr align="left">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/EN01_enrononline_header.gif" width="97" height="12" border="0" alt=""></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="15" alt="" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="2">EnronOnline successfully leverages Enron's core market-making 
+			capabilities, benefiting both our customers and Enron.  The web-based system makes it easier to do business with Enron.  
+			It also accelerates the growth of Enron's existing businesses and facilitates quick and efficient entry into new markets.</td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="400" colspan="5"><img src="/src/img/ui/clear.gif" width="25" height="30" alt="" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+			<td align="left" width="340" colspan="2"><img src="/src/img/ui/clear.gif" width="340" height="1" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+	</table>
+	
+</td>
+
+
+<!--PAGE 2-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="2" width="340"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-00,0,20,1)"><img src="/src/arrow_back.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="235" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_forward.gif" border="0"></a></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+		</tr>
+			
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+	
+		
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/EN01_makinamarkets.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="25" height="15" alt="" border="0"></td>
+		</tr>
+	
+		
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="2">Enron's networks of assets and contractual relationships allow us to make markets and 
+			offer real-time pricing for more than 1,200 products on EnronOnline. This tremendous market liquidity 
+			attracts customers and further increases Enron's volumes and market share.</td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+	
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+			<td align="left" width="340" colspan="2"><img src="/src/img/ui/clear.gif" width="340" height="1" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+	</table>
+	
+</td>
+
+
+<!--PAGE 3-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="2" width="340"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_back.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="235" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-1200,0,20,1)"><img src="/src/arrow_forward.gif" border="0"></a></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+		</tr>
+			
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+			
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/EN01_customerelation.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="15" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="2">EnronOnline provides customers with a more convenient way to discover 
+			prices and do business with Enron, which increases transaction volumes and attracts new customers. The 
+			system automatically taps into Enron's sophisticated customer-credit profiles to protect Enron from 
+			credit risk.</td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+			<td align="left" width="340" colspan="2"><img src="/src/img/ui/clear.gif" width="340" height="1" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+		
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+	</table>
+	
+</td>
+
+
+
+<!--PAGE 4-->
+
+	<td width="400" valign="top">
+	
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="2" width="340"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_back.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="235" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-1600,0,20,1)"><img src="/src/arrow_forward.gif" border="0"></a></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+		</tr>
+		
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/EN01_infosystems.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="15" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="2">EnronOnline is fully integrated with Enron's proprietary information 
+			systems, which provide critical market information, process thousands of deals and help assess 
+			and manage market and other risks. As a result, Enron manages risks instantaneously even in the 
+			most volatile markets.</td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+			<td align="left" width="340" colspan="2"><img src="/src/img/ui/clear.gif" width="340" height="1" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+		
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+	</table>
+	
+</td>
+
+<!--PAGE 5-->
+
+	<td width="400" valign="top">
+	
+	
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="2" width="340"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-1200,0,20,1)"><img src="/src/arrow_back.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="245" height="1" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+		</tr>
+		
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+		<tr align="left" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/EN01_scalability.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="15" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="bottom" valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="2">Enron's well-tuned back-office system, integrated with EnronOnline,
+			has proven its ability to scale as Enron's total transactions have grown from an average of 650 a day at EnronOnline's 
+			November 1999 launch to an average of 7,900 a day by year-end 2000. As EnronOnline expands products and volumes,
+			Enron's scalable back-office will continue to be a competitive advantage.</td>
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="1" alt="" border="0"></td>
+			<td align="left" width="340" colspan="2"><img src="/src/img/ui/clear.gif" width="340" height="1" alt="" border="0"></td>
+			<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr valign="top">
+			<td align="left" width="400" colspan="4"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+	</table>
+	
+</td>
+
+<!--end-->
+</tr>
+</table>
+		</div>
+
+<div id="frame1" style="position: absolute; left:0; top:0; width:20; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_01.gif" width="20" height="260" border="0" alt="">
+</div>
+
+<div id="frame3" style="position: absolute; left:28; top:0; width:1; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_03.gif" width="1" height="260" border="0" alt="">
+</div>
+
+<div id="frame5" style="position: absolute; left:372; top:0; width:1; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_05.gif" width="1" height="260" border="0" alt="">
+</div>
+
+<div id="frame7" style="position: absolute; left:381; top:0; width:20; height:260; margin:0;">
+<img src="/src/EN01_eonlineslide_b_07.gif" width="20" height="260" border="0" alt="">
+</div>
+
+<map name="topbar_map">
+<area shape="rect" alt="" coords="11,55,244,71" href="index.html">
+<area shape="rect" alt="" coords="484,56,535,66" href="/corp/contacts/">
+<area shape="rect" alt="" coords="354,55,410,66" href="/corp/investors/">
+<area shape="rect" alt="" coords="354,67,428,78" href="/corp/workatenron/">
+<area shape="rect" alt="" coords="484,67,582,77" href="/corp/">
+<area shape="rect" alt="" coords="484,44,551,55" href="/corp/pressroom/">
+<area shape="rect" alt="" coords="354,44,460,55" href="/corp/products/">
+<area shape="poly" alt="" coords="637,39, 666,10, 694,38, 694,55, 679,55, 666,68" href="/corp/">
+</map>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<html>
+<head>
+
+
+<style type="text/css">
+<!-- Menu CSS attributes -->
+table.menu {width: 118px; background-color: #FFFFFF; }
+td.menuParent {background-color: #99CCFF;}
+td.menuPanel {background-color: #99CCFF;}
+td.menuParentSelected {background-color: #006699; }
+div.menuParent {padding: 2px;}
+div.menuChild {width: 116px; padding: 2px; border: 1px solid #006699; margin : 1px 1x 1px 1px;}
+div.menuPanel {width: 118px; border: solid #FFFFFF; border-width: 0px 1px 1px 1px; }
+a.menuLink {font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #006699; text-decoration: none;}
+a:hover.menuLink {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+a.menuLinkSelected {font: 12px Arial, Tahoma, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none;}
+a.menuChildLinkSelected {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
+td.pagefooter {BACKGROUND-COLOR: #009966; COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; TEXT-ALIGN: right;}
+a.pagefooter {COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; font-weight: bold;}
+
+
+<!-- Default CSS attributes -->
+BODY {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TD {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+TH {FONT-SIZE: 12px; font-weight: bold; text-align: left; FONT-FAMILY: Arial, Verdana, helvetica}
+SELECT {FONT-SIZE: 12px;}
+P {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
+select.Search {width: 150px; font-size: 12px;}
+input.Search {width: 150px; font-size: 12px;}
+input.receivable {width: 150px; font-size: 12px; text-align: right;}
+H5 {FONT-SIZE: 8pt;FONT-FAMILY: Verdana, Arial, helvetica;FONT-WEIGHT=bold;}
+TD.PartnerHeading {color: #428db5; FONT-FAMILY: Arial, Verdana, helvetica; font-size: 17px; FONT-WEIGHT: bold;}
+b.blueH	{FONT-SIZE: 12pt; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.blue	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica;}
+.bluebold	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
+.darkblue {background-color: #006699; color: #FFFFFF; font-weight: bold;}
+.lightblue {background-color: #C1E9E9;}
+.darkgray {background-color: #999999;  color: #FFFFFF;}
+.middlegray {background-color: #CCCCCC;}
+.lightgray {background-color: #E3E5E5;}
+.darkgrey {background-color: #999999;  color: #FFFFFF;}
+.middlegrey {background-color: #CCCCCC;}
+.lightgrey {background-color: #E3E5E5;}
+.white {background-color: #FFFFFF;}
+a.homepage:hover	{color:#cc3300;text-decoration:none;}
+a.homepage			{color:#006699;text-decoration:none;}
+a.nohover {color:#006699;text-decoration:underline;}
+a.nohover:hover {color:#006699;text-decoration:underline;}
+a {color:#006699;}
+a.portfolioCommand {color:#006699; font-weight: bold;}
+a.portfolioTab {color:#636163; font-weight: bold; text-decoration:none;}
+a.clsToolTip {color: #000000; font-weight: bold; text-decoration: none;}
+tr.portfolioHeading {FONT-SIZE: 12px; font-weight: bold; text-align: left; color:#006699; background-color: #CCCCCC;}
+tr.indicesHeading {FONT-SIZE: 8pt; font-weight: bold; text-align: left; color:#006699;}
+span.blueHeading {color: #006699; font-weight: bold;}
+span.pageHeading {color: #006699; font-weight: bold; font-size: 14pt;}
+</style>
+
+</head>
+<body leftmargin="2" topmargin="2" marginwidth="2" marginheight="2">
+
+<map name="m_banner">
+<area shape="rect" coords="518,111,628,127" href="/credit/rfi/requestforinfo.html" alt="request for info" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="524,73,624,94" alt="Help" href="/credit/sitehelp/" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="641,74,739,92" href="/credit/siteMap/" alt="Site map" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="652,109,722,127" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="123,123,465,160" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
+<area shape="rect" coords="12,60,111,150" href="/corp/" alt="Enron.com" target="_blank">
+</map>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr class="banner">	
+	<td colspan="3"><img name="banner" src="/src/img/credit/topbar.png" width="760" border="0" usemap="#m_banner"></td>
+</tr>
+<tr>
+	<td width="118" valign="top" align="center" class="menuPanel">
+		
+
+<script language="javascript">
+function MenuSelect(intTopMenu, intSecMenu) {
+	var strCookie;
+	strCookie = "ECMenu=TopMenu=" + intTopMenu + "&SecMenu=" + intSecMenu + ";path=/;";
+	document.cookie = strCookie;	
+}</script>
+
+<table class="menu" border="0" cellspacing="0" cellpadding="0">
+
+	<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParentSelected"><div class="menuParent"><a href="/credit/portfolio/" class="menuLinkSelected" onclick="MenuSelect(0, -1)">Portfolios &amp; Credit Information</a></div></td></tr>
+		
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,0)">Portfolio</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,1)">Indices</a></div></td></tr>
+    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,2)">Graphs</a></div></td></tr>
+		
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(1, -1)">Company Search</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/aboutUs/" class="menuLink" onclick="MenuSelect(2, -1)">About Us</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/tmspartners/" class="menuLink" onclick="MenuSelect(3, -1)">Partners</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/productsAndServices/" class="menuLink" onclick="MenuSelect(4, -1)">Products and Services</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+<tr><td class="menuParent"><div class="menuParent"><a href="/credit/learnMore/" class="menuLink" onclick="MenuSelect(5, -1)">Learn More...</a></div></td></tr>
+<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
+
+</table>
+		<!--<table border='0' cellspacing='0' cellpadding='0'>
+			<tr><td align="center" valign="bottom">
+				<img src="/Menu/Images/shim.gif" width="50" height="100" border="0"><BR>				
+			</td></tr>			
+		</table>-->
+	</td>
+	<td width="24" rowspan="2"><img name="space_shim" src="/src/img/credit/shim.gif" width="24" height="10" border="0"></td>
+	<td width="618" rowspan="2" valign="top">
+
+<img src="/src/img/credit/shim.gif" width="618" height="14" border="0">
+<table border="0" cellpadding="0" cellspacing="0" width="618">
+<tr valign="top">
+	<!--<td width="100"><img src="/web/20010429013230im_/http://www.enroncredit.com/technical_Papers/images/logo_techpapers.gif" alt="Technical Papers" border="0" width="87" height="80"></td>-->
+	<td width="518">
+		<h3 align="center">Introduction to Credit Risk</h3>
+		<h4 align="center">Enron Credit</h4>
+	</td>
+</tr>
+</table>
+
+<table cellpadding="5" border="0">
+<tr><td>
+<br>
+<p><b>Business risks</b></p>
+A typical firm is exposed to several different types of risks such as market risk, credit risk and operational risk.
+<ul>
+<li>Market risk is the risk of losing money due to changes in interest rates, share prices, foreign exchange rates and/or commodity prices. </li>
+<li>Credit risk is the risk of losing money as a result of a debtor going bankrupt.</li>
+<li>Operational risk is broadly defined as the risk of a breakdown in management controls, information technology, production etc.</li>
+</ul>
+Most business risks are interrelated. For example, when a firm advances trade credit it is exposed to both credit risk and operational risk.
+
+<p><b>What is credit risk?</b></p>
+<p>Credit risk is the risk that a debtor will be unable to meet its obligations towards its creditors. Credit risk can arise from numerous sources such as:</p>
+<ul>
+	<li>cash payments, goods or services owed by the debtor, </li>
+	<li>long term supply contracts,</li>
+	<li>loans, bonds or credit notes,</li>
+	<li>derivatives and other off-balance sheet contracts.</li>
+</ul>
+Credit risk is a function of the amounts owed by the debtor, the probability of the debtor going bankrupt and the expected recovery rate in the event of bankruptcy. 
+
+<p><b>Different types of credit risk</b></p>
+<p>Different classes of creditors are exposed to varying degrees of credit risk. The various stages of the financial distress of a firm can be charted as:</p>
+<ul>
+	<li>Credit migration: Even if the issuer does not actually default on any debt, the price of bonds in the market will fall if the credit rating of their issuer is downgraded, e.g. from A to BBB. </li>
+	<li>Default: This occurs when a firm breaches the covenants on a loan or a bond. Default is a precise technical stage of financial distress. It does not mean that the firm is not able to meet its trading or financial obligations.</li>
+	<li>Bankruptcy: At this stage the firm proclaims that they are unable to meet all of their financial obligations and the creditors risk losing some (or even all) of the amounts owed to them.</li>
+	<li>Liquidation: This is the final stage of financial distress, when receivers are called in to dispose of the assets of the firm and repay the debtors in order of their seniority.</li>
+</ul>
+<!--<p align="CENTER"><img align="center" alt border="0" src="/web/20010429013230im_/http://www.enroncredit.com/technical_Papers/images/crersk01.gif" width="169" height="341"></p>-->
+
+Credit migration risk is the most important stage for the bondholders. Due to the relative liquidity of bonds, bondholders are always in a position to sell them before the issuer&#146;s financial state deteriorates too far. However, they will incur any fall in price that results from the deterioration of the credit quality of the issuer.
+Loans, bonds and derivative contracts issued by a firm usually have certain covenants. Any breach of these covenants is a case of default. Therefore, banks and financial institutions, as well as bondholders are very sensitive to the risk of default.
+Since these events do not disrupt the normal operations of the firm, a firm's customers, suppliers and other trade counter-parties are often not very sensitive to them. Instead, these parties are sensitive to the event of bankruptcy, which often leads to severe losses.
+
+<p><b>Measuring credit risk</b></p>
+
+<p>Credit risk is composed of three elements: credit exposure, the probability of bankruptcy and the recovery rate.</p>
+<p align="CENTER">Credit risk = Credit exposure * Probability of bankruptcy * (1-Recovery rate)</p>
+<p>The credit exposure refers to the total amount that is at risk due to bankruptcy by a debtor. One type of exposure arises from the possibility that a client does not pay for goods or services that have been delivered to them. This is called the risk of non-payment, or settlement risk.</p>
+<p>A second type of exposure arises from contracts in which the goods or services are due to be delivered in the future. These contracts can be valuable if the contracted price of goods in the contract is favorable compared to the market price. This exposes us to the risk of a default by the counter-party (in which case the contract needs to be replaced at the new market rates). This is called the mark-to-market risk. </p>
+
+<p><b>Measuring non-payment exposure</b></p>
+<p>The credit exposure due to loans, credit notes and amounts owed by customers is essentially a non-payment exposure. This exposure is equal to the principal amount of the debt plus any accrued interest.</p>
+
+<b>Example</b><br>
+Consider a firm that supplies certain goods at a price of $1,000,000 with a downpayment of 25% and three equal payments of $250,000 staged over a period of three quarters. The credit exposure for this transaction is the present value of the future payments. The present value is the product of the payment and its discount factor. Assuming that the discount rates for the first, second and third quarter are 1.5%, 3.0% and 4.5% respectively, the total exposure is
+given by:
+<p align="CENTER">Exposure = 250,000*(1 - 0.015) + 250,000*(1 - 0.03) + 250,000*(1 - 0.045) = $727,500</p>
+
+<p><b>Measuring mark-to-market exposure</b></p>
+<p>In the case of contracts that involve the delivery of goods and services the calculation of credit exposure is based on the contracted delivery price, the prevailing market price and the quantity to be delivered. This value of exposure is called the mark-to-market exposure. In the case of contracts to sell goods at a set price, the mark-to-market exposure is given by the following expression:</p>
+<p align="CENTER">MTM exposure = (Contracted selling price - Market price) * Quantity delivered</p>
+<b>Example</b><br>
+Consider a firm that has the contract to supply 100,000 tonnes of aluminium at the price of $1,650/tonne. The price of aluminium in the market is $1,600/tonne.
+
+The mark-to-market credit exposure of this firm will be:
+<p align="CENTER">MTM exposure = (1,650 - 1,600) * 100,000 = $5,000,000</p>
+
+When the delivery is not immediate but on some date in the future, it is necessary to base the mark-to-market calculation on the expected price (forward price) at the time of delivery rather than the spot price. It is also necessary to discount the value of the exposure back to today using the rates in the money markets.
+
+<p align="CENTER">MTM exposure = (Contracted selling price - Forward price) * Quantity delivered * Discount factor</p>
+
+<b>Example</b><br>
+In the previous example, consider that the delivery of aluminium was in six months time and 
+the six-month forward price of aluminium is $1,550/tonne and the six-month discount rate is 3%, then the mark-to-market credit exposure of this firm will be:
+<p align="CENTER">MTM exposure = (1,650 - 1,550) * 100,000 * (1 - 0.03) = $9,700,000</p>
+<!--<p align="CENTER"><img align="center" alt border="0" src="/web/20010429013230im_/http://www.enroncredit.com/technical_Papers/images/crersk02.gif" width="323" height="213"></p>-->
+<p>In the case of long-term contracts the current mark-to-market exposure does not capture the full extent of the credit exposure faced by the firm (even if we account for the forward price and the discount rate).</p>
+<p>The value of such a contract is liable to change due to the volatility of the underlying markets. So it is possible that when a counter-party defaults at some time in the future the contract may be more valuable than its current value. Hence the future credit exposure is higher than the current mark-to-market exposure.</p>
+<p>The measurement of this potential exposure requires the use of relatively complex option pricing models. The key variables in this measurement are:</p>
+<ul>
+	<li>Price of goods agreed in the contract</li>
+	<li>Expected price of the goods over the period of the contract</li>
+	<li>Expected volatility of the price over the period of the contract</li>
+	<li>Contract period</li>
+	<li>Interest rates prevailing in the market</li>
+</ul>
+<b>Example</b><br>
+In the above example, although the current mark-to-market exposure is only &#036;9,700,000, the future exposure is higher due to the possibility of aluminium prices falling even lower than $1,550/tonne.
+<!--<p align="CENTER"><img align="center" alt border="0" src="/web/20010429013230im_/http://www.enroncredit.com/technical_Papers/images/crersk03.gif" width="324" height="219"></p>-->
+
+<p><b>Probability of default</b></p>
+<p>The probability of default is more difficult to measure than credit exposure. Usually, this probability is estimated using one or more of the following:</p>
+<ul>
+	<li>Management accounts of the debtor</li>
+	<li>Credit rating of the debtor</li>
+	<li>Yields of any floating rate notes or bonds issued by the debtor</li>
+</ul>
+The yields of notes or bonds are an important source of credit information about the issuer. These yields are the sum of the riskfree rate available in the market (yield on treasury bonds) and the spread that the market charges for taking the credit risk of the issuer.
+<p align="CENTER">Bond yield = Risk free rate + Spread due to credit risk</p>
+<p>Thus the spread at which floating rate notes or bonds issued by the debtor are trading over the relevant market benchmarks can be used to extract the risk of default.</p>
+<p>The advent of derivatives has made the estimation of default probability even more complex. Derivatives allow companies to partially accumulate losses without actually recognising them on their balance sheet. Often the creditors only become aware of these losses when the situation has deteriorated considerably, e.g. Orange County, Gibson greetings, Barings etc.</p>
+
+<p><b>Recovery rate</b></p>
+<p>Bonds, loans, trade notes and other forms of credit are subject to the risk of default, which can range from broken covenants to bankruptcy. A critical aspect of this default is the actual loss suffered by the lenders. In most events of default, lenders can recover at least some of the debt owed to them. This is called the recovery rate.</p>
+<p align="CENTER">Recovery rate = Value recovered / Value of debt</p>
+
+The recovery rate depends on several factors, including:
+<ul>
+	<li>Industry type &#150; the recovery rates are generally higher in the industries that generate tangible/tradable assets</li>
+	<li>Economic conditions &#150; the recovery rates rise and fall depending on the market for corporate assets</li>
+	<li>Seniority of the debt &#150; senior loans enjoy a higher recovery</li>
+	<li>Value of collateral &#150; in case of collateralised debt, the market value of the collateral determines the recovery rate</li>
+</ul>
+
+Estimates of recovery rates are available from several sources such as Moody's. Industry data shows that the recovery rates vary between 70% for secured bank loans to 30% for unsecured subordinate debt. Thus trade creditors who rank with other unsecured lenders can expect 30-50% recovery rates. These figures are also liable to change with economic conditions and the industry type.
+<p>For the purpose of credit derivatives, it is necessary to use forward-looking recovery rates over the period of the contract. These are different from the historic recovery rates based on the past data. These can be obtained from rating agencies such as Moody&#146;s and certain market-makers. </p>
+<p>Note: the recovery rates available in the market are based on a certain debt seniority. It is essential to adjust them for the seniority of the specific debt. For example, say the recovery rates in the airline industry are estimated at 55%. A bank that has made a fully collateralised loan to an airline would then estimate its recovery to be greater than 55%, whilst a supplier holding a credit note from the same airline would estimate its recovery to be less than 55%.</p>
+
+<p><b>Managing credit risk</b></p>
+<p>The traditional approach to credit risk measurement consists of:</p>
+<ul>
+	<li>Credit checks on the counter-party before the loan is advanced</li>
+	<li>Setting very strict limits on the maximum loans made to a counter-party</li>
+	<li>Very close monitoring of counter-parties</li>
+	<li>Passing risk to third parties through factoring and credit insurance</li>
+</ul>
+Modern credit management practice includes several additional functions:
+<ul>
+	<li>Dynamic management of the exposure though the use of credit derivatives</li>
+	<li>Analysis of credit exposure on a portfolio basis to identify concentrations to a given sector, geographical region, or a group of clients</li>
+	<li>Portfolio optimisation to reduce the overall credit exposure without compromising the ability to conduct normal business</li>
+</ul>
+
+<p><b>Why Is Credit Pricing Important?</b></p>
+<p><b>Credit Risk:</b>  Every risk a business takes involves a cost. Credit risk is no different. A company is likely to suffer a cash loss if one of its customers defaults on a contract. </p>
+<p>Extending credit therefore imposes a cost on the business. But how is this cost measured? The first issue to consider is how to measure the level of credit exposure. This is discussed above.  Having determined the level of credit exposure to a counterparty, the next step is to know how much this exposure is costing. </p>
+<p>When a bank charges interest on a loan, the rate it is charging will consist of two elements. The first element is a liquidity charge. This represents the cost that the bank incurs in raising the funds to on-lend. It will usually be the rate that the bank has to pay in the wholesale money markets to raise funds (e.g. LIBOR). </p>
+<p>The second element will be a &#145;risk premium&#146;, and is usually referred to as an Interest Margin. The Interest Margin represents an assessment of the risk that the borrower will not be able to repay the loan. This risk will be a function of two things. Firstly, the probability that the borrower will be unable to repay the loan. Secondly, the proportion of the loan that the bank would ultimately lose if the borrower failed to repay and they took steps to enforce the loan (e.g. instigate insolvency proceedings).</p>
+<p><b>The Cost of Credit:</b>  The Interest Margin can be thought of as the cost of extending credit. It will be higher for higher risk borrowers, because the probability of losing money will be greater.</p>
+<p>When a company is extending trade credit the same principle applies. They will need to assess the &#145;risk premium&#146; for each company that they extend trade credit to. This will tell them the cost to their business of extending credit to each of their trade counterparties. Moreover, it is important to do this for every counterparty, because the probability of incurring a loss will not be the same for any two companies.</p>
+<p>The cost of extending trade credit can be assessed in the same way as the Interest Margin on a bank loan. To calculate this, first assess the probability that the trade customer will fail to honour their obligations. This probability should then be multiplied by the expected percentage of the credit exposure that would be lost if  insolvency proceedings were instigated to enforce the claim.</p>
+<p>The second part of this calculation, i.e. the expected loss in the event of a customer&#146;s insolvency, can be estimated by using historical recovery rates for the industry they operate in. (Recovery Rates are discussed above).</p>
+<p>The first part of the calculation, i.e. the probability that a company will fail to honour its obligations, will depend upon many factors. These will include:</p>
+<ul>
+	<li>General economic issues</li>
+	<li>Country/regional issues</li>
+	<li>Industry specific trends and so on</li>
+</ul>
+<p>Because it will be affected by so many different factors the estimate of the probability of default will change constantly. Therefore, to ensure that the correct probability is being used it is important to constantly monitor the events that can affect it and make continual re-assessments of the impact these can have. </p>
+<p>This is essentially what the credit markets do for companies that have public bond issues. Information that could potentially affect a bond&#146;s pricing is constantly monitored and assessed. </p>
+
+<p><b>The Enron Cost of Credit (ECC) &#150; How this can be used to Manage Credit Risk </b></p>
+
+<p>The ECC is Enron&#146;s measure of the cost of credit. You can find the ECC for more than 2000 companies on this website. </p>
+<p>Enron calculates the ECC for each company by taking the probability of bankruptcy and multiplying this by the expected percentage of a claim that a senior ranking unsecured creditor would lose in the event of the company&#146;s bankruptcy. This can be expressed by the following formula:</p>
+<p align="CENTER">ECC = Probability of Bankruptcy * (1- recovery rate)</p>
+<p>We use the probability of bankruptcy as a measure of a company&#146;s ability to honour its trade obligations. [For a further discussion of the link between bankruptcy and payment on trade obligations see <a href="introCreditDerivatives.html">Introduction To Credit Derivatives</a>]. This incorporates all current information that could have an impact on the company&#146;s credit worthiness. The expected amount that a creditor would lose is calculated using historical recovery data, as discussed above.</p>
+<p>The ECC for each company therefore represents a cost of credit that incorporates the latest information. This will change frequently as new information becomes available. Consequently you can use this to determine and monitor the cost to your company of extending credit to any of the companies listed. </p>
+<p>The ECC is expressed as an interest rate. Clearly, it costs more to extend credit to a company with an ECC of 2% than to a company with an ECC of 1.5%.</p>
+<p>You will see on this website that we list the ECC for five time periods. You can select the ECC for the time period that best matches your credit exposure. For example, suppose you have a one year contract with company X and you have estimated that under this contract you have credit exposure of US$2 million. You see that the one year ECC for this company is 1.5%. Therefore extending credit to this company for one year is costing your company US$30,000  (i.e. US$2,000,000 * 1.5%).</p>
+</td></tr></table>
+<br><br>
+
+</td>
+</tr>
+<tr valign="bottom"><td class="menuPanel"><img src="/src/img/credit/left_wheel.jpg" border="0" width="118" height="184"></td></tr>
+</table><center>
+<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
+<tr>
+	<td colspan="3" class="white" width="760"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr>
+	<td class="pageFooter" valign="bottom" align="left" width="9"><img src="/src/img/credit/left.gif"></td>
+	<td width="742" class="pageFooter">
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+		<td class="pageFooter">You are not currently logged in. <a class="pageFooter" href="/project/not/index.html">Click here to Log in or Register</a></td>
+	</tr></td></table>
+	</td>
+	<td class="pageFooter" valign="bottom" align="right" width="9"><img src="/src/img/credit/right.gif"></td>
+</tr>
+</table>
+</body>
+</html>

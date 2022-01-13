@@ -1,0 +1,360 @@
+
+<html>
+<title>Enron: 2000 Annual Report - One Coal Contract Covers All Logistics</title>
+<head>
+ <link rel="stylesheet" href="/src/css/ar2000.css" type="text/css">	
+	
+<script language="JavaScript">
+<!--
+
+function WM_checkIn(WM_id) { 
+
+/*
+WM_checkIn()
+Takes the ID of a positioned HTML element and returns an object reference.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Taylor
+Author Email: taylor@wired.com
+Author URL: http://www.taylor.org/
+
+Usage: WM_checkIn('id')
+*/
+
+  // First we initialize all the variables.
+  var theObj,ss,sr,i,j,WM_layers=new Array();
+  // This chunk handles the IE portion of the checkIn code.
+  if (document.all) {
+    // This checks to see if the inline style declaration has 
+    // a position property associated with it. If not, it will 
+    // scan the global stylesheets for the ID.
+    if((document.all[WM_id].style.position != 'absolute') && (document.all[WM_id].style.position != 'relative')){
+      // This little loop I'm very proud of, because it's kinda 
+      // slick and I wrote it all myself. It loops through all 
+      // global stylesheets and all the rules in each stylesheet, 
+      // tests for the selected ID, then returns that as the object.
+      for (ss=0 ; ss < document.styleSheets.length; ss++) {
+        for (sr=0 ; sr < document.styleSheets(ss).rules.length; sr++) { 
+          if (document.styleSheets(ss).rules(sr).selectorText == '#' + WM_id) {
+            theObj = document.styleSheets(ss).rules(sr).style;
+            break;
+          }
+        }
+      }
+    } else {
+      // This works the same as in the light version, so you can 
+      // use inline styles.
+      theObj = document.all[WM_id].style;
+    }
+  } else if(document.layers) {
+    // Now we're in Netscapeland. The main problem here 
+    // is finding the object in a maze of hierarchy.
+    // I wish I could say that I'm proud of this code, 
+    // because it's really slick. Unfortunately, I ripped 
+    // it off from Macromedia Dreamweaver's drag layer code 
+    // (with permission, of course :-) 
+    // Dreamweaver/Configuration/Behaviors/Actions/Drag Layer.htm 
+    // It works wonderfully and solves the problem.
+    WM_layers = new Array();
+    with (document) {
+      for (i=0; i<layers.length; i++) WM_layers[i]=layers[i]; {
+        for (i=0; i<WM_layers.length; i++) {
+          if (WM_layers[i].document && WM_layers[i].document.layers) {
+            for (j=0; j<WM_layers[i].document.layers.length; j++) {
+              WM_layers[WM_layers.length] = WM_layers[i].document.layers[j];
+            }
+            if(WM_layers[i].name == WM_id){
+              // So if the code matches the name of the layer, 
+              // return the reference. 
+              theObj = WM_layers[i];
+            }
+          }
+        }
+      }
+    }
+  }
+  return theObj;
+}
+
+
+function WM_moveTo(daObject, endLeft, endTop, numSteps, delay, endFunction) {
+
+/*
+
+WM_moveTo()
+
+Moves an object from its current location to a new location and optionally fires a function when it's done.
+
+Source: Webmonkey Code Library
+(http://www.hotwired.com/webmonkey/javascript/code_library/)
+
+Author: Nadav Savio
+Author Email: nadav@wired.com
+
+Usage: WM_moveTo('objectName', endingLeft, endingTop, numberOfSteps, delayBetweenSteps, 'functionToFire()'); 
+
+*/
+
+  // Declare variables.
+  var leftInc, topInc, daObj = new Object;
+  // The first time through, create document.WM.WM_moveTo
+  if (typeof document.WM == 'undefined'){
+    document.WM = new Object;
+    document.WM.WM_moveTo = new Object;
+  } else if (typeof document.WM.WM_moveTo == 'undefined') {
+    document.WM.WM_moveTo = new Object;
+  }
+  // Store endFunction to execute when the move is finished.
+  if(endFunction) document.WM.WM_moveTo.endFunction = endFunction;
+  // Get a good object reference (call it daObj) from WM_checkIn().
+  // But if we've already done so, don't check it in again.
+    if (daObject == "sameObj") {
+      daObj = document.WM.WM_moveTo.daObj;
+    } else {
+      daObj = WM_checkIn(daObject);
+      document.WM.WM_moveTo.daObj = daObj;
+    }
+  // If this is the last step, go to the end point and run endFunction.
+  if (numSteps == 1) {
+    daObj.left = endLeft;
+    daObj.top = endTop;
+    // If an endFunction was set, execute it and then delete it.
+    if(document.WM.WM_moveTo.endFunction) {
+      daFunction = document.WM.WM_moveTo.endFunction;
+      document.WM.WM_moveTo.endFunction = '';
+      eval(daFunction);
+    }
+  } else {
+    // Otherwise, figure out how far to move.
+    leftInc = (endLeft - parseInt(daObj.left)) / numSteps;
+    topInc = (endTop - parseInt(daObj.top)) / numSteps;
+    // Then move, decrement numSteps, and do it all again.
+    daObj.left = parseInt(daObj.left) + leftInc;
+    daObj.top = parseInt(daObj.top) + topInc;
+    numSteps--;
+    setTimeout ('WM_moveTo(\'sameObj\', ' + endLeft + ', ' + endTop + ', ' + numSteps + ', ' + delay + ')', delay);
+  }
+}
+// -->
+</script>
+<style type="text/css">
+	<!--
+		body {
+
+			background-attachment: fixed;
+		}
+
+		td {font-family: verdana,geneva,helvetica,arial}
+		/* External Style Sheet */
+	-->
+	</style>
+</head>
+<body bgcolor="#ffffff">
+
+<div id="frame2" style="position: absolute; left:21; top:0; width:10; height:260; margin:0;">
+<img src="/src/EN01_coalslide_b_02.gif" width="10" height="260" border="0" alt="">
+</div>
+
+<div id="frame4" style="position: absolute; left:32; top:0; width:346; height:260; margin:0;">
+<img src="/src/EN01_coalslide_b_04.gif" width="346" height="260" border="0" alt="">
+</div>
+
+<div id="timeline" style="position: absolute; left:0; top:0; width:1200; height:260; margin:0;">
+<table border="0" cellpadding="0" cellspacing="0" width="1200">
+
+<tr>
+
+<!--Page 1-->
+
+<td width="400" valign="top">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr>
+		<td align="left" width="400" colspan="5" height="35"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+
+		<tr align="left">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="20" alt="" border="0"></td>
+			<td align="left" colspan="3" width="340"><img src="/src/img/ui/clear.gif" width="282" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_forward_onecoal.gif" border="0"></a></td>
+			<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+			
+		<tr align="left">
+			<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+			<td align="left" width="170"><!--<img src="images/EN01_enrononline_header.gif" width="97" height="12" border="0" alt="">--></td>
+			<td align="left" width="5"><img src="/src/img/ui/clear.gif" width="5" height="1" alt="" border="0"></td>
+			<td align="left" width="170"><img src="/src/img/ui/clear.gif" width="142" height="26" alt="" border="0"></td>
+			<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="15" alt="" border="0"></td>
+		</tr>
+	
+		<tr>
+			<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+			<td align="left" width="340" class="smBodyText" colspan="3"><img src="/src/headers/EN01_coalcontract_head.gif" alt="One Coal Contract Covers All Logistics" width="185" height="26">
+			<br>The process of sourcing and delivering coal to an electricity generator is a
+			complicated process. Enron provides a single, comprehensive solution to manage all
+			logistics and risk, whether the coal is	sourced domestically or abroad. In some
+			cases, we have reduced the customer’s cost of coal by as much as 10 percent.
+		</td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+	
+		<tr>
+		<td align="left" width="400" colspan="5"><img src="/src/img/ui/clear.gif" width="25" height="30" alt="" border="0"></td>
+		</tr>
+
+	
+	</table>
+	
+</td>
+
+
+<!--PAGE 2-->
+
+<td width="400" valign="top">
+
+		<table cellpadding="0" cellspacing="0" border="0" width="400">
+		<tr>
+		<td align="left" width="400" colspan="3" height="35"><img src="/src/img/ui/clear.gif" width="25" height="20" alt="" border="0"></td>
+		</tr>
+		
+		<tr align="left">
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="20" alt="" border="0"></td>
+		<td align="left" width="335"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-00,0,20,1)"><img src="/src/arrow_backward_onecoal.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="240" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_forward_onecoal.gif" border="0"></a></td>
+		<td align="left" width="30"><img src="/src/img/ui/clear.gif" width="30" height="25" alt="" border="0"></td>
+		</tr>
+		
+		<tr align="left">
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="335"><img src="/src/headers/EN01_coalcontract.gif" width="162" height="26" alt="COAL CONTRACTS AND SUPPLY RISKS" border="0"></td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="15" alt="" border="0"></td>
+		</tr>
+		
+		<tr>
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="340" class="smBodyText" valign="top">
+		
+
+			Enron allows generators to purchase coal at flexible 
+			terms, such as long-term fixed rates or a maximum 
+			price. Supply and price are assured because Enron has
+			access to multiple sources all over the globe. Enron is
+			on its way to becoming the world’s largest wholesale
+			coal merchant.
+			
+		</td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+		<tr>
+		<td align="left" width="400" colspan="3"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+
+		</table>
+	
+</td><!--PAGE 3-->
+
+	<td width="400" valign="top">
+	
+	
+		<table cellpadding="0" cellspacing="0" border="0" width="400">
+		<tr>
+		<td align="left" width="400" colspan="3" height="35"><img src="/src/img/ui/clear.gif" width="400" height="20" alt="" border="0"></td>
+		</tr>
+		<tr align="left">
+		
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="20" alt="" border="0"></td>
+		<td align="left" width="340"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-400,0,20,1)"><img src="/src/arrow_backward_onecoal.gif" border="0"></a><img src="/src/img/ui/clear.gif" width="240" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-1200,0,20,1)"><img src="/src/arrow_forward_onecoal.gif" border="0"></a></td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="25" alt="" border="0"></td>
+		</tr>
+		
+		<tr align="left">
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="340"><img src="/src/headers/EN01_coalcontract2.gif" width="132" height="26" alt="TRANSPORTATION RISKS" border="0"></td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="15" alt="" border="0"></td>
+		</tr>
+		
+		<tr>
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="340" class="smBodyText" valign="top">Imported coal travels by sea and land, 
+and the consumer usually makes each arrangement 
+separately and bears the risk if prices or capacity change.
+Enron delivers a complete logistical solution for its customers, 
+managing both the process and risk as part of just a single contract 
+for the coal. Enron also provides complete domestic logistics.</td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+		<tr>
+		<td align="left" width="400" colspan="3"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+		</table>
+
+</td><!--PAGE 4-->
+
+<td width="400" valign="top">
+
+		<table cellpadding="0" cellspacing="0" border="0" width="400">
+		<tr>
+		<td align="left" width="400" colspan="3" height="35"><img src="/src/img/ui/clear.gif" width="400" height="20" alt="" border="0"></td>
+		</tr>
+		<tr align="left">
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="20" alt="" border="0"></td>
+		<td align="left" width="340"><img src="/src/img/ui/clear.gif" width="40" height="1" alt="" border="0"><a href="javascript:WM_moveTo('timeline',-800,0,20,1)"><img src="/src/arrow_backward_onecoal.gif" border="0"></a></td>
+		
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="25" alt="" border="0"></td>
+		</tr>
+		<tr>
+		<td align="left" width="400" colspan="3"><img src="/src/img/ui/clear.gif" width="400" height="1" alt="" border="0"></td>
+		</tr>
+		<tr align="left">
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="340"><img src="/src/headers/EN01_coalcontract3.gif" width="100" height="26" alt="CURRENCY RISKS" border="0"><img src="/src/img/ui/clear.gif" width="240" height="15" alt="" border="0"></td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="15" alt="" border="0"></td>
+		</tr>
+		<tr>
+		<td align="left" width="35"><img src="/src/img/ui/clear.gif" width="35" height="25" alt="" border="0"></td>
+		<td align="left" width="340" class="smBodyText" valign="top">Like oil, imported coal is denominated in U.S. dollars. A 
+		British generator, however, collects electricity payments in pounds sterling. When appropriate, Enron includes
+		currency hedges in its contracts to protect customers if the value of the pound drops against the dollar.
+		</td>
+		<td align="left" width="25"><img src="/src/img/ui/clear.gif" width="25" height="1" alt="" border="0"></td>
+		</tr>
+		<tr>
+		<td align="left" width="400" colspan="3"><img src="/src/img/ui/clear.gif" width="400" height="1" alt="" border="0"></td>
+		</tr>
+		</table>
+	
+</td>
+</tr>
+</table>
+		</div>
+
+		
+<div id="frame1" style="position: absolute; left:0; top:0; width:21; height:260; margin:0;">
+<img src="/src/EN01_coalslide_b_01.gif" width="21" height="260" border="0" alt="">
+</div>
+
+<div id="frame3" style="position: absolute; left:31; top:0; width:1; height:260; margin:0;">
+<img src="/src/EN01_coalslide_b_03.gif" width="1" height="260" border="0" alt="">
+</div>
+
+<div id="frame5" style="position: absolute; left:378; top:0; width:22; height:260; margin:0;">
+<img src="/src/EN01_coalslide_b_05.gif" width="22" height="260" border="0" alt="">
+</div>
+		
+		
+		
+		
+<map name="topbar_map">
+<area shape="rect" alt="" coords="11,55,244,71" href="index.html">
+<area shape="rect" alt="" coords="484,56,535,66" href="/corp/contacts/">
+<area shape="rect" alt="" coords="354,55,410,66" href="/corp/investors/">
+<area shape="rect" alt="" coords="354,67,428,78" href="/corp/workatenron/">
+<area shape="rect" alt="" coords="484,67,582,77" href="/corp/">
+<area shape="rect" alt="" coords="484,44,551,55" href="/corp/pressroom/">
+<area shape="rect" alt="" coords="354,44,460,55" href="/corp/products/">
+<area shape="poly" alt="" coords="637,39, 666,10, 694,38, 694,55, 679,55, 666,68" href="/corp/">
+</map>
+</body>
+</html>
