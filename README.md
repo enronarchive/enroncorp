@@ -15,7 +15,6 @@ A live mirror is avaliable at http://enroncorp.com
    - Products + Services
    - Contact Us
    - Press Room
-     - Press Releases from '00 and '01 are still being done. 
     - Investor Relations
        - Some parts are not avaliable due to Wayback Machine limitations.
     - Work at Enron
