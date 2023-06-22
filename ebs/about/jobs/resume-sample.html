@@ -1,0 +1,231 @@
+<html>
+<head>
+
+<title>Resumix ResumeBuilder Sample</title>
+</head>
+<body bgcolor="#ffffff">
+ 
+
+<!--  Resumix Copyright & Disclaimer. -->
+<!--   This template is copyrighted and the property of Resumix, Inc. -->
+<!--   This template may be used and modified as appropriate to interface -->
+<!--   WorldWide Websites to the Resumix Human Skills Management System. -->
+<!--   Resumix provides this and related templates only for use by licensed  -->
+<!--   Resumix customers to build upon.  Use of this form requires display of the -->
+<!--   Resumix copyright notice on the web page, and a hyperlink to the Resumix -->
+<!--   website "http://www.resumix.com/".   This template is provided without  -->
+<!--   implied warranty or support.  -->
+
+<h1><img align="left" src="/src/img/ebs/logo_resumix.gif">ResumeBuilder<img src="/src/img/ebs/tm.GIF"> Sample Form</center></h1>
+<hr>
+
+<!--
+<CENTER><H3><A HREF="res-instructions.html">Form Instructions</A></H3></CENTER>
+-->
+
+<h2>Personal Information</h2>
+<!-- Action for Mac based demo -->
+<!-- <FORM METHOD="POST" ACTION="resume.pl"> -->
+<!-- Action for online system -->
+<form method="POST" action="success.html">
+<strong>Name</strong> (as you'd like it to appear on the resume):
+<input type="text" name="name" size="30" value="Clark Kent">
+<p>
+<strong>Address 1:</strong>
+<select name="addresstype1">
+<option selected> Home
+<option> Work
+<option> School
+<option> Temporary
+<option> Permanent
+<option> Mailing
+</select>
+<p>
+<input type="text" name="address11" size="39" value="1001 Main Street"> <br>
+<input type="text" name="address12" size="39" value="Apt 321"> <br>
+<input type="text" name="address13" size="39"> <br>
+City: <input type="text" name="city1" size="19" value="Metropolis">
+State: <input type="text" name="state1" size="2" value="MN">
+Zip: <input type="text" name="zip1" size="10" value="43211-0000"> <br>
+<p>
+<strong>Address 2:</strong> 
+<select name="addresstype2">
+<option> Home
+<option selected> Work
+<option> School
+<option> Temporary
+<option> Permanent
+<option> Mailing
+</select>
+<p>
+<input type="text" name="address21" size="39" value="The Daily Planet"> <br>
+<input type="text" name="address22" size="39" value="Journalism Dept."> <br>
+<input type="text" name="address23" size="39" value="100 Planet Ave."> <br>
+City: <input type="text" name="city2" size="19" value="Metropolis">
+State: <input type="text" name="state2" size="2" value="MN">
+Zip: <input type="text" name="zip2" size="10" value="43200-0000"> <br>
+<p>
+<h3>Phone Numbers</h3>
+<select name="phonetype1">
+<option selected> Home
+<option> Work
+<option> Fax
+<option> Mobile
+<option> School
+<option> Pager
+<option> Message
+</select>
+<input type="text" name="phone1" size="15" value="612-555-3221"> (optional)
+<p>
+<select name="phonetype2">
+<option> Home
+<option selected> Work
+<option> Fax
+<option> Mobile
+<option> School
+<option> Pager
+<option> Message
+</select>
+<input type="text" name="phone2" size="15" value="612-555-3000"> (optional)
+<p>
+<select name="phonetype3">
+<option> Home
+<option> Work
+<option selected> Fax
+<option> Mobile
+<option> School
+<option> Pager
+<option> Message
+</select>
+<input type="text" name="phone3" size="15" value="612-555-1000"> (optional)
+<p>
+<strong>E-Mail Address:</strong>
+<input type="text" name="email" size="30" value="ckent@dplanet.com"> (optional)
+
+<hr>
+
+<h2>Objective</h2>
+Give a brief one or two sentence description of the type of employment
+or position you desire. (Please use carriage returns.)
+
+<textarea name="objective" rows="4" cols="72">A fast-paced job in journalism that expands and builds upon my skills
+as an experienced reporter.
+</textarea>
+<hr>
+
+<h2>Education</h2>
+Please fill in your educational background. List at least one
+school you attended.<p>
+School: <input type="text" name="school1" size="30" value="Metropolis University">
+Major: <input type="text" name="major1" size="15" value="Journalism">
+Degree: <input type="text" name="degree1" size="5" value="B.A.">
+<hr>
+School: <input type="text" name="school2" size="30" value="Smallville High School">
+Major: <input type="text" name="major2" size="15" value="English">
+Degree: <input type="text" name="degree2" size="5" value="H.S.">
+<hr>
+School: <input type="text" name="school3" size="30">
+Major: <input type="text" name="major3" size="15">
+Degree: <input type="text" name="degree3" size="5">
+<hr>
+School: <input type="text" name="school4" size="30">
+Major: <input type="text" name="major4" size="15">
+Degree: <input type="text" name="degree4" size="5">
+<p>
+
+<hr>
+
+<h2>Employment History</h2>
+Please fill in the name of the employer, your job title,
+the dates you work (MM/YY format), and a brief description
+of your job responsibilities. Fill in at least one.
+<p>
+Employer: <input type="text" name="employer1" size="60" value="The Daily Planet"><br>
+Job Title: <input type="text" name="title1" size="40" value="Reporter"><br>
+From: <input type="text" name="from1" size="7" value="Sept. 1990">
+To: <input type="text" name="to1" size="7" value="Present"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties1" rows="4" cols="72">Headline reporting for a major metropolitan newspaper. Responsibilities
+include in-the-field reporting, writing and editing front page stories,
+and working closely with other reports in covering the daily events of
+the world.
+
+</textarea>
+<hr>
+Employer: <input type="text" name="employer2" size="60" value="Smallville Gazette"><br>
+Job Title: <input type="text" name="title2" size="40" value="Editor"><br>
+From: <input type="text" name="from2" size="7" value="Oct. 1989">
+To: <input type="text" name="to2" size="7" value="Sept. 1990"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties2" rows="4" cols="72">Head Editor and Chief for the Smallville Gazette. Managed a team of
+four reporters, plus oversight of typesetting and delivery of a newspaper
+with a subscription of over 600 loyal readers. Also managed fundraising
+and finances.</textarea>
+<hr>
+Employer: <input type="text" name="employer3" size="60" value="Smallville Pizza Plaza"> <br>
+Job Title: <input type="text" name="title3" size="40" value="Delivery Person"><br>
+From: <input type="text" name="from3" size="7" value="June 1988">
+To: <input type="text" name="to3" size="7" value="Aug. 1989"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties3" rows="4" cols="72">Delivery of hot, fresh, pizza to customers' doorstep.
+Never delivered a pizza late.
+</textarea>
+<hr>
+Employer: <input type="text" name="employer4" size="60" value="Smallville Red Cross"><br>
+Job Title: <input type="text" name="title4" size="40" valua="Volunteer"><br>
+From: <input type="text" name="from4" size="7" value="July 1982">
+To: <input type="text" name="to4" size="7" value="June 1988"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties4" rows="4" cols="72">First-aid and CPR instruction, swimming and water-safety instruction.
+Member of the Smallville National Disaster team.
+</textarea>
+<hr>
+Employer: <input type="text" name="employer5" size="60"><br>
+Job Title: <input type="text" name="title5" size="40"><br>
+From: <input type="text" name="from5" size="7">
+To: <input type="text" name="to5" size="7"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties5" rows="4" cols="72"></textarea>
+<hr>
+Employer: <input type="text" name="employer6" size="60"><br>
+Job Title: <input type="text" name="title6" size="40"><br>
+From: <input type="text" name="from6" size="7">
+To: <input type="text" name="to6" size="7"><br>
+Description of Duties: (please use carriage returns)<br>
+<textarea name="duties6" rows="4" cols="72"></textarea>
+
+<hr>
+
+<h2>Additional Information</h2>
+
+Use this area to write any additional information you may wish
+to include on your resume (e.g. - additional skills, strengths,
+abilities, etc.). (Please use carriage returns.)<p>
+<textarea name="personal" rows="6" cols="72">In addition to my experience and abilities as a reporter, and
+background with the Red Cross, I can also leap tall buildings in a 
+single bound, fly faster than a speeding bullet, stronger than
+a locomotive, have X-ray vision, and super-hearing.
+</textarea>
+
+<hr>
+
+<!--
+To format your resume, press this button:
+<INPUT TYPE="submit" VALUE="Format" NAME="res_action"> <P>
+To format and submit your resume, press this button:
+<INPUT TYPE="submit" VALUE="Submit" NAME="res_action"> <P>
+To clear this form, press this button:
+<INPUT TYPE="reset" VALUE="Clear Form">
+-->
+
+</form>
+
+<hr>
+
+<a href="http://web.archive.org/web/20010827083311/http://www.resumix.com/"><img src="/src/img/ebs/resumix.GIF"></a>
+
+<hr>
+
+</body>
+
+</html>

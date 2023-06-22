@@ -42,6 +42,14 @@ The purpose of the project - and the Enron Archive as a whole - is to present in
 - **Enron Energy Services**
     - Entire site minus customer login panel.
 
+- **Enron Transportation Services**
+    - Main site
+    - Florida Gas Transmission.
+	
+- **Enron Broadband Services**
+    - Main site as it looked like in the year 2000. 
+    - 
+
 - **EnronCredit**
     - Entire site minus parts that require login.
 
@@ -49,9 +57,7 @@ The purpose of the project - and the Enron Archive as a whole - is to present in
     - Canada
     - Spain
 
-- **Enron Transportation Services**
-    - Main site
-    - Florida Gas Transmission.
+
 
 ## Changelog, Roadmap & Bugs
 - The changelong for the project can be found at [/project/changelog](http://enroncorp.com/project/changelog).
