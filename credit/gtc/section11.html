@@ -1,266 +1,0 @@
-<html>
-<head>
-
-
-<style type="text/css">
-<!-- Menu CSS attributes -->
-table.menu {width: 118px; background-color: #FFFFFF; }
-td.menuParent {background-color: #99CCFF;}
-td.menuPanel {background-color: #99CCFF;}
-td.menuParentSelected {background-color: #006699; }
-div.menuParent {padding: 2px;}
-div.menuChild {width: 116px; padding: 2px; border: 1px solid #006699; margin : 1px 1x 1px 1px;}
-div.menuPanel {width: 118px; border: solid #FFFFFF; border-width: 0px 1px 1px 1px; }
-a.menuLink {font-family: Arial, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #006699; text-decoration: none;}
-a:hover.menuLink {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
-a.menuLinkSelected {font: 12px Arial, Tahoma, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none;}
-a.menuChildLinkSelected {font: bold 12px Arial, Tahoma, Helvetica, sans-serif; color: #006699; text-decoration: none;}
-td.pagefooter {BACKGROUND-COLOR: #009966; COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; TEXT-ALIGN: right;}
-a.pagefooter {COLOR: #FFFFFF; FONT: 12px Arial, Tahoma, Helvetica, sans-serif; font-weight: bold;}
-
-
-<!-- Default CSS attributes -->
-BODY {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
-TD {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
-TH {FONT-SIZE: 12px; font-weight: bold; text-align: left; FONT-FAMILY: Arial, Verdana, helvetica}
-SELECT {FONT-SIZE: 12px;}
-P {FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, helvetica}
-select.Search {width: 150px; font-size: 12px;}
-input.Search {width: 150px; font-size: 12px;}
-input.receivable {width: 150px; font-size: 12px; text-align: right;}
-H5 {FONT-SIZE: 8pt;FONT-FAMILY: Verdana, Arial, helvetica;FONT-WEIGHT=bold;}
-TD.PartnerHeading {color: #428db5; FONT-FAMILY: Arial, Verdana, helvetica; font-size: 17px; FONT-WEIGHT: bold;}
-b.blueH	{FONT-SIZE: 12pt; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
-.blue	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica;}
-.bluebold	{FONT-SIZE: 12px; color: #006699; FONT-FAMILY: Verdana, Arial, helvetica; font-weight: bold;}
-.darkblue {background-color: #006699; color: #FFFFFF; font-weight: bold;}
-.lightblue {background-color: #C1E9E9;}
-.darkgray {background-color: #999999;  color: #FFFFFF;}
-.middlegray {background-color: #CCCCCC;}
-.lightgray {background-color: #E3E5E5;}
-.darkgrey {background-color: #999999;  color: #FFFFFF;}
-.middlegrey {background-color: #CCCCCC;}
-.lightgrey {background-color: #E3E5E5;}
-.white {background-color: #FFFFFF;}
-a.homepage:hover	{color:#cc3300;text-decoration:none;}
-a.homepage			{color:#006699;text-decoration:none;}
-a.nohover {color:#006699;text-decoration:underline;}
-a.nohover:hover {color:#006699;text-decoration:underline;}
-a {color:#006699;}
-a.portfolioCommand {color:#006699; font-weight: bold;}
-a.portfolioTab {color:#636163; font-weight: bold; text-decoration:none;}
-a.clsToolTip {color: #000000; font-weight: bold; text-decoration: none;}
-tr.portfolioHeading {FONT-SIZE: 12px; font-weight: bold; text-align: left; color:#006699; background-color: #CCCCCC;}
-tr.indicesHeading {FONT-SIZE: 8pt; font-weight: bold; text-align: left; color:#006699;}
-span.blueHeading {color: #006699; font-weight: bold;}
-span.pageHeading {color: #006699; font-weight: bold; font-size: 14pt;}
-</style>
-
-</head>
-<body leftmargin="2" topmargin="2" marginwidth="2" marginheight="2">
-
-<map name="m_banner">
-<area shape="rect" coords="518,111,628,127" href="/credit/rfi/requestforinfo.html" alt="request for info" onclick="MenuSelect(-1, -1)">
-<area shape="rect" coords="524,73,624,94" alt="Help" href="/credit/sitehelp/" onclick="MenuSelect(-1, -1)">
-<area shape="rect" coords="641,74,739,92" href="/credit/siteMap/" alt="Site map" onclick="MenuSelect(-1, -1)">
-<area shape="rect" coords="652,109,722,127" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
-<area shape="rect" coords="123,123,465,160" href="/credit/" alt="Home Main" onclick="MenuSelect(-1, -1)">
-<area shape="rect" coords="12,60,111,150" href="/corp/" alt="Enron.com" target="_blank">
-</map>
-
-<center>
-<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
-<tr class="banner">	
-	<td colspan="3"><img name="banner" src="/src/img/credit/banner.gif" width="760" border="0" usemap="#m_banner"></td>
-</tr>
-<tr>
-	<td width="118" valign="top" align="center" class="menuPanel">
-		
-
-<script language="javascript">
-function MenuSelect(intTopMenu, intSecMenu) {
-	var strCookie;
-	strCookie = "ECMenu=TopMenu=" + intTopMenu + "&SecMenu=" + intSecMenu + ";path=/;";
-	document.cookie = strCookie;	
-}</script>
-
-<table class="menu" border="0" cellspacing="0" cellpadding="0">
-
-	<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParentSelected"><div class="menuParent"><a href="/credit/portfolio/" class="menuLinkSelected" onclick="MenuSelect(0, -1)">Portfolios &amp; Credit Information</a></div></td></tr>
-		
-    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,0)">Portfolio</a></div></td></tr>
-    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,1)">Indices</a></div></td></tr>
-    <tr><td><div class="menuChild"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(0,2)">Graphs</a></div></td></tr>
-		
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParent"><div class="menuParent"><a href="/project/not/index.html" class="menuLink" onclick="MenuSelect(1, -1)">Company Search</a></div></td></tr>
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParent"><div class="menuParent"><a href="/credit/aboutUs/" class="menuLink" onclick="MenuSelect(2, -1)">About Us</a></div></td></tr>
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParent"><div class="menuParent"><a href="/credit/tmspartners/" class="menuLink" onclick="MenuSelect(3, -1)">Partners</a></div></td></tr>
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParent"><div class="menuParent"><a href="/credit/productsAndServices/" class="menuLink" onclick="MenuSelect(4, -1)">Products and Services</a></div></td></tr>
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-<tr><td class="menuParent"><div class="menuParent"><a href="/credit/learnMore/" class="menuLink" onclick="MenuSelect(5, -1)">Learn More...</a></div></td></tr>
-<tr><td><img src="/src/img/credit/wshim.gif" width="118" height="1" border="0"></td></tr>
-
-</table>
-		<!--<table border='0' cellspacing='0' cellpadding='0'>
-			<tr><td align="center" valign="bottom">
-				<img src="/Menu/Images/shim.gif" width="50" height="100" border="0"><BR>				
-			</td></tr>			
-		</table>-->
-	</td>
-	<td width="24" rowspan="2"><img name="space_shim" src="/src/img/credit/shim.gif" width="24" height="10" border="0"></td>
-	<td width="618" rowspan="2" valign="top">
-
-<img src="/src/img/credit/shim.gif" width="618" height="14" border="0">
-
-<table border="0" cellpadding="0" cellspacing="0" width="618">
-	<tr valign="top">
-		<td width="100"><img src="/src/img/credit/logo_generalterms.gif" alt="GENERAL TERMS AND CONDITIONS" border="0" width="87" height="80"></td>
-		<td align="center"><h4 align="center">ENRON CREDIT DERIVATIVES<br><br>GENERAL TERMS AND CONDITIONS ("GTCs")</h4></td>
-	</tr>
-</table>
-
-<img src="/src/img/credit/shim.gif" width="618" height="14" border="0">
-
-<table border="0" cellpadding="0" cellspacing="0" width="618">
-<tr><td>
-<font size="3">
-<b><u><p align="CENTER">Schedule C</p>
-<p align="CENTER">Form of Enron Corp. Guarantee</p>
-</b><p align="JUSTIFY"></p>
-<p align="CENTER">Deed of Guarantee</p>
-</u><p align="CENTER"></p>
-<p align="JUSTIFY">This Deed of Guarantee (the &quot;Guarantee&quot;) dated as of  <u>&#9;&#9;</u>, 200_, is made and entered into by <b>Enron Corp</b>., an Oregon corporation (&quot;<b>Guarantor</b>&quot;) in favour of <b>________________</b>, a __________ organized under the laws of _____________ (&quot;<b>Counterparty</b>&quot;).</p>
-<b><p align="CENTER">W I T N E S S E T H:</p>
-<p align="CENTER"></p>
-</b><p align="JUSTIFY">WHEREAS, Counterparty and <b>[</font><font size="3" color="#ff00ff">INSERT NAME OF ENRON ENTITY</font><font size="3">]</b> (&quot;<b>Enron</b>&quot;), a subsidiary of Guarantor, are contemplating entering and/or have entered into one or more swap, option or other financially-settled derivative transactions (each a &quot;<b>Transaction</b>&quot;), which shall pursuant to their respective terms be subject to a deemed agreement in the form of the 1992 ISDA Master Agreement (Multicurrency-Cross Border)  (the "<b>Deemed Agreement</b>");</p>
-<p align="JUSTIFY"></p>
-<p align="JUSTIFY">WHEREAS, Counterparty and Enron have agreed to use all reasonable endeavors promptly to negotiate, execute and deliver an agreement in the form of the 1992 ISDA Master Agreement (Mulitcurrency - Cross Border), with such modifications as Counterparty and Enron will in good faith agree (the "<b>Agreement</b>");</p>
-<p align="JUSTIFY"></p>
-<p align="JUSTIFY">WHEREAS, upon the execution of the Agreement by Counterparty and Enron such Agreement shall amend and supersede the Deemed Agreement and all Confirmations shall, in accordance with their respective terms, supplement, form a part of, and be subject to the Agreement; and</p>
-<p align="JUSTIFY">NOW THEREFORE, in consideration of Counterparty entering into the Transactions, Guarantor hereby covenants and agrees as follows:</p>
-<p align="JUSTIFY">1.  <u>GUARANTEE</u>.  Subject to the provisions hereof, Guarantor hereby irrevocably and unconditionally guarantees the timely payment when due of the obligations of Enron (the &quot;<b>Obligations</b>&quot;) to Counterparty under the Deemed Agreement or Agreement, as applicable, (the &quot;<b>Contract</b>&quot;).  This Guarantee shall constitute a continuing Guarantee of payment and not of collection <b><i>subject to the following:</p><dir>
-<dir>
-
-</b></i><p align="JUSTIFY"> (a)  Guarantors liability hereunder shall be and is specifically limited to payments expressly required to be made under the Contract (even if such payments are deemed to be damages) and, except to the extent specifically provided in the Contract, in no event shall Guarantor be subject hereunder to consequential, exemplary, equitable, loss of profits, punitive, tort, or any other damages, costs, or attorneys fees.</p>
-<p align="JUSTIFY">(b)  The aggregate amount covered by this Guarantee shall not exceed U.S.$ </font><font size="3" color="#ff00ff">[TBA].</p></dir>
-</dir>
-
-</font><font size="3"><p align="JUSTIFY">2.  <u>DEMANDS AND NOTICE</u>.  Upon the occurrence and during the continuance of an Event of Default,</font><font size="3" color="#ff0000"> </font><font size="3">if Enron fails or refuses to pay any Obligations and Counterparty has elected to exercise its rights under this Guarantee, Counterparty shall make a demand upon Guarantor (hereinafter referred to as a &quot;<b>Payment Demand</b>&quot;).  A Payment Demand shall be in writing and shall reasonably and briefly specify in what manner and what amount Enron has failed to pay and an explanation of why such payment is due, with a specific statement that Counterparty is calling upon Guarantor to pay under this Guarantee. A Payment Demand satisfying the foregoing requirements shall be required with respect to Obligations before Guarantor is required to pay such Obligations hereunder and shall be deemed sufficient notice to Guarantor that it must pay the Obligations within five (5) Local Business Days after its receipt of the Payment Demand. A single written Payment Demand shall be effective as to any specific default during the continuance of such default, until Enron or Guarantor has cured such default, and additional written demands concerning such default shall not be required until such default is cured. </p>
-<p align="JUSTIFY">3.  <u>REPRESENTATIONS AND WARRANTIES</u>.  Guarantor represents and warrants that:</p>
-<p align="JUSTIFY">(a)  it is a corporation duly organized and validly existing under the laws of the State of Oregon and has the corporate power and authority to execute, deliver and carry out the terms and provisions of the Guarantee; </p>
-<p align="JUSTIFY">(b)  no authorization, approval, consent or order of, or registration or filing with, any court or other governmental body having jurisdiction over Guarantor is required on the part of Guarantor for the execution and delivery of this Guarantee; and</p>
-<p align="JUSTIFY">(c)  this Guarantee, when executed and delivered, will constitute a valid and legally binding agreement of Guarantor, except as the enforceability of this Guarantee may be limited by the effect of any applicable bankruptcy, insolvency, reorganization, moratorium or similar laws affecting creditors' rights generally and by general principles of equity.</p>
-<p align="JUSTIFY">4.  <u>SETOFFS AND COUNTERCLAIMS</u>.  Without limiting Guarantors own defenses and rights hereunder, Guarantor reserves to itself all rights, setoffs, counterclaims and other defenses to which Enron or any other affiliate of Guarantor is or may be entitled to arising from or out of the Contract or otherwise, except for defenses arising out of the bankruptcy, insolvency, dissolution or liquidation of Enron.</p>
-<p align="JUSTIFY">5.  <u>AMENDMENT OF GUARANTEE</u>.  No term or provision of this Guarantee shall be amended, modified, altered, waived or supplemented except in a writing signed by Guarantor and Counterparty.</p>
-<p align="JUSTIFY">6.  <u>WAIVERS</u>.  Guarantor hereby waives (a) notice of acceptance of this Guarantee; (b) presentment and demand concerning the liabilities of Guarantor, except as expressly hereinabove set forth; and (c) any right to require that any action or proceeding be brought against Enron or any other person, or except as expressly hereinabove set forth, to require that Counterparty seek enforcement of any performance against Enron or any other person, prior to any action against Guarantor under the terms hereof.</p>
-<p align="JUSTIFY">Except as to applicable statutes of limitation, no delay of Counterparty in the exercise of, or failure to exercise, any rights hereunder shall operate as a waiver of such rights, a waiver of any other rights or a release of Guarantor from any obligations hereunder.</p>
-<p align="JUSTIFY">Guarantor consents to the renewal, compromise, extension, acceleration or other changes in the time of payment of or other changes in the terms of the Obligations, or any part thereof or any changes or modifications to the terms of the Contract.</p>
-<p align="JUSTIFY">Guarantor may terminate this Guarantee by providing written notice of such termination to Counterparty and upon the effectiveness of such termination, Guarantor shall have no further liability hereunder, except as provided in the last sentence of this paragraph.  No such termination shall be effective until five (5) Local Business Days after receipt by Counterparty of such termination notice.  No such termination shall affect Guarantor's liability with respect to any Transaction (as defined in the Contract) entered into prior to the time the termination is effective, which Transaction shall remain guaranteed pursuant to the terms of this Guarantee.</p>
-<p align="JUSTIFY">7.  <u>NOTICE</u>.  Any Payment Demand, notice, request, instruction, correspondence or other document to be given hereunder by any party to another (herein collectively called &quot;Notice&quot;) shall be in writing and delivered personally or mailed by certified mail, postage prepaid and return receipt requested, or by telegram or telecopier, as follows:</p>
-<p align="JUSTIFY"></p></font>
-<table cellspacing="0" border="0" cellpadding="7" width="618">
-<tr><td width="18%" valign="TOP">
-<font size="3"><p>To Counterparty:</font></td>
-<td width="24%" valign="TOP">
-<b><font size="3"><p align="JUSTIFY">INSERT DETAILS</b></font></td>
-<td width="17%" valign="TOP">
-<font size="3"><p>To Guarantor:</font></td>
-<td width="41%" valign="TOP">
-<font size="3"><p>Enron Corp.</font></td>
-</tr>
-<tr><td width="18%" valign="TOP">&nbsp;</td>
-<td width="24%" valign="TOP">&nbsp;</td>
-<td width="17%" valign="TOP">&nbsp;</td>
-<td width="41%" valign="TOP">
-<font size="3"><p>1400 Smith Street</font></td>
-</tr>
-<tr><td width="18%" valign="TOP">&nbsp;</td>
-<td width="24%" valign="TOP">&nbsp;</td>
-<td width="17%" valign="TOP">&nbsp;</td>
-<td width="41%" valign="TOP">
-<font size="3"><p>Houston, Texas  77002</font></td>
-</tr>
-<tr><td width="18%" valign="TOP">&nbsp;</td>
-<td width="24%" valign="TOP">&nbsp;</td>
-<td width="17%" valign="TOP">&nbsp;</td>
-<td width="41%" valign="TOP">
-<font size="3"><p>Attn.:  Vice President, Finance and Treasurer</font></td>
-</tr>
-<tr><td width="18%" valign="TOP">&nbsp;</td>
-<td width="24%" valign="TOP">&nbsp;</td>
-<td width="17%" valign="TOP">&nbsp;</td>
-<td width="41%" valign="TOP">
-<font size="3"><p>Fax No.:  (713) 646-3422</font></td>
-</tr>
-</table>
-
-<font size="3"><p align="JUSTIFY">A copy of any notice sent to Guarantor pursuant hereto must also be sent to the above address to:  Enron North America Corp., (i) Attention: Corporate Secretary, Fax No. (713) 853-2534, and (ii) Attention:  Assistant General Counsel, Trading Group, Fax No. (713) 646-4818.</p>
-<p align="JUSTIFY">Notice given by personal delivery or mail shall be effective upon actual receipt. Notice given by telegram or telecopier shall be effective upon actual receipt if received during the recipient's normal business hours, or at the beginning of the recipient's next business day after receipt if not received during the recipient's normal business hours.  All Notices by telegram or telecopier shall be confirmed promptly after transmission in writing by certified mail or personal delivery.  Any party may change any address to which Notice is to be given to it by giving notice as provided above of such change of address.</p>
-<p align="JUSTIFY">8.  <u>MISCELLANEOUS</u>. This Guarantee shall in all respects be governed by, and construed in accordance with, the laws of England, and Guarantor and Counterparty agree to submit to the exclusive jurisdiction of the courts of England, in respect of any matter arising under this Guarantee and waive any claim that any proceedings brought in such courts in respect of any matter arising under this Guarantee have been brought in an inconvenient forum.  This Guarantee shall be binding upon Guarantor, its successors and assigns and inure to the benefit of and be enforceable by Counterparty, its successors and assigns.  The Guarantee embodies the entire agreement and understanding between Guarantor and Counterparty and supersedes all prior agreements and understandings relating to the subject matter hereof.  The headings in this Guarantee are for purposes of reference only, and shall not affect the meaning hereof.  Terms defined in the Contract that are used but not otherwise defined herein shall have the meanings given to them in the Contract.</p>
-<p align="JUSTIFY">IN WITNESS WHEREOF, the Guarantor has executed this Deed of Guarantee on ______, 200_, but it is effective as of the date first above written.</p>
-<p>Executed as a deed by &#9;</p>
-<b><p>ENRON CORP.</p></b> 
-<p>acting by&#9;</p>
-<p>and by&#9; </p>
-<p align="JUSTIFY"></p><dir>
-<dir>
-<dir>
-<dir>
-<dir>
-<dir>
-<dir>
-<dir>
-<dir>
-
-<p align="JUSTIFY">In the presence of:</p>
-<p align="JUSTIFY">Witness' Signature&#9;.</p>
-<p align="JUSTIFY">Name&#9;.</p>
-<p align="JUSTIFY">Address&#9;.</p>
-<p>.</p>
-
-</td></tr>
-</table>
-
-<img src="/src/img/credit/shim.gif" width="618" height="10" border="0">
-
-<table border="0" width="100%" cellpadding="0" cellspacing="0">
-	<tr>
-		<td align="LEFT" width="33%">
-			<a href="section9.html">Previous</a>
-		</td>
-		<td align="CENTER" width="34%">
-			<a href="gtcmain.html">Return to Table of Contents</a>
-		</td>
-		<td align="RIGHT" width="33%">
-			<a href="section12.html">Next</a>
-		</td>
-	</tr>
-</table>
-
-<img src="/src/img/credit/shim.gif" width="618" height="14" border="0">
-
-</td>
-</tr>
-<tr valign="bottom"><td class="menuPanel"><img src="/src/img/credit/left_wheel.jpg" border="0" width="118" height="184"></td></tr>
-</table><center>
-<table border="0" cellpadding="0" cellspacing="0" width="760" align="center">
-<tr>
-	<td colspan="3" class="white" width="760"><img src="/src/img/credit/shim.gif" width="1" height="1" border="0"></td>
-</tr>
-<tr>
-	<td class="pageFooter" valign="bottom" align="left" width="9"><img src="/src/img/credit/left.gif"></td>
-	<td width="742" class="pageFooter">
-<table border="0" cellspacing="0" cellpadding="0"><tr>
-		<td class="pageFooter">You are not currently logged in. <a class="pageFooter" href="/project/not/index.html">Click here to Log in or Register</a></td>
-	</tr></td></table>
-	</td>
-	<td class="pageFooter" valign="bottom" align="right" width="9"><img src="/src/img/credit/right.gif"></td>
-</tr>
-</table>
-</body>
-</html>
