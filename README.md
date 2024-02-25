@@ -59,6 +59,6 @@ The purpose of the project - and the Enron Archive as a whole - is to present in
 - You can submit bug reports to fpenroncorp at gmail dot com
 
 ## About the Enron Archive
-The Enron Archive aims to preserve the information about Enron Corp. and its activities worldwide before the company's eventual demise.
+The Enron Archive aims to preserve the information about Enron Corp. and its activities worldwide before the company's eventual demise. For more information, visit https://archive.enroncorp.com
 
 
