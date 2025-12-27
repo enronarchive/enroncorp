@@ -1,5 +1,12 @@
 # Enron Website Changelog
 
+## Version 2.6.1
+**Released on December 27th, 2025.**
+
+### Changed
+- **Enron Transportation Services**: Updated content.
+---
+
 ## Version 2.6
 **Released on December 27th, 2025.**
 
