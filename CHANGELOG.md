@@ -1,4 +1,13 @@
 # Enron Website Changelog
+## Version 2.7
+**Released on December 27th, 2025.**
+
+### Added
+- **Ask Why Commercials**: Added .mov version of Bandwidth ad and .asf version of the 30-second Weather ad (taken from a low-quality VHS rip, not the original file, but better than nothing).
+
+### Changed
+- **Ask Why Commercials**: Updated files so they all conform to the original files, even if they are not.
+---
 
 ## Version 2.6.1
 **Released on December 27th, 2025.**
