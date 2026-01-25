@@ -1,4 +1,15 @@
 # Enron Website Changelog
+
+## Version 2.7.1
+**Released on December 27th, 2025.**
+
+### Added
+- **Content Disclaimer**: Added a small legal disclaimer at the bottom of every page.
+
+### Changed
+- **Not Avaliable Page**: Moved to .org domain.
+---
+
 ## Version 2.7
 **Released on December 27th, 2025.**
 
@@ -112,7 +123,7 @@
 
 ### Changed
 - The whole website has a new domain: https://enroncorp.netlify.app/
-- /not/: Moved to https://archive.enroncorp.com/not//
+- /not/: Moved to https://enronarchive.org/not//
 - /changelog/: Moved to /project/changelog/
 - /azurix/: Moved to /project/wip/azurix/ since it is not finished.
 - https://broadband.enroncorp.com/: Moved to /project/wiphttps://broadband.enroncorp.com/ since it is not finished.
