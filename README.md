@@ -24,15 +24,11 @@ The purpose of the project - and the Enron Archive as a whole - is to present in
    - Press Room
     - Investor Relations
        - Some parts are not avaliable due to Wayback Machine limitations.
+       - Some parts that are interctive are not working yet.
     - Work at Enron
         - JobFinder doesn't work due to WM limitations. 
 
-## Changelog, Roadmap & Bugs
-- The changelong for the project can be found at [/project/changelog](http://enroncorp.com/project/changelog).
-- A roadmap and a tracked bugs panel is avaliable at [Notion](https://facundopignanelli.notion.site/ce63b9166dc347169a1a9c116eb21afc?v=ec5510464df847bf85bb27c0ba7d4c3b)
-- You can submit bug reports to fpenroncorp at gmail dot com
-
 ## About the Enron Archive
-The Enron Archive aims to preserve the information about Enron Corp. and its activities worldwide before the company's eventual demise. For more information, visit https://archive.enroncorp.com
+The Enron Archive aims to preserve the information about Enron Corp. and its activities worldwide before the company's eventual demise. For more information, visit https://enronarchive.org
 
 
