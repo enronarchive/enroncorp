@@ -100,8 +100,8 @@ var hw = navigator.platform;
     	<font size="+1" face="verdana, arial, helvetica, sans-serif" color="#333333"><b><!--xx--></b></font>
 
         <br>
-        <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">
-	   <b>Date requested:</b> 13-Aug-2001</font>
+	   <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">
+	   <b>Date requested:</b> <span id="dateRequested">13-Aug-2001</span></font>
 		</td><td align="right" valign="top">
 	<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">
 	       <b>Security:</b> ENE (Common Stock)
@@ -111,11 +111,11 @@ var hw = navigator.platform;
 </table>
 
 	<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"></font>
-	<table bgcolor="#FFFFFF" width="90%" border="1" cellpadding="10" cellspacing="0" align="center">
+	<table bgcolor="#FFFFFF" width="560" border="1" cellpadding="10" cellspacing="0" align="center">
 
 	  <tr valign="top" align="left">
 	      <td align="CENTER" colspan="2">
-	      	  <form method="GET" action="history.html">
+	      	  <form method="GET" action="history.html" id="historyForm">
 			<input name="security" type="hidden" value="ENE ">
 
 		   	<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">
@@ -294,28 +294,28 @@ var hw = navigator.platform;
 		  <font size="+1">
 
               <font size="+1" face="verdana, arial, helvetica, sans-serif" color="#000000">
-									<nobr><nobr>42.93</nobr></nobr>
-									</font>
+								<nobr><nobr><span id="closePrice">42.93</span></nobr></nobr>
+								</font>
               <br>
-              <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><font color="#008000" size="+1">
-											<!-- <font color="#FF0000" size="+1"> --><nobr>
-											<nobr>0.780</nobr></nobr>
-											<nobr>(up 1.85%)</nobr>
-										 </font></font>
+              <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><font color="#008000" size="+1" id="changeColor">
+										<!-- <font color="#FF0000" size="+1"> --><nobr>
+										<nobr><span id="changeValue">0.780</span></nobr></nobr>
+										<nobr>(<span id="changeText">up 1.85%</span>)</nobr>
+									 </font></font>
               <br>
               
             <div align=left>
-            <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Day's High:</font>
-            <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr><nobr>43.20</nobr></nobr></font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Day's High:</font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr><nobr><span id="dayHigh">43.20</span></nobr></nobr></font>
             <br>
-            <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Day's Low:</font>
-            <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr><nobr>42.02</nobr></nobr></font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Day's Low:</font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr><nobr><span id="dayLow">42.02</span></nobr></nobr></font>
             <br>					
             <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Day's Volume:</font>
-			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">2,021,700 shares</font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><span id="dayVolume">2,021,700 shares</span></font>
             <br>
             <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Last Trade:</font>
-			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr>13-Aug-2001 <nobr>4:11&nbsp;PM</nobr></nobr></font>
+			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"><nobr><span id="lastTrade">13-Aug-2001 4:11&nbsp;PM</span></nobr></font>
             <br>
 			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Stock Exchange:</font>
 			<font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">NYSE</font>
@@ -421,6 +421,9 @@ var hw = navigator.platform;
 
 
 </font>
+	
+<script language="JavaScript" src="enron_stock_data.js"></script>
+<script language="JavaScript" src="history-lookup.js"></script>
 	
 <div style="text-align: center; margin-top: 20px; padding: 10px; font-size: 0.75em; font-style: italic; color: #666;">
 Restored by <a href="https://enronarchive.org" style="color: #666;">The Enron Archive</a> for historical research. Content is archived and out of date. All rights to original material belongs to their respective owners.

@@ -71,6 +71,7 @@ var hw = navigator.platform;
 
 <tr><td colspan="1" bgcolor="#0066cc" width="1"><img src="/src/img/spacer.gif" width="1" height="1"></td><td colspan="12" bgcolor="#ffffff" width="726"><img src="/src/img/spacer.gif" width="726" height="1"></td></tr>
 
+
 <tr>
 	<!-- left edge, vertical pinstripe -->
 	<td valign="top" align="left" width="1" class="gridLine" bgcolor="#0066cc" rowspan="2"><br/></td>
@@ -79,10 +80,10 @@ var hw = navigator.platform;
 	<td valign="top" colspan="9" rowspan="2">
 
 		<!-- headline spans columns 1,2,3,4 -->
-		<table cellspacing="0" cellpadding="0" border="0" width="483">
+		<table cellspacing="0" cellpadding="0" border="0" width="604">
 			<tr>
 				<td width="13"><img src="/src/img/spacer.gif" width="13" height="1"></td>
-				<td width="470">
+				<td width="591">
 					<img src="/src/img/spacer.gif" width="1" height="10"><br>
 				
 
@@ -114,7 +115,7 @@ var hw = navigator.platform;
 
 <font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000"></font>
 
-<table bgcolor="#FFFFFF" width="90%" border="1" cellpadding="10" cellspacing="0" align="center">
+<table bgcolor="#FFFFFF" width="560" border="1" cellpadding="10" cellspacing="0" align="center">
     <tr valign="top" align="left">
 		<td align="CENTER" colspan="2">
 
@@ -131,7 +132,7 @@ var hw = navigator.platform;
 				<input type="hidden" name="security" value="ENE "> 
 				<p>
 				<input type="hidden" name="nrep" value="chart"><table border="0"><tr><td valign="top" bgcolor="#FFFFFF"><b><font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Time Frame</font></b><br> <font face="Arial,Helvetica,sans-serif" size="-2"><b>&nbsp;</b></font><br> <select name="time">
-<option value="1hr">1 hour (intraday)</option>
+	<!-- <option value="1hr">1 hour (intraday)</option> -->
 <option value="1dy">1 day (intraday)</option>
 <option value="2dy">2 days (intraday)</option>
 <option value="5dy">5 days (intraday)</option>
@@ -150,10 +151,10 @@ var hw = navigator.platform;
 <option value="All">All Data</option>
 </select>
 <br> </td> <td valign="top" bgcolor="#FFFFFF"><b><font size="-1" face="verdana, arial, helvetica, sans-serif" color="#000000">Frequency</font></b><br> <font face="Arial,Helvetica,sans-serif" size="-2"><b>&nbsp;</b></font><br> <select name="freq">
-<option value="1mi">1 Minute (intraday)</option>
-<option value="5mi">5 Minute (intraday)</option>
-<option value="15mi">15 Minute (intraday)</option>
-<option value="1hr">Hourly (intraday)</option>
+	<!-- <option value="1mi">1 Minute (intraday)</option> -->
+	<!-- <option value="5mi">5 Minute (intraday)</option> -->
+	<!-- <option value="15mi">15 Minute (intraday)</option> -->
+	<!-- <option value="1hr">Hourly (intraday)</option> -->
 <option value="1dy" selected>Daily</option>
 <option value="1wk">Weekly</option>
 <option value="1mo">Monthly</option>
@@ -168,7 +169,7 @@ var hw = navigator.platform;
 <option value="sp500">S&P; 500</option>
 <option value="xmi">AMEX Major Mkt</option>
 </select>
-<br> </td> <td valign="bottom" bgcolor="#FFFFFF"><input type="submit" value="Re-draw"></form></td></tr></table><table border="1"><tr><td colspan="10" align="CENTER"><a href="history.html" title="Click for historical price lookup"><img width="430" height="218" border="0" alt="Click for historical price lookup" src="/src/img/chart.jpg"></a></td></tr></table>
+<br> </td> <td valign="bottom" bgcolor="#FFFFFF"><input type="submit" value="Re-draw"></form></td></tr></table><table border="1"><tr><td colspan="10" align="CENTER"><a href="history.html" title="Click for historical price lookup"><img id="stockChart" width="520" height="264" border="0" alt="Click for historical price lookup" src="/src/img/charts/ENE_1yr_1dy_none.jpg"></a></td></tr></table>
 
 
 			<p><br>
@@ -240,6 +241,8 @@ var hw = navigator.platform;
 
 
 </font>
+	
+<script language="JavaScript" src="charts-switcher.js"></script>
 	
 <div style="text-align: center; margin-top: 20px; padding: 10px; font-size: 0.75em; font-style: italic; color: #666;">
 Restored by <a href="https://enronarchive.org" style="color: #666;">The Enron Archive</a> for historical research. Content is archived and out of date. All rights to original material belongs to their respective owners.

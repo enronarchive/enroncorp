@@ -44,11 +44,12 @@ enron :: discover the power of WHY</title>
 			<tr><td valign="top" width=242><img src="/src/img/spacer.gif" width=242 height=1></td></tr>
 			<tr><td valign="top"><img src="/src/img/box2.jpg" width=242 height=151 usemap="#box2_map" border=0></td></tr>
 			<tr><td valign="top" width=242><img src="/src/img/spacer.gif" width=242 height=1></td></tr>
-			<tr><td valign="top" background="/src/img/box3bg.jpg" width=242>
-				<table cellspacing=0 cellpadding=0 border=0>
+			<tr><td valign="top" background="/src/img/box3bg.jpg" width="242">
+				<table cellspacing="0" cellpadding="0" border="0">
 					<tr>
-						<td width=10><img src="/src/img/box3bg.jpg" width=13 height=152></td>
+						<td width="10"><img src="/src/img/spacer.gif" width="13" height="152"></td>
 						<td>
+							<form method="GET" action="" name="form0">
 							<img src="/src/img/search.gif"><br>
 								<input type="hidden" name="mss" value="simple">
 								<input type="hidden" name="pg" value="q">
@@ -58,15 +59,14 @@ enron :: discover the power of WHY</title>
 								<input type="text" class="dropdown" size="(none)" maxlength="255" name="q" value=""><input type="hidden" name="search" value="Search"><a href="javascript:form0.submit()"><img src="/src/img/go.gif" border="0"></a><br>
 							<img src="/src/img/requested.gif"><br>
 							<font size="-2" face="arial,helvetica,sans-serif">
-							<select class="dropdown"
-								onChange="	si=this.selectedIndex;
+							<select class="dropdown" onchange="	si=this.selectedIndex;
 											this.selectedIndex=0;
 											if (this.options[si].value == 'map')
 												openPopup('investors/location.html', 'Map', '661', '561');
 											else if (this.options[si].value == 'milestones')
 												openPopup('pressroom/milestones/frameset.html', 'milestones', '600', '350')
 											else
-												top.location.href=this.options[si].value;
+												top.frames.location.href=this.options[si].value;
 											">
 								<option value="">Select...</option>
 								<option value="/corp/askwhy/">Advertising</option>
@@ -76,7 +76,6 @@ enron :: discover the power of WHY</title>
 								<option value="/corp/investors/location.html">Map to Headquarters</option>
 								<option value="/corp/pressroom/releases/2001/press_chron2001.html">Recent Press Releases</option>
 								<option value="/corp/investors/stock/">Stock Quote</option>
-                                <option value="https://github.com/enronarchive/enroncorp/blob/main/CHANGELOG.md">Website Changelog (New!)</option>
 								<option value="">(none)</option>
 							</select>
 							</font>
@@ -101,16 +100,16 @@ enron :: discover the power of WHY</title>
 								<option value="/int/europe">Enron Europe</option>
 								<option value="https://wholesale.enroncorp.com/principalinvestments">Enron Investment Partners</option>
 								<option value="https://enronarchive.org/not/">Enron Japan</option>
-								<option value="/int/southamerica">Enron South America</option>
-								<option value="https://wholesale.enroncorp.com/wind">Enron Wind </option>
+								<option value="https://enronarchive.org/not/">Enron South America</option>
+								<option value="https://enronwind.com">Enron Wind </option>
 								<option value="https://transportation.enroncorp.com/fgt/">Florida Gas Transmission</option>
 								<option value="https://enronarchive.org/not/">HotTap</option>
-								<option value="/ei/">Int'l Project Portfolio</option>
-								<option value="/newpowercompany">New Power Company</option>
-								<option value="https://transportation.enroncorp.com/northenborder">Northern Border Pipeline</option>
-								<option value="https://transportation.enroncorp.com/northengas">Northern Natural Gas</option>
+								<option value="https://enronarchive.org/not/">Int'l Project Portfolio</option>
+								<option value="https://enronarchive.org/not/">New Power Company</option>
+								<option value="https://enronarchive.org/not/">Northern Border Pipeline</option>
+								<option value="https://enronarchive.org/not/">Northern Natural Gas</option>
 								<option value="http://portlandgeneral.com">Portland General Electric</option>
-								<option value="https://transportation.enroncorp.com/transwestern/">Transwestern Pipeline</option>
+								<option value="https://enronarchive.org/not/">Transwestern Pipeline</option>
 								<option value="">(none)</option>
 							</select>
 							</font>
